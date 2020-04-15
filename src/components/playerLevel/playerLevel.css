@@ -1,0 +1,70 @@
+body {
+  margin: 50px;
+}
+
+.playerLevel {
+  position: relative;
+}
+
+.playerLevel_level {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #b09cfd;
+  font-size: 1.7rem;
+  color: white;
+}
+
+.playerLevel__progress-bar {
+  position: relative;
+  width: 70px;
+  height: 16px;
+  border-radius: 0 4px 4px 0;
+  background-color: #eeeeee;
+}
+
+.progress {
+  height: 100%;
+  background-color: #d8d0ff;
+}
+
+.progress-bar__dec {
+  position: absolute;
+  background-color: white;
+  width: 1px;
+  height: 1px;
+}
+
+.progress-bar__dec_1, .progress-bar__dec_2 {
+  width: 2px;
+  height: 2px;
+}
+
+.progress-bar__dec_1 {
+  left: 20%;
+  top: 20%;
+}
+
+.progress-bar__dec_2 {
+  left: 40%;
+  top: 60%;
+}
+
+.progress-bar__dec_3 {
+  left: 60%;
+  top: 25%;
+}
+
+.progress-bar__dec_4 {
+  left: 80%;
+  top: 65%;
+}
+
+/*# sourceMappingURL=playerLevel.css.map */
