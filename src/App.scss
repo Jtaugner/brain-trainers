@@ -1,8 +1,18 @@
 @import "root";
 
+
+@font-face {
+    font-family: 'Montserrat';
+    src:url("assets/Montserrat-Medium.ttf");
+
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+
+}
 html, body, #root{
     height: 100%;
-    font: 10px/1.5 Noto Sans, sans-serif;
+    font: 10px/1.5 'Montserrat', sans-serif;
     -webkit-tap-highlight-color: transparent;
     -ms-user-select: none;
     -moz-user-select: none;

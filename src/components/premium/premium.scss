@@ -1,0 +1,13 @@
+.premium{
+  width: 95px;
+  height: 18px;
+
+  background: url(premium.png) center center no-repeat;
+  background-size: 100%;
+}
+@media (min-width: 359px) {
+  .premium{
+    width: 120px;
+    height: 26px;
+  }
+}

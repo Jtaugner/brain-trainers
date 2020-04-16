@@ -4,10 +4,10 @@ const valueForDoneLevel = [
     {money: 4, exp: 40},
     {money: 6, exp: 70}
 ];
-export const getMoneyForLevel = (difficult) => {
+export const getMoneyForGameLevel = (difficult) => {
     return valueForDoneLevel[difficult].money;
 };
-export const getExpForLevel = (difficult) => {
+export const getExpForGameLevel = (difficult) => {
     return valueForDoneLevel[difficult].exp;
 };
 const gameLevelOpen = [

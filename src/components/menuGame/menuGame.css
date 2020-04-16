@@ -1,0 +1,129 @@
+.menu-game {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  background-color: white;
+  border-bottom: 2px solid #fd9896;
+  border-radius: 7px;
+  margin: 0 auto 13px auto;
+}
+
+.menu-game__icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.menu-game__additional {
+  flex-grow: 1;
+}
+
+.game-progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+
+.game-progress_done {
+  height: 90%;
+  background-color: #d8d0ff;
+}
+
+.game-name {
+  font-size: 1.5rem;
+  color: #111112;
+}
+
+.game-doneLevels {
+  font-size: 1rem;
+  color: #111112;
+}
+
+.shultz {
+  border-color: #d8d0ff;
+}
+
+.rememberWords {
+  border-color: #fdd0ff;
+}
+
+.findWord {
+  border-color: #ffd0da;
+}
+
+.rememberNumbers {
+  border-color: #ffe5d0;
+}
+
+.field {
+  border-color: #fffad0;
+}
+
+.runWords {
+  border-color: #f2ffd0;
+}
+
+.chet {
+  border-color: #d2ffd0;
+}
+
+.findLetters {
+  border-color: #d0ffee;
+}
+
+.wordInText {
+  border-color: #d0eeff;
+}
+
+.couple {
+  border-color: #d0eeff;
+}
+
+.shultz .menu-game__icon {
+  background: url(shultz.png) center center no-repeat;
+}
+
+.rememberWords .menu-game__icon {
+  background: url(rememberWords.png) center center no-repeat;
+}
+
+.findWord .menu-game__icon {
+  background: url(findWord.png) center center no-repeat;
+}
+
+.rememberNumbers .menu-game__icon {
+  background: url(rememberNumbers.png) center center no-repeat;
+}
+
+.field .menu-game__icon {
+  background: url(field.png) center center no-repeat;
+}
+
+.runWords .menu-game__icon {
+  background: url(runWords.png) center center no-repeat;
+}
+
+.chet .menu-game__icon {
+  background: url(chet.png) center center no-repeat;
+}
+
+.findLetters .menu-game__icon {
+  background: url(findLetters.png) center center no-repeat;
+}
+
+.wordInText .menu-game__icon {
+  background: url(wordInText.png) center center no-repeat;
+}
+
+.couple .menu-game__icon {
+  background: url(couple.png) center center no-repeat;
+}
+
+.menu-game .menu-game__icon {
+  background-size: 100%;
+}
+
+/*# sourceMappingURL=menuGame.css.map */

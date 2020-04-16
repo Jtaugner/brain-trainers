@@ -3,13 +3,16 @@ import './root.css'
 import './App.css';
 import {connect} from "react-redux";
 import {SwitchTransition,CSSTransition} from "react-transition-group";
-import PlayerLevel from "./components/playerLevel";
+import MainPage from "./components/mainPage";
 
 function App(props) {
 
     return (
         <>
-        <PlayerLevel />
+            <MainPage />
+
+
+
             </>
     );
 }

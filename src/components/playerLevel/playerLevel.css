@@ -1,9 +1,6 @@
-body {
-  margin: 50px;
-}
-
 .playerLevel {
   position: relative;
+  margin-left: 20px;
 }
 
 .playerLevel_level {
@@ -20,6 +17,10 @@ body {
   background-color: #b09cfd;
   font-size: 1.7rem;
   color: white;
+}
+
+.playerLevel_level_small {
+  font-size: 1.4rem;
 }
 
 .playerLevel__progress-bar {
@@ -65,6 +66,29 @@ body {
 .progress-bar__dec_4 {
   left: 80%;
   top: 65%;
+}
+
+@media (min-width: 359px) {
+  .playerLevel {
+    margin-left: 26px;
+  }
+
+  .playerLevel__progress-bar {
+    width: 70px;
+    height: 21px;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .playerLevel_level {
+    left: -26px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.9rem;
+  }
+
+  .playerLevel_level_small {
+    font-size: 1.6rem;
+  }
 }
 
 /*# sourceMappingURL=playerLevel.css.map */

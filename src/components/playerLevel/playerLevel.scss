@@ -1,9 +1,7 @@
 @import '../../root';
-body{
-  margin: 50px;
-}
 .playerLevel{
   position: relative;
+  margin-left: 20px;
 }
 .playerLevel_level{
   position: absolute;
@@ -25,7 +23,9 @@ body{
   font-size: 1.7rem;
   color: white;
 }
-
+.playerLevel_level_small{
+  font-size: 1.4rem;
+}
 .playerLevel__progress-bar{
   position: relative;
 
@@ -65,4 +65,30 @@ body{
 .progress-bar__dec_4{
   left: 80%;
   top: 65%;
+}
+$levelLeft: 26px;
+@media (min-width: 359px) {
+  .playerLevel{
+    margin-left: $levelLeft;
+  }
+  .playerLevel__progress-bar{
+    width: 70px;
+    height: 21px;
+
+
+    border-radius: 0 5px 5px 0;
+  }
+  .playerLevel_level{
+    left: -$levelLeft;
+
+    width: 32px;
+    height: 32px;
+
+
+
+    font-size: 1.9rem;
+  }
+  .playerLevel_level_small{
+    font-size: 1.6rem;
+  }
 }

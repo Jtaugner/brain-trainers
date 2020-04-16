@@ -1,0 +1,91 @@
+@import '../../root';
+
+.moneyBlock__money{
+  position: relative;
+
+  width: 45px;
+  height: 16px;
+
+  border-radius: 0 2px 2px 0;
+
+  background-color: $lightClose;
+
+  text-align: center;
+  font-size: 1.2rem;
+  color: $money;
+
+  margin: 0 5px 0 20px;
+}
+
+.moneyPic{
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 25px;
+  height: 25px;
+
+  background: url(../../assets/images/money.png) center center no-repeat;
+  background-size: 100%;
+}
+
+.addMoney{
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 12px;
+  height: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #83da8f;
+  border-radius: 50%;
+  box-shadow: 0.5px 1px 1px #30b042;
+
+  font-size: 1.3rem;
+  color: white;
+
+  cursor: pointer;
+}
+
+@media (min-width: 359px) {
+  .moneyBlock__money{
+
+    width: 60px;
+    height: 21px;
+
+    font-size: 1.5rem;
+    border-radius: 0 4px 4px 0;
+
+    margin: 0 7px 0 30px;
+  }
+
+  .moneyPic{
+    position: absolute;
+    left: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 32px;
+
+    background: url(../../assets/images/money.png) center center no-repeat;
+    background-size: 100%;
+  }
+
+  .addMoney{
+    right: -7px;
+
+    width: 18px;
+    height: 18px;
+
+    box-shadow: 0.7px 1px 1px #30b042;
+
+    font-size: 1.6rem;
+  }
+}
