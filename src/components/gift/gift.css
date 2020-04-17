@@ -1,0 +1,29 @@
+.gift {
+  margin-right: 29.1666666667px;
+}
+
+.gift__time {
+  position: relative;
+  width: 60px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #111112;
+  background-color: white;
+}
+
+.gift-image {
+  position: absolute;
+  right: -29.1666666667px;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 35px;
+  height: 40px;
+  background: url(gift.png) center center no-repeat;
+  background-size: 100%;
+}
+
+/*# sourceMappingURL=gift.css.map */

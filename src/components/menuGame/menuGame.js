@@ -1,11 +1,21 @@
 import React from 'react';
 import './menuGame.scss'
+import {connect} from "react-redux";
+import {selectGameProgress} from "../../store/selectors";
+const classNames = require('classnames');
+
 function MenuGame(props) {
-    const {name, gameClass} = props;
-    let levelsDone = 50;
+    const {name, gameClass, progress} = props;
+    let isGameClosed = !progress[0];
+    let levelsDone = progress[1].reduce((acc, el)=>acc+el, 0);
     let allLevels = 100;
+    const menuGameClasses = classNames({
+        'menu-game': true,
+        [gameClass]: true,
+        'menu-game_closed': isGameClosed
+    });
     return (
-        <div className={'menu-game' + ' ' + gameClass}>
+        <div className={menuGameClasses}>
             <div
                 className={'menu-game__icon'} />
             <div className="menu-game__additional">
@@ -22,4 +32,6 @@ function MenuGame(props) {
     );
 }
 
-export default MenuGame;
+export default connect((store, ownProps)=>({
+    progress: selectGameProgress(store, ownProps.gameClass)
+}))(MenuGame);

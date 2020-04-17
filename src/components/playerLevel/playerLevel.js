@@ -5,8 +5,7 @@ import {selectExp, selectLevel} from "../../store/selectors";
 import {getExpLevel} from "../../projectCommon";
 const classNames = require('classnames');
 function PlayerLevel(props) {
-   let level = 13;
-   let exp = 4005;
+   const {level, exp} = props;
     let levelClasses = classNames({
         "playerLevel_level": true,
         "playerLevel_level_small": level > 9

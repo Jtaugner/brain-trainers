@@ -4,6 +4,7 @@
   "homepage": ".",
   "private": true,
   "dependencies": {
+    "autoprefixer": "^9.7.6",
     "classnames": "^2.2.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -27,9 +28,8 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      ">0.05%",
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",

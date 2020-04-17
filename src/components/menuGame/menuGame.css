@@ -129,6 +129,12 @@
   background-size: 100%;
 }
 
+.menu-game_closed {
+  filter: gray;
+  filter: grayscale(100%);
+  border-color: #d0d0d0;
+}
+
 @media (min-width: 359px) {
   .menu-game {
     height: 65px;

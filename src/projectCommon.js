@@ -51,3 +51,16 @@ export const getExpLevel = (lvl) => {
 export const getMoneyLevel= (lvl) => {
     return level[lvl].money
 };
+
+export const gamesNames = [
+    ['Таблица Шульте', 'shultz'],
+    ['Запомни слова', 'rememberWords'],
+    ['Найди слово', 'findWord'],
+    ['Запомни числа','rememberNumbers'],
+    ['Поле зрения', 'field'],
+    ['Бегущие слова', 'runWords'],
+    ['Чётные числа', 'chet'],
+    ['Поиск букв', 'findLetters'],
+    ['Слово в тексте', 'wordInText'],
+    ['Пары слов', 'couple']
+];
