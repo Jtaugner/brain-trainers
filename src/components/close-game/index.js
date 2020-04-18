@@ -1,1 +1,1 @@
-export {default} from './gift'
+export {default} from './close-game'

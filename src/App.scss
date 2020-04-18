@@ -11,6 +11,9 @@
 
 }
 html, body, #root{
+    position: relative;
+
+    width: 100%;
     height: 100%;
     font: 10px/1.5 'Montserrat', sans-serif;
     -webkit-tap-highlight-color: transparent;
@@ -19,4 +22,71 @@ html, body, #root{
     -webkit-user-select: none;
     touch-action: manipulation;
     user-select: none;
+}
+
+
+
+//Уровни, картинки, обводка
+.shultz{
+    border-color: #d8d0ff;
+}
+.rememberWords{
+    border-color: #fdd0ff;
+}
+.findWord{
+    border-color: #ffd0da;
+}
+.rememberNumbers{
+    border-color: #ffe5d0;
+}
+.field{
+    border-color: #fffad0;
+}
+.runWords{
+    border-color: #f2ffd0;
+}
+.chet{
+    border-color: #d2ffd0;
+}
+.findLetters{
+    border-color: #d0ffee;
+}
+.wordInText{
+    border-color: #d0eeff;
+}
+.couple{
+    border-color: #d0eeff;
+}
+.shultz .menu-game__icon{
+    background: url(assets/images/shultz.png) center center no-repeat;
+}
+.rememberWords .menu-game__icon{
+    background: url(assets/images/rememberWords.png) center center no-repeat;
+}
+.findWord .menu-game__icon{
+    background: url(assets/images/findWord.png) center center no-repeat;
+}
+.rememberNumbers .menu-game__icon{
+    background: url(assets/images/rememberNumbers.png) center center no-repeat;
+}
+.field .menu-game__icon{
+    background: url(assets/images/field.png) center center no-repeat;
+}
+.runWords .menu-game__icon{
+    background: url(assets/images/runWords.png) center center no-repeat;
+}
+.chet .menu-game__icon{
+    background: url(assets/images/chet.png) center center no-repeat;
+}
+.findLetters .menu-game__icon{
+    background: url(assets/images/findLetters.png) center center no-repeat;
+}
+.wordInText .menu-game__icon{
+    background: url(assets/images/wordInText.png) center center no-repeat;
+}
+.couple .menu-game__icon{
+    background: url(assets/images/couple.png) center center no-repeat;
+}
+.menu-game .menu-game__icon{
+    background-size: 100%;
 }

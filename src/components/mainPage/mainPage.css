@@ -4,19 +4,19 @@
   background-color: #eeeeee;
 }
 
-.trainers {
-  display: inline-block;
-  font-size: 1.1rem;
-  padding: 3px 7px;
-  margin: 20px 0 10px 0;
-  background-color: white;
-  border-radius: 10px;
-}
-
 .top-tip {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px 0 10px 0;
+}
+
+.trainers {
+  display: inline-block;
+  font-size: 1.1rem;
+  padding: 3px 7px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 @media (min-width: 359px) {

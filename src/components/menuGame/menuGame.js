@@ -15,7 +15,11 @@ function MenuGame(props) {
         'menu-game_closed': isGameClosed
     });
     return (
-        <div className={menuGameClasses}>
+        <div className={menuGameClasses}
+            onClick={()=>{
+                let a = isGameClosed ? props.onClick() :  5;
+            }}
+        >
             <div
                 className={'menu-game__icon'} />
             <div className="menu-game__additional">

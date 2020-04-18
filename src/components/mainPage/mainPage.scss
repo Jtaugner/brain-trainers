@@ -8,6 +8,13 @@
 
   background-color: $lightClose;
 }
+.top-tip{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px 0 10px 0;
+}
 
 .trainers{
   display: inline-block;
@@ -15,17 +22,12 @@
 
   padding: 3px 7px;
 
-  margin: 20px 0 10px 0;
 
   background-color: white;
   border-radius: 10px;
 }
 
-.top-tip{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 @media (min-width: 359px) {
   .mainPage{

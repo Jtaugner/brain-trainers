@@ -78,41 +78,40 @@
   border-color: #d0eeff;
 }
 .shultz .menu-game__icon{
-  background: url(shultz.png) center center no-repeat;
+  background: url(../../assets/images/shultz.png) center center no-repeat;
 }
 .rememberWords .menu-game__icon{
-  background: url(rememberWords.png) center center no-repeat;
+  background: url(../../assets/images/rememberWords.png) center center no-repeat;
 }
 .findWord .menu-game__icon{
-  background: url(findWord.png) center center no-repeat;
+  background: url(../../assets/images/findWord.png) center center no-repeat;
 }
 .rememberNumbers .menu-game__icon{
-  background: url(rememberNumbers.png) center center no-repeat;
+  background: url(../../assets/images/rememberNumbers.png) center center no-repeat;
 }
 .field .menu-game__icon{
-  background: url(field.png) center center no-repeat;
+  background: url(../../assets/images/field.png) center center no-repeat;
 }
 .runWords .menu-game__icon{
-  background: url(runWords.png) center center no-repeat;
+  background: url(../../assets/images/runWords.png) center center no-repeat;
 }
 .chet .menu-game__icon{
-  background: url(chet.png) center center no-repeat;
+  background: url(../../assets/images/chet.png) center center no-repeat;
 }
 .findLetters .menu-game__icon{
-  background: url(findLetters.png) center center no-repeat;
+  background: url(../../assets/images/findLetters.png) center center no-repeat;
 }
 .wordInText .menu-game__icon{
-  background: url(wordInText.png) center center no-repeat;
+  background: url(../../assets/images/wordInText.png) center center no-repeat;
 }
 .couple .menu-game__icon{
-  background: url(couple.png) center center no-repeat;
+  background: url(../../assets/images/couple.png) center center no-repeat;
 }
 .menu-game .menu-game__icon{
   background-size: 100%;
 }
 
 .menu-game_closed{
-  filter: gray;
   filter: grayscale(100%);
   border-color: #d0d0d0;
 }

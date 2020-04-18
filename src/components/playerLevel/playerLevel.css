@@ -15,6 +15,7 @@
   align-items: center;
   border-radius: 50%;
   background-color: #b09cfd;
+  box-shadow: 2px 2px 3px #d8d0ff;
   font-size: 1.7rem;
   color: white;
 }

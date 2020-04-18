@@ -1,18 +1,21 @@
 import React from 'react'
-import useAmount from '../hooks/setAmount'
+import './index.scss'
 
-function amount(OriginalComponent) {
+function popUpBlackout(OriginalComponent) {
+    return (props) => {
+        return (
+            <div className={'pop-up-anim'}>
+                <div className={'blackout'} onClick={()=>{props.onClick()}}/>
+                <div className="pop-up">
+                    <OriginalComponent
+                        {...props}
+                    />
+                </div>
 
-  return (props) =>{
-    const {amount, increase, decrease} = useAmount(0);
-
-    return <OriginalComponent
-        {...props}
-        amount={amount}
-        increase={increase}
-        decrease={decrease}
-      />
-  }
+            </div>
+        )
+    }
 
 }
-export default amount
+
+export default popUpBlackout

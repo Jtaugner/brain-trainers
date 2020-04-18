@@ -1,15 +1,18 @@
 import React from 'react';
 import './premium.scss'
 import {connect} from "react-redux";
+import {selectPremium} from "../../store/selectors";
 function Premium(props) {
-    const {} = props;
+    const {isPremium} = props;
     return (
-        <div className="premium" />
+        <>
+        {isPremium ? <div className="premium" /> : <></>}
+        </>
     );
 }
 
 export default connect((store) => ({
-
+        isPremium: selectPremium(store)
 
     })
 )(Premium);

@@ -1,5 +1,7 @@
 import {} from "../common";
-
-export const purchasesReducer = (state = {}, action) => {
+const purchasesState = {
+    isPremium: false
+};
+export const purchasesReducer = (state = purchasesState, action) => {
     return state;
 };

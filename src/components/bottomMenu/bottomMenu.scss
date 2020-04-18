@@ -1,1 +1,54 @@
 @import "../../root";
+
+.bottom-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 2px solid $lightMain;
+
+  background-color: white;
+
+  z-index: 2;
+}
+.bottom-menu__shop{
+  width: 38px;
+  background: url('cart.png') center center no-repeat;
+}
+.bottom-menu__active-link .bottom-menu__shop{
+  background: url('cart_active.png') center center no-repeat;
+}
+
+
+.bottom-menu__home{
+  width: 28px;
+  background: url('home.png') center center no-repeat;
+}
+.bottom-menu__active-link .bottom-menu__home{
+  background: url('home_active.png') center center no-repeat;
+}
+
+
+
+.bottom-menu__settings{
+  width: 30px;
+  background: url('settings.png') center center no-repeat;
+}
+
+.bottom-menu__active-link .bottom-menu__settings{
+  background: url('settings_active.png') center center no-repeat;
+}
+
+
+
+.bottom-menu__link, .bottom-menu__active-link .bottom-menu__link{
+  height: 28px;
+  background-size: 100%;
+}

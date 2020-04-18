@@ -10,12 +10,12 @@
   padding: 0 10px;
   background-color: white;
   border-bottom: 2px solid #d8d0ff;
+  z-index: 2;
 }
 
 @media (min-width: 359px) {
   .top-menu {
     height: 55px;
-    padding: 0 5px;
   }
 }
 

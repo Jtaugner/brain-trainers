@@ -19,11 +19,12 @@
   background-color: white;
 
   border-bottom: 2px solid $lightMain;
+
+  z-index: 2;
 }
 
 @media (min-width: 359px) {
   .top-menu{
     height: 55px;
-    padding: 0 5px;
   }
 }

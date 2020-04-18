@@ -5,8 +5,8 @@ import {expReducer} from "./expReducer";
 import {purchasesReducer} from "./purchasesReducer";
 import {progressReducer} from "./progressReducer";
 
-
 const reducer = combineReducers({
+
     money: moneyReducer,
     level: levelReducer,
     exp: expReducer,
