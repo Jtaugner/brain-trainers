@@ -14,7 +14,7 @@
 
 .close-game__header{
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 0;
 
   display: flex;
@@ -24,9 +24,11 @@
   width: 100%;
   height: 30px;
 
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+
   background-color: #8b7bd6;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+
 }
 .close-game__header h3{
   font-size: 2rem;
@@ -63,9 +65,15 @@
   width: 60px;
   height: 60px;
   display: block;
-  margin: 10px auto;
+  margin: 10px auto 2px auto;
 
   background-size: 100%;
+}
+
+
+.close-game__name{
+  text-align: center;
+  font-size: 1.4rem;
 }
 
 .buyGame{
@@ -75,10 +83,14 @@
 
   width: 150px;
   height: 35px;
+
   background: transparent;
+
   margin: 15px auto 5px auto;
   border: 2px solid $money;
   border-radius: 8px;
+
+  box-shadow: 2px 3px 3px #fbe5ac;
 
 
   font-size: 1.6rem;
@@ -111,9 +123,10 @@
     width: 20px;
     height: 20px;
   }
-  .close-game p {
+  .close-game p, .close-game__name {
     font-size: 1.6rem;
   }
+
   .close-game .menu-game__icon {
     width: 70px;
     height: 70px;

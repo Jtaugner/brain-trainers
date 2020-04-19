@@ -1,23 +1,17 @@
 import React from 'react';
-import './close-game.scss'
 import {connect} from "react-redux";
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
+import ClosePopUp from "../closePopUp/closePopUp";
 
 function CloseGame(props) {
-    const {gameClass, money, level, onClick} = props;
+    const {money, level} = props;
     return (
-        <div className={'close-game ' + gameClass}>
-            <div className={'close-game__header'}>
-                <h3>Режим закрыт</h3>
-                <div className="close-game__close" onClick={()=>onClick()}/>
-            </div>
-            <p>Чтобы разблокировать режим, достигнете {level} уровня и купите его за {money} монет.</p>
-            <div className="menu-game__icon"/>
-            <div className="buyGame">
-                Открыть {money}
-                <div className={'money-img'} />
-            </div>
-        </div>
+        <ClosePopUp
+            {...props}
+            parText={`Чтобы разблокировать режим, достигнете ${level} уровня и купите его за ${money} монет.`}
+            headerText={'Режим закрыт'}
+            nameColor={'#3f3f3f'}
+        />
     );
 }
 

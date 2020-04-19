@@ -7,7 +7,6 @@ function Shop(props) {
     return (
         <div className="shop">
             Магазин
-
         </div>
 
     );

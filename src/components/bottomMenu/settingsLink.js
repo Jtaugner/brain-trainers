@@ -1,16 +1,16 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
+import {toggleSettings} from "../../store/ac";
 
-function SettingsLink() {
+function SettingsLink(props) {
+    const {openSettings} = props;
     return (
-        <NavLink
-            to={'/settings'}
-            activeClassName={'bottom-menu__active-link'}
-        >
-            <div className="bottom-menu__link bottom-menu__settings" />
-
-        </NavLink>
+            <div
+            onClick={openSettings}
+                className="bottom-menu__link bottom-menu__settings" />
     );
 }
 
-export default SettingsLink;
+export default connect(null, (dispatch) => ({
+    openSettings: () => dispatch(toggleSettings())
+}))(SettingsLink);

@@ -1,6 +1,11 @@
 export const SHOW_ADV = "SHOW_ADV";
 
 
+
+export const TOGGLE_SETTINGS = "TOGGLE_SETTINGS";
+export const TOGGLE_SOUNDS = "TOGGLE_SOUNDS";
+
+
 //Покупки за монеты
 export const SUBTRACT_MONEY = "SUBTRACT_MONEY";
 export const BUY_GAME = "BUY_GAME";
