@@ -64,3 +64,10 @@ export const gamesNames = [
     ['Слово в тексте', 'wordInText'],
     ['Пары слов', 'couple']
 ];
+export const moneyPrice = [
+    //монеты - рубли
+    [150, 59],
+    [400, 129],
+    [1000, 249],
+    [2000, 399]
+];
