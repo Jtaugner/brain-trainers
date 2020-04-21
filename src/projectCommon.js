@@ -66,10 +66,10 @@ export const gamesNames = {
 };
 export const moneyPrice = [
     //монеты - рубли
-    [150, 59],
-    [400, 129],
-    [1000, 249],
-    [2000, 399]
+    {money:150, price:59},
+{money:400, price:129, className: 'double-money'},
+    {money:1000, price:249, className: 'bag-money'},
+    {money:2000, price:399, className: 'bags-money'}
 ];
 export const premiumPrice = [
     //дни - рубли

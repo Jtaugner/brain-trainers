@@ -1,0 +1,17 @@
+@import "../../../root";
+
+.premium-game .menu-game__icon{
+  background: url(../../../assets/images/premium.png) center center no-repeat;
+  background-size: 100%;
+}
+$premiumColor: #b38614;
+.premium-game{
+  border-color: $money;
+}
+.premium-game .game-name{
+  color: $premiumColor;
+}
+.premium-game .game-desc{
+  color: $premiumColor;
+  font-size: 1.3rem;
+}

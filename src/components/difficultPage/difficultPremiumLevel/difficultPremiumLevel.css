@@ -1,0 +1,19 @@
+.premium-game .menu-game__icon {
+  background: url(../../../assets/images/premium.png) center center no-repeat;
+  background-size: 100%;
+}
+
+.premium-game {
+  border-color: #fbc230;
+}
+
+.premium-game .game-name {
+  color: #b38614;
+}
+
+.premium-game .game-desc {
+  color: #b38614;
+  font-size: 1.3rem;
+}
+
+/*# sourceMappingURL=difficultPremiumLevel.css.map */

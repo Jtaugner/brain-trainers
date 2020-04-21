@@ -8,6 +8,7 @@ import TopMenu from "../topMenu/topMenu"
 import {selectGame, selectGameName} from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
+import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
 
 const difficultNames = {
     'easy':'Легко',
@@ -28,6 +29,7 @@ function DifficultPage(props) {
             <div className="top-tip">
                 <div className="top-tip__name">{gameName}</div>
             </div>
+            <DifficultPremiumLevel/>
             {Object.keys(difficultNames).map((key, index)=>
                 <DifficultLevel
                     key={key}

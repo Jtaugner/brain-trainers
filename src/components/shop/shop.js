@@ -30,11 +30,12 @@ function Shop(props) {
                     price={arr[1]}
                 />
             )}
-            {moneyPrice.map((arr, index)=>
+            {moneyPrice.map((obj, index)=>
              <ShopItem
                  key={'money' + index}
-                money={arr[0]}
-                price={arr[1]}
+                money={obj.money}
+                price={obj.price}
+                 className={obj.className}
              />
             )}
             <BottomMainMenu/>
