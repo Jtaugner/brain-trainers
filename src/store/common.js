@@ -6,6 +6,10 @@ export const TOGGLE_SETTINGS = "TOGGLE_SETTINGS";
 export const TOGGLE_SOUNDS = "TOGGLE_SOUNDS";
 
 
+export const CHOOSE_GAME = "CHOOSE_GAME";
+export const CHOOSE_DIFFICULT = "CHOOSE_DIFFICULT";
+
+
 //Покупки за монеты
 export const SUBTRACT_MONEY = "SUBTRACT_MONEY";
 export const BUY_GAME = "BUY_GAME";

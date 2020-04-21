@@ -10,6 +10,10 @@
   margin: 0 auto 13px auto;
 }
 
+.numbers-font {
+  font-family: "Roboto", "Montserrat", sans-serif;
+}
+
 .menu-game__icon {
   width: 40px;
   height: 40px;
@@ -157,4 +161,4 @@
   }
 }
 
-/*# sourceMappingURL=menuGame.css.map */
+/*# sourceMappingURL=menuLevel.css.map */

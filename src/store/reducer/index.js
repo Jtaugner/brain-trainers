@@ -6,6 +6,8 @@ import {purchasesReducer} from "./purchasesReducer";
 import {progressReducer} from "./progressReducer";
 import {settingsReducer} from "./settingsReducer";
 import {soundsReducer} from "./soundsReducer";
+import {gameReducer} from "./gameReducer";
+import {difficultReducer} from "./difficultReducer";
 
 const reducer = combineReducers({
 
@@ -15,7 +17,9 @@ const reducer = combineReducers({
     purchases: purchasesReducer,
     progress: progressReducer,
     settings: settingsReducer,
-    sounds: soundsReducer
+    sounds: soundsReducer,
+    game: gameReducer,
+    difficult: difficultReducer,
 });
 
 export {reducer};

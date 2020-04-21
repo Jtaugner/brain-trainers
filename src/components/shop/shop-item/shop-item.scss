@@ -49,7 +49,7 @@
 .shop-item__free .shop-item__money{
   color: $darkMain;
 }
-.shop-item__free, .shop-item__buy-button{
+.shop-item__free, .shop-item__free .shop-item__buy-button{
   border-color: $darkMain;
 }
 .free-money{
@@ -57,5 +57,17 @@
   height: 25px;
 
   background: url(free-money.png) center center no-repeat;
+  background-size: 100%;
+}
+.shop-item__free_premium .shop-item__money{
+  color: $money;
+}
+.shop-item__free_premium, .shop-item__free_premium .shop-item__buy-button{
+  border-color: $money;
+  color: $money;
+}
+
+.shop-item__free_premium .shop-item__pic{
+  background: url(../../../assets/images/premium.png) center center no-repeat;
   background-size: 100%;
 }

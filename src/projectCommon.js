@@ -52,22 +52,28 @@ export const getMoneyLevel= (lvl) => {
     return level[lvl].money
 };
 
-export const gamesNames = [
-    ['Таблица Шульте', 'shultz'],
-    ['Запомни слова', 'rememberWords'],
-    ['Найди слово', 'findWord'],
-    ['Запомни числа','rememberNumbers'],
-    ['Поле зрения', 'field'],
-    ['Бегущие слова', 'runWords'],
-    ['Чётные числа', 'chet'],
-    ['Поиск букв', 'findLetters'],
-    ['Слово в тексте', 'wordInText'],
-    ['Пары слов', 'couple']
-];
+export const gamesNames = {
+    'shultz': 'Таблица Шульте',
+    'rememberWords': 'Запомни слова',
+    'findWord': 'Найди слово',
+    'rememberNumbers': 'Запомни числа',
+    'field': 'Поле зрения',
+    'runWords': 'Бегущие слова',
+    'chet': 'Чётные числа',
+    'findLetters': 'Поиск букв',
+    'wordInText': 'Слово в тексте',
+    'couple': 'Пары слов',
+};
 export const moneyPrice = [
     //монеты - рубли
     [150, 59],
     [400, 129],
     [1000, 249],
     [2000, 399]
+];
+export const premiumPrice = [
+    //дни - рубли
+    [1, 49],
+    [7, 149],
+    [30, 299]
 ];

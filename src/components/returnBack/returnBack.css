@@ -1,0 +1,13 @@
+.return-back {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  background: url("angle-left.svg") 45% center no-repeat, #b09cfd;
+  background-size: 50%;
+  box-shadow: 2px 2px 3px #d8d0ff;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=returnBack.css.map */

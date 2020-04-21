@@ -1,5 +1,6 @@
 .mainPage {
   width: 100%;
+  min-height: 100%;
   padding: 45px 20px;
   background-color: #eeeeee;
 }
@@ -11,7 +12,7 @@
   margin: 20px 0 10px 0;
 }
 
-.trainers {
+.top-tip__name {
   display: inline-block;
   font-size: 1.1rem;
   padding: 3px 7px;

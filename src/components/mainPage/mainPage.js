@@ -5,16 +5,18 @@ import PlayerLevel from "../playerLevel/playerLevel";
 import Premium from "../premium/premium";
 import Money from "../money/money";
 import TopMenu from "../topMenu/topMenu";
-import MenuGame from "../menuGame";
+import MenuGameLevel from "../menuGameLevel/menuGameLevel";
 import {gamesNames} from "../../projectCommon";
 import Gift from "../gift";
 import CloseGame from "../close-game";
 import {getGameLevelOpenCosts, getGameLevelOpenLevel} from '../../projectCommon'
 import RandomMenuGame from '../randomMenuGame/randomMenuGame'
+import {chooseGame} from "../../store/ac";
+import BottomMainMenu from "../bottomMainMenu/bottomMenu";
 let indexGame = 0;
-let gamesClosedNames = [];
+let gamesClosedName = [];
 function MainPage(props) {
-    const {} = props;
+    const {chooseGame} = props;
     const [gameClosed, changeGameClosed] = useState(false);
     return (
         <div className={'mainPage'}>
@@ -24,30 +26,31 @@ function MainPage(props) {
                 <Money/>
             </TopMenu>
             <div className="top-tip">
-                <div className="trainers">Упражнения</div>
+                <div className="top-tip__name">Упражнения</div>
                 <Gift/>
             </div>
             <RandomMenuGame />
-            {gamesNames.map((arr, index) =>
-                <MenuGame key={arr[1]}
-                          name={arr[0]}
-                          gameClass={arr[1]}
+            {Object.keys(gamesNames).map((key, index) =>
+                <MenuGameLevel key={key}
+                          name={gamesNames[key]}
+                          gameClass={key}
                           onClick={() => {
                               changeGameClosed(true);
-                              gamesClosedNames = arr;
+                              gamesClosedName = key;
                               indexGame = index;
                                     }
                           }
                 />
             )
             }
-            {gameClosed ? <CloseGame gameClass={gamesClosedNames[1]}
-                                     name={gamesClosedNames[0]}
+            {gameClosed ? <CloseGame gameClass={gamesClosedName}
+                                     name={gamesNames[gamesClosedName]}
                                             onClick={()=>{changeGameClosed(false)}}
                                            money={getGameLevelOpenCosts(indexGame)}
                                            level={getGameLevelOpenLevel(indexGame)}
 
             /> : ''}
+            <BottomMainMenu/>
         </div>
     );
 }

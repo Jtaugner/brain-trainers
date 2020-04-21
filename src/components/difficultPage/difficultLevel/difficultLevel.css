@@ -1,0 +1,42 @@
+.difficult-icon .menu-game__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 50%;
+}
+
+.easy .menu-game__icon, .easy .game-progress_done {
+  background-color: #76e879;
+}
+
+.easy.menu-game {
+  border-color: #76e879;
+}
+
+.medium .menu-game__icon, .medium .game-progress_done {
+  background-color: #59e4e3;
+}
+
+.medium.menu-game {
+  border-color: #59e4e3;
+}
+
+.hard .menu-game__icon, .hard .game-progress_done {
+  background-color: #57b7d7;
+}
+
+.hard.menu-game {
+  border-color: #57b7d7;
+}
+
+.expert .menu-game__icon, .expert .game-progress_done {
+  background-color: #e25454;
+}
+
+.expert.menu-game {
+  border-color: #e25454;
+}
+
+/*# sourceMappingURL=difficultLevel.css.map */

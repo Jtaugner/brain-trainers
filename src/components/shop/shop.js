@@ -6,6 +6,8 @@ import TopMenu from "../topMenu";
 import {selectMoney} from "../../store/selectors";
 import ShopItem from "./shop-item";
 import {moneyPrice} from "../../projectCommon";
+import {premiumPrice} from "../../projectCommon";
+import ShopItemPremium from "./shop-item/shop-item-premium";
 
 function Shop(props) {
     const {money} = props;
@@ -21,12 +23,21 @@ function Shop(props) {
                 money={25}
                 price={0}
             />
-            {moneyPrice.map((arr)=>
+            {premiumPrice.map((arr, index)=>
+                <ShopItemPremium
+                    key={'premium' + index}
+                    days={arr[0]}
+                    price={arr[1]}
+                />
+            )}
+            {moneyPrice.map((arr, index)=>
              <ShopItem
+                 key={'money' + index}
                 money={arr[0]}
                 price={arr[1]}
              />
             )}
+            <BottomMainMenu/>
         </div>
 
     );

@@ -9,6 +9,7 @@ import {Route, Switch} from "react-router-dom";
 import BottomMainMenu from "./components/bottomMainMenu/bottomMenu";
 import Settings from "./components/settings";
 import {selectSettings} from "./store/selectors";
+import DifficultPage from "./components/difficultPage/difficultPage";
 
 
 function App(props) {
@@ -25,8 +26,11 @@ function App(props) {
 
                 <Route path={'/settings'}
                        render={() => <Settings/>}/>
+
+                <Route path={'/difficult'}
+                       render={() => <DifficultPage/>}
+                />
             </Switch>
-            <BottomMainMenu />
             {settings ? <Settings/> : ''}
         </>
     );

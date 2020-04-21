@@ -1,0 +1,49 @@
+@import "../../../root";
+
+.difficult-icon .menu-game__icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 2.5rem;
+
+  border-radius: 50%;
+}
+$easyColor: #76e879;
+.easy .menu-game__icon, .easy .game-progress_done{
+  background-color: $easyColor;
+}
+.easy.menu-game{
+  border-color: $easyColor;
+}
+
+$mediumColor: #59e4e3;
+.medium .menu-game__icon, .medium .game-progress_done{
+  background-color: $mediumColor;
+}
+.medium.menu-game{
+  border-color: $mediumColor;
+}
+
+$hardColor: #57b7d7;
+.hard .menu-game__icon, .hard .game-progress_done{
+  background-color: $hardColor;
+}
+.hard.menu-game{
+  border-color: $hardColor;
+}
+
+$expertColor: #e25454;
+.expert .menu-game__icon, .expert .game-progress_done{
+  background-color: $expertColor;
+}
+.expert.menu-game{
+  border-color: $expertColor;
+}
+
+
+
+@media (min-width: 359px) {
+
+}
