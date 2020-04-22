@@ -24,6 +24,10 @@
   .mainPage {
     padding-top: 55px;
   }
+
+  .top-tip__name {
+    font-size: 1.3rem;
+  }
 }
 
 /*# sourceMappingURL=mainPage.css.map */

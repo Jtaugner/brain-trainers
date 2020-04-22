@@ -8,11 +8,12 @@ import {settingsReducer} from "./settingsReducer";
 import {soundsReducer} from "./soundsReducer";
 import {gameReducer} from "./gameReducer";
 import {difficultReducer} from "./difficultReducer";
+import {gameLevelReducer} from "./gameLevelReducer";
 
 const reducer = combineReducers({
 
     money: moneyReducer,
-    level: levelReducer,
+    playerLevel: levelReducer,
     exp: expReducer,
     purchases: purchasesReducer,
     progress: progressReducer,
@@ -20,6 +21,7 @@ const reducer = combineReducers({
     sounds: soundsReducer,
     game: gameReducer,
     difficult: difficultReducer,
+    gameLevel: gameLevelReducer
 });
 
 export {reducer};

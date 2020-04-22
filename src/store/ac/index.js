@@ -1,4 +1,4 @@
-import {CHOOSE_DIFFICULT, CHOOSE_GAME, SKIP_LEVEL, TOGGLE_SETTINGS, TOGGLE_SOUNDS} from "../common";
+import {CHOOSE_DIFFICULT, CHOOSE_GAME, CHOOSE_LEVEL, SKIP_LEVEL, TOGGLE_SETTINGS, TOGGLE_SOUNDS} from "../common";
 
 
 export const skipLevel = (game, level) => ({
@@ -20,7 +20,11 @@ export const chooseGame = (game) => ({
     type: CHOOSE_GAME,
     game
 });
-export const chooseDifficult = (diff) => ({
+export const chooseDifficult = (difficult) => ({
     type: CHOOSE_DIFFICULT,
-    diff
+    difficult
+});
+export const chooseLevel = (level) => ({
+    type: CHOOSE_LEVEL,
+    level
 });

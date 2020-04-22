@@ -77,3 +77,9 @@ export const premiumPrice = [
     [7, 149],
     [30, 299]
 ];
+export const difficultNames = [
+    {key: 'easy', difficultName: 'Легко'},
+    {key: 'medium', difficultName: 'Средне'},
+    {key: 'hard', difficultName: 'Сложно'},
+    {key: 'expert', difficultName: 'Эксперт'}
+];

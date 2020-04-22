@@ -8,6 +8,7 @@ export const TOGGLE_SOUNDS = "TOGGLE_SOUNDS";
 
 export const CHOOSE_GAME = "CHOOSE_GAME";
 export const CHOOSE_DIFFICULT = "CHOOSE_DIFFICULT";
+export const CHOOSE_LEVEL = "CHOOSE_LEVEL";
 
 
 //Покупки за монеты

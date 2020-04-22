@@ -1,0 +1,44 @@
+.level {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #b09cfd;
+  background-color: white;
+  border-radius: 5px;
+  margin: 0 4px 6px 0;
+  font-size: 2rem;
+  color: #3f3f3f;
+  cursor: pointer;
+}
+
+.closed-level {
+  border-color: #dedddb;
+  color: #9a9a9b;
+}
+
+.new-level:after {
+  content: "!";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #b09cfd;
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 359px) {
+  .level {
+    margin: 0 8px 16px 0;
+  }
+}
+
+/*# sourceMappingURL=level.css.map */

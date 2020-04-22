@@ -9,12 +9,8 @@ import {selectGame, selectGameName} from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
+import {difficultNames} from "../../projectCommon";
 
-const difficultNames = {
-    'easy':'Легко',
-    'medium': 'Средне',
-    'hard': 'Сложно',
-    'expert': 'Эксперт'};
 let indexGame = 0;
 let gamesClosedNames = [];
 function DifficultPage(props) {
@@ -30,14 +26,13 @@ function DifficultPage(props) {
                 <div className="top-tip__name">{gameName}</div>
             </div>
             <DifficultPremiumLevel/>
-            {Object.keys(difficultNames).map((key, index)=>
+            {difficultNames.map((obj, index)=>
                 <DifficultLevel
-                    key={key}
-                    name={difficultNames[key]}
+                    key={obj.key}
+                    name={obj.difficultName}
                     game={game}
-                    gameClass={key}
+                    gameClass={obj.key}
                     difficult={index}
-                    di
                 />
             )}
 

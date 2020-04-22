@@ -10,6 +10,8 @@ import BottomMainMenu from "./components/bottomMainMenu/bottomMenu";
 import Settings from "./components/settings";
 import {selectSettings} from "./store/selectors";
 import DifficultPage from "./components/difficultPage/difficultPage";
+import LevelsPage from "./components/levelsPage/levelsPage";
+import GamePage from "./components/gamePage/gamePage";
 
 
 function App(props) {
@@ -30,6 +32,11 @@ function App(props) {
                 <Route path={'/difficult'}
                        render={() => <DifficultPage/>}
                 />
+                <Route path={'/levels'}
+                       render={() => <LevelsPage/>}
+                />
+                <Route path={'/game'}
+                       render={() => <GamePage/>}/>
             </Switch>
             {settings ? <Settings/> : ''}
         </>

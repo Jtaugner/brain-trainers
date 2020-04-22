@@ -1,11 +1,13 @@
 import React from 'react';
 import './playerLevel.scss'
 import {connect} from "react-redux";
-import {selectExp, selectLevel} from "../../store/selectors";
+import {selectExp, selectPlayerLevel} from "../../store/selectors";
 import {getExpLevel} from "../../projectCommon";
+
 const classNames = require('classnames');
+
 function PlayerLevel(props) {
-   const {level, exp} = props;
+    const {level, exp} = props;
     let levelClasses = classNames({
         "playerLevel_level": true,
         "playerLevel_level_small": level > 9
@@ -29,7 +31,7 @@ function PlayerLevel(props) {
 }
 
 export default connect((store) => ({
-        level: selectLevel(store),
+        level: selectPlayerLevel(store),
         exp: selectExp(store)
     })
 )(PlayerLevel);

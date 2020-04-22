@@ -5,15 +5,16 @@ import {Link} from "react-router-dom";
 import {selectGameProgress} from "../../../store/selectors";
 import {chooseDifficult} from "../../../store/ac";
 import MenuLevel from "../../menuLevel/menuLevel";
+import {getLevelsAmountByGameAndDiff} from "../../../gamesCommon";
 
 function DifficultLevel(props) {
     const {
-        progress, chooseDifficult, difficult
+        progress, chooseDifficult, difficult, game
     } = props;
-    console.log(props);
     let isGameClosed = !progress.openedLevels[difficult];
     let levelsDone = progress.doneLevels[difficult];
-    let allLevels = 100;
+    let allLevels = getLevelsAmountByGameAndDiff(game, difficult);
+    console.log(allLevels);
     const Component = (<MenuLevel
             {...props} isGameClosed={isGameClosed}
             levelsDone={levelsDone}

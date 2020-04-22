@@ -1,0 +1,26 @@
+.levelsPage {
+  padding: 45px 20px 60px 20px;
+}
+
+.levels {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 274px;
+  margin: 0 auto;
+  padding-left: 4px;
+}
+
+@media (min-width: 359px) {
+  .mainPage {
+    padding-top: 55px;
+  }
+
+  .levels {
+    width: 298px;
+    padding-left: 8px;
+  }
+}
+
+/*# sourceMappingURL=levelsPage.css.map */
