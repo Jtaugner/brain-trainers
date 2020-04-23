@@ -1,4 +1,22 @@
-@import '../../root';
+.shultz-game td{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+.next-num{
+  font-size: 1.2rem;
+  color: #4b4b4b;
+  margin-bottom: 5px;
+}
+.shultz-game table{
+  table-layout: fixed;
+  margin-right: 1px;
+}
+@for $i from 3 through 10 {
+  .shultz-width-#{$i} td{
+    font-size: 5rem - (0.5rem * ($i - 3));
+  }
+}
 
 
 

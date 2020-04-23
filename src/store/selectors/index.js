@@ -12,6 +12,8 @@ export const selectGameName= (store) => gamesNames[store.game];
 export const selectDifficult= (store) => store.difficult;
 export const selectDifficultName= (store) => difficultNames[selectDifficult(store)].difficultName;
 
+export const selectGameLevel = (store) => store.gameLevel;
+
 export const selectMoney= (store) => store.money;
 export const selectPremium= (store) => store.purchases.isPremium;
 

@@ -1,4 +1,14 @@
-import {CHOOSE_DIFFICULT, CHOOSE_GAME, CHOOSE_LEVEL, SKIP_LEVEL, TOGGLE_SETTINGS, TOGGLE_SOUNDS} from "../common";
+import {
+    ADD_DONE_LEVEL,
+    ADD_EXP,
+    ADD_MONEY,
+    CHOOSE_DIFFICULT,
+    CHOOSE_GAME,
+    CHOOSE_LEVEL,
+    SKIP_LEVEL,
+    TOGGLE_SETTINGS,
+    TOGGLE_SOUNDS
+} from "../common";
 
 
 export const skipLevel = (game, level) => ({
@@ -27,4 +37,20 @@ export const chooseDifficult = (difficult) => ({
 export const chooseLevel = (level) => ({
     type: CHOOSE_LEVEL,
     level
+});
+
+
+export const addMoney = (money) => ({
+    type: ADD_MONEY,
+    money
+});
+export const addExp = (exp) => ({
+    type: ADD_EXP,
+    exp
+});
+export const addDoneLevels = (game, difficult, doneLevels) => ({
+    type: ADD_DONE_LEVEL,
+    payload:{
+        game, difficult, doneLevels
+    }
 });

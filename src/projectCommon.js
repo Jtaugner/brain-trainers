@@ -46,6 +46,7 @@ const level = [
 ];
 
 export const getExpLevel = (lvl) => {
+    console.log(lvl, level[lvl], level[lvl].exp);
     return level[lvl].exp
 };
 export const getMoneyLevel= (lvl) => {
@@ -82,4 +83,11 @@ export const difficultNames = [
     {key: 'medium', difficultName: 'Средне'},
     {key: 'hard', difficultName: 'Сложно'},
     {key: 'expert', difficultName: 'Эксперт'}
+];
+
+export const moneyAndExpPerDifficult = [
+    {exp: 10, money: 1},
+    {exp: 25, money: 3},
+    {exp: 40, money: 5},
+    {exp: 70, money: 10},
 ];

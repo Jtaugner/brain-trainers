@@ -4,13 +4,14 @@ import {selectGameProgress} from "../../store/selectors";
 import {chooseGame} from "../../store/ac";
 import {Link} from "react-router-dom";
 import MenuLevel from "../menuLevel/menuLevel";
+import {getAllLevelsByGame} from "../../gamesCommon";
 
 function MenuGameLevel(props) {
-    const {progress, chooseGame} = props;
+    const {progress, chooseGame, gameClass} = props;
     const isGameClosed = !progress.gameOpen;
     const levelsDone = progress.doneLevels
         .reduce((acc, el) => acc + el, 0);
-    const allLevels = 100;
+    const allLevels = getAllLevelsByGame(gameClass);
     const Component = (<MenuLevel
         {...props} isGameClosed={isGameClosed}
                     levelsDone={levelsDone}

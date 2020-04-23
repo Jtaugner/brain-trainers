@@ -1,0 +1,111 @@
+.game-done__blackout {
+  z-index: 3;
+}
+
+.game-done {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: #d8d0ff;
+  padding: 65px 25px 10px 25px;
+  z-index: 4;
+}
+
+.game-done__flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #b09cfd;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.game-done .playerLevel_level, .game-done .moneyPic {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+}
+
+.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
+  height: 25px;
+}
+
+.game-done__flex .playerLevel, .game-done__flex .moneyBlock {
+  margin-right: 5px;
+}
+
+.game-done__flex_money {
+  color: #fbc230;
+}
+
+.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
+  width: 160px;
+}
+
+.game-done__arrow {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  background: url(long-arrow-alt-right.svg) center center no-repeat;
+  background-size: 100%;
+}
+
+.game-done .playerLevel, .game-done .moneyBlock__money {
+  margin-left: 15px;
+}
+
+.game-done .moneyBlock__money {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-right: 0;
+}
+
+.line-through {
+  text-decoration: line-through #f7b631;
+}
+
+.game-done__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.new-money {
+  color: #fbc230;
+}
+
+.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
+  background-color: #e7e7e7;
+}
+
+.game-done__button {
+  width: 35px;
+  height: 35px;
+}
+
+.game-done__home {
+  background: url(home.png) center center no-repeat;
+  background-size: 100%;
+}
+
+.game-done__again {
+  background: url(again.png) center center no-repeat;
+  background-size: 100%;
+}
+
+.game-done__next {
+  background: url(next.png) center center no-repeat;
+  background-size: 100%;
+}
+
+@media (min-width: 359px) {
+  .game-done .playerLevel, .game-done .moneyBlock__money {
+    margin-left: 20px;
+  }
+}
+
+/*# sourceMappingURL=gameDone.css.map */

@@ -1,17 +1,50 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import '../../root';
- *   |         ^^^^^^^^^^^^
- *   '
- *   shultzGame.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import '../../root';\a   \2502          ^^^^^^^^^^^^\a   \2575 \a   shultzGame.scss 1:9  root stylesheet";
+.shultz-game td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
 }
+
+.next-num {
+  font-size: 1.2rem;
+  color: #4b4b4b;
+  margin-bottom: 5px;
+}
+
+.shultz-game table {
+  table-layout: fixed;
+  margin-right: 1px;
+}
+
+.shultz-width-3 td {
+  font-size: 5rem;
+}
+
+.shultz-width-4 td {
+  font-size: 4.5rem;
+}
+
+.shultz-width-5 td {
+  font-size: 4rem;
+}
+
+.shultz-width-6 td {
+  font-size: 3.5rem;
+}
+
+.shultz-width-7 td {
+  font-size: 3rem;
+}
+
+.shultz-width-8 td {
+  font-size: 2.5rem;
+}
+
+.shultz-width-9 td {
+  font-size: 2rem;
+}
+
+.shultz-width-10 td {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=shultzGame.css.map */

@@ -11,17 +11,44 @@
   justify-content: center;
   color: #4b4b4b;
   font-size: 1.8rem;
+  border-color: #5a5a5a;
 }
 
 .playAgain {
   position: absolute;
   top: 50%;
-  right: -5px;
+  left: 8px;
   transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   background: url(again.png) center center no-repeat;
   background-size: 100%;
+}
+
+.gamePage .return-back {
+  background-color: #5a5a5a;
+  box-shadow: 2px 2px 3px #939393;
+}
+
+.fade-game-enter {
+  opacity: 0;
+}
+
+.fade-game-exit {
+  opacity: 1;
+}
+
+.fade-game-enter-active {
+  opacity: 1;
+}
+
+.fade-game-exit-active {
+  opacity: 0;
+}
+
+.fade-game-enter-active,
+.fade-game-exit-active {
+  transition: opacity 300ms;
 }
 
 /*# sourceMappingURL=gamePage.css.map */

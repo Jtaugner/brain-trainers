@@ -109,4 +109,13 @@ html, body, #root {
   background-size: 100%;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+table, tr, td {
+  border: 1px solid #414141;
+  color: #414141;
+}
+
 /*# sourceMappingURL=App.css.map */
