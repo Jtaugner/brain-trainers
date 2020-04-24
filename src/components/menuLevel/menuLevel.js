@@ -31,7 +31,7 @@ function MenuLevel(props) {
                 <div className="game-name">{name}</div>
                 <div className="game-progress">
                     <div className="game-progress_done"
-                         style={{width: levelsDone + '%'}}/>
+                         style={{width: (levelsDone/allLevels*100) + '%'}}/>
                 </div>
                 <div className="game-doneLevels">
                     Пройдено: {levelsDone} / {allLevels}

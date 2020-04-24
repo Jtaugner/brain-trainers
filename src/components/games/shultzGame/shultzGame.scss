@@ -1,3 +1,4 @@
+@import '../../../root';
 .shultz-game td{
   text-align: center;
   vertical-align: middle;
@@ -5,10 +6,16 @@
 
   cursor: pointer;
 }
-.next-num{
+.shultz-game__flex{
   font-size: 1.2rem;
   color: #4b4b4b;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 5px;
+}
+.next-num{
+  margin: 0 auto 5px 0;
 }
 .shultz-game table{
   table-layout: fixed;
@@ -19,8 +26,12 @@
     font-size: 5rem - (0.5rem * ($i - 3));
   }
 }
-
-
+.shultz-game .right-answer{
+  background-color: $right;
+}
+.shultz-game .wrong-answer{
+  background-color: $wrong;
+}
 
 @media (min-width: 359px) {
 

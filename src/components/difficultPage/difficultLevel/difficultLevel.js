@@ -14,7 +14,6 @@ function DifficultLevel(props) {
     let isGameClosed = !progress.openedLevels[difficult];
     let levelsDone = progress.doneLevels[difficult];
     let allLevels = getLevelsAmountByGameAndDiff(game, difficult);
-    console.log(allLevels);
     const Component = (<MenuLevel
             {...props} isGameClosed={isGameClosed}
             levelsDone={levelsDone}

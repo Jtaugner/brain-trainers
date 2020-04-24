@@ -5,7 +5,7 @@ const gamesProgress = {};
 function getGameProgress() {
     return {
         gameOpen: false,
-        doneLevels: [0, 0, 0, 0],
+        doneLevels: [50, 0, 0, 0],
         openedLevels: [1, 1, 1, 0]
     }
 }

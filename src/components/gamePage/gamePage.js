@@ -37,14 +37,17 @@ function GamePage(props) {
     }
     const getWin = ()=>{
         if(doneLevels === level){
-            setWin(true);
             addMoney(money);
             addExp(exp);
             if(levelsCount > level + 1){
                 addDoneLevels(game, difficult, level+1);
             }
         }
+        console.log('get win');
         setWin(true);
+    };
+    const getLose = ()=>{
+        alert('lose');
     };
     const playAgain = ()=>{
         setWin(false);
@@ -56,7 +59,10 @@ function GamePage(props) {
         }
     };
     switch (game) {
-        case 'shultz': gameComponent = <ShultzGame getWin={getWin}/>; break;
+        case 'shultz': gameComponent = <ShultzGame
+            getWin={getWin}
+            getLose={getLose}
+        />; break;
     }
 
     return (
