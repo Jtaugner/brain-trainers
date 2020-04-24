@@ -1,6 +1,7 @@
 @import '../../../root';
 .game-done__blackout{
   z-index: 3;
+  cursor: auto;
 }
 .game-done{
   position: absolute;
@@ -80,6 +81,8 @@ text-decoration: line-through #f7b631;
 .game-done__button{
   width: 35px;
   height: 35px;
+
+  cursor: pointer;
 }
 .game-done__home{
   background: url(home.png) center center no-repeat;

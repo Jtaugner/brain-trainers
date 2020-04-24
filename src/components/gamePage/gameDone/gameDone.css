@@ -1,5 +1,6 @@
 .game-done__blackout {
   z-index: 3;
+  cursor: auto;
 }
 
 .game-done {
@@ -85,6 +86,7 @@
 .game-done__button {
   width: 35px;
   height: 35px;
+  cursor: pointer;
 }
 
 .game-done__home {

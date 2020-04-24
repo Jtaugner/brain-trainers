@@ -1,0 +1,21 @@
+@import '../../../root';
+$expert: #e25353;
+.close-game_diff{
+  border-color: $expert;
+}
+.close-game_diff .menu-game__icon-diff{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: $expert;
+  font-size: 4rem;
+  border-radius: 50%;
+}
+.close-game_diff .close-game__name{
+  color: $expert;
+}
+
+@media (min-width: 359px) {
+
+}

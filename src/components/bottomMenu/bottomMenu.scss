@@ -40,6 +40,8 @@
 .bottom-menu__settings{
   width: 30px;
   background: url('settings.png') center center no-repeat;
+
+  cursor: pointer;
 }
 
 .bottom-menu__active-link .bottom-menu__settings{

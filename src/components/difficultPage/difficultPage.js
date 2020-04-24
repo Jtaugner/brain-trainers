@@ -10,11 +10,11 @@ import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
 import {difficultNames} from "../../projectCommon";
+import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 
-let indexGame = 0;
-let gamesClosedNames = [];
 function DifficultPage(props) {
     const {gameName, game} = props;
+    let [popUpExpert, setPopUp] = useState(false);
     return (
         <div className={'mainPage difficultPage'}>
             <TopMenu>
@@ -33,8 +33,10 @@ function DifficultPage(props) {
                     game={game}
                     gameClass={obj.key}
                     difficult={index}
+                    onClick={()=>{setPopUp(true)}}
                 />
             )}
+            {popUpExpert ? <CloseDifficultLevel onClick={()=>{setPopUp(false)}}/>: ''}
 
             <ReturnBack to={'/home'}/>
         </div>
