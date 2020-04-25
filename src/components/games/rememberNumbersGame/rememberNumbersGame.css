@@ -1,0 +1,71 @@
+.rememberNumbers-game {
+  width: 100%;
+}
+
+.rememberNumbers__numbers, .rememberNumbers__number, .rememberNumbers__enter__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rememberNumbers__number {
+  width: 35px;
+  height: 50px;
+  font-size: 2.3rem;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  margin-left: 8px;
+}
+
+.rememberNumbers__numbers .rememberNumbers__number:first-child {
+  margin-left: 0;
+}
+
+.rememberNumbers__rounds {
+  margin: 0 0 25px 5px;
+  color: #4b4b4b;
+  font-size: 1.3rem;
+}
+
+.rememberNumbers-game .right-answer {
+  color: #35c63f;
+  border: 1px solid #35c63f;
+}
+
+.rememberNumbers-game .wrong-answer {
+  color: #ef6565;
+  border: 1px solid #ef6565;
+}
+
+.rememberNumbers__enter {
+  width: 306px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 40px auto 0 auto;
+}
+
+.rememberNumbers__enter__number {
+  width: 90px;
+  height: 45px;
+  margin: 6px;
+  font-size: 2.4rem;
+  color: #414141;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.rememberNumbers__enter__number:active {
+  border: 1px solid #414141;
+}
+
+.rememberNumbers__enter__number_null {
+  width: 186px;
+}
+
+.rememberNumbers__enter__number_delete {
+  background: url(deleteNumber.png) center center no-repeat, white;
+  background-size: 50%;
+}
+
+/*# sourceMappingURL=rememberNumbersGame.css.map */

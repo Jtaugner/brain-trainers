@@ -1,0 +1,73 @@
+@import '../../../root';
+.rememberNumbers-game{
+  width: 100%;
+}
+.rememberNumbers__numbers, .rememberNumbers__number, .rememberNumbers__enter__number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rememberNumbers__number{
+  width: 35px;
+  height: 50px;
+
+  font-size: 2.3rem;
+
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+
+  margin-left: 8px;
+}
+.rememberNumbers__numbers .rememberNumbers__number:first-child{
+  margin-left: 0;
+}
+.rememberNumbers__rounds{
+  margin: 0 0 25px 5px;
+  color: #4b4b4b;
+  font-size: 1.3rem;
+}
+.rememberNumbers-game .right-answer{
+  color: $right;
+  border: 1px solid $right;
+}
+.rememberNumbers-game .wrong-answer{
+  color: $wrong;
+  border: 1px solid $wrong;
+}
+
+$numberWidth: 90px;
+$numberMargin: 6px;
+.rememberNumbers__enter{
+  width: $numberWidth*3+$numberMargin*6;
+
+  display: flex;
+  flex-flow: row wrap;
+
+
+  margin: 40px auto 0 auto;
+}
+.rememberNumbers__enter__number{
+  width: $numberWidth;
+  height: $numberWidth/2;
+  margin: $numberMargin;
+
+  font-size: 2.4rem;
+  color: $gameColor;
+
+  background-color: white;
+  border-radius: 7px;
+}
+.rememberNumbers__enter__number:active{
+  border: 1px solid $gameColor;
+}
+.rememberNumbers__enter__number_null{
+  width: $numberMargin + $numberWidth*2;
+}
+.rememberNumbers__enter__number_delete{
+  background: url(deleteNumber.png) center center no-repeat, white;
+  background-size: 50%;
+}
+@media (min-width: 359px) {
+
+}

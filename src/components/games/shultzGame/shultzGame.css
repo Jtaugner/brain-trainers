@@ -7,7 +7,7 @@
 
 .shultz-game__flex {
   font-size: 1.2rem;
-  color: #4b4b4b;
+  color: #414141;
   display: flex;
   justify-content: space-between;
   padding: 0 5px;
@@ -20,6 +20,7 @@
 .shultz-game table {
   table-layout: fixed;
   margin-right: 1px;
+  background-color: white;
 }
 
 .shultz-width-3 td {

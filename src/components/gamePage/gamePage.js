@@ -16,15 +16,17 @@ import GameDone from "./gameDone/gameDone";
 import {moneyAndExpPerDifficult} from "../../projectCommon";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import {addDoneLevels, addExp, addMoney, chooseLevel} from "../../store/ac";
-import {getLevelsAmountByGameAndDiff} from "../../gamesCommon";
+import {getLevelsAmountByGameAndDiff, getLevelsInfoByGameDiffAndLevel} from "../../gamesCommon";
 import GameDoneLose from "./gameDoneLose/gameDoneLose";
+import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGame";
 
 function GamePage(props) {
     console.log('game page');
     const {gameName, game, difficult, level, allMoney,
         doneLevels,
         addMoney, addExp, chooseLevel, addDoneLevels} = props;
-    let gameComponent;
+    const levelInfo =
+        getLevelsInfoByGameDiffAndLevel(game, difficult, level);
     let [isWin, setWin] = useState(false);
     let [isLose, setLose] = useState(false);
     let [isTimeout, setIsTimeout] = useState(false);
@@ -62,11 +64,11 @@ function GamePage(props) {
             setWin(false);
         }
     };
+    let GameComponent;
+
     switch (game) {
-        case 'shultz': gameComponent = <ShultzGame
-            getWin={getWin}
-            getLose={getLose}
-        />; break;
+        case 'shultz': GameComponent = ShultzGame; break;
+        case 'rememberNumbers': GameComponent = RememberNumbersGame; break;
     }
 
     return (
@@ -99,7 +101,11 @@ function GamePage(props) {
                     /> : isLose ? <GameDoneLose
                         isTimeout={isTimeout}
                         allMoney={allMoney}
-                    /> :gameComponent}
+                    /> :<GameComponent
+                            getWin={getWin}
+                            getLose={getLose}
+                            levelInfo={levelInfo}
+                        />}
                 </CSSTransition>
             </SwitchTransition> : ''}
 

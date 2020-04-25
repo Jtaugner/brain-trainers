@@ -8,7 +8,7 @@
 }
 .shultz-game__flex{
   font-size: 1.2rem;
-  color: #4b4b4b;
+  color: $gameColor;
   display: flex;
   justify-content: space-between;
 
@@ -20,6 +20,7 @@
 .shultz-game table{
   table-layout: fixed;
   margin-right: 1px;
+  background-color: white;
 }
 @for $i from 3 through 10 {
   .shultz-width-#{$i} td{

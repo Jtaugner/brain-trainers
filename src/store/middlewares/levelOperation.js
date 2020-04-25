@@ -8,9 +8,9 @@ export const levelOperation  = store => next => action => {
         let expAdd = action.exp;
         const state = store.getState();
         let exp = selectExp(state);
-        console.group("LEVEL OPrATIOn");
         console.log(selectPlayerLevel(state));
         let expLevel = getExpLevel(selectPlayerLevel(state));
+        console.log(exp, expAdd, expLevel);
         if(exp + expAdd >= expLevel){
             next({
                 type: GET_NEW_LEVEL

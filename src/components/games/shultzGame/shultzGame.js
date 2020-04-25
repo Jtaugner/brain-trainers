@@ -1,24 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import './shultzGame.scss'
-import {connect} from "react-redux";
-import {selectDifficult, selectGame, selectGameLevel} from "../../../store/selectors";
-import {getLevelsInfoByGameDiffAndLevel} from "../../../gamesCommon";
 
 let interval;
-
-function setTimer(timer, changeTimer, getLose) {
-    interval = setInterval(() => {
-        console.log('interval secs');
-        if (timer - 1 < 0) {
-            console.log('interval');
-            getLose();
-            clearInterval(interval);
-        } else {
-            changeTimer(timer - 1);
-        }
-    }, 1000)
-}
-
 class ShultzGame extends Component {
     width = this.props.levelInfo.width;
     lastNumber = this.width * this.width;
@@ -105,8 +88,7 @@ class ShultzGame extends Component {
                                     <td key={'shultz-td' + q}
                                         className={this.state.goodAnswer === (i + '-' + q) ? 'right-answer' :
                                             this.state.badAnswer === (i + '-' + q) ? 'wrong-answer' : ''}
-                                        onMouseUp={() => {
-                                            console.log("ds");
+                                        onClick={() => {
                                             this.testNumber(num, i, q)
                                         }}
                                         onTouchEnd={() => {
@@ -127,16 +109,7 @@ class ShultzGame extends Component {
 
 }
 
-export default connect(
-    (store) => ({
-        levelInfo:
-            getLevelsInfoByGameDiffAndLevel(
-                selectGame(store),
-                selectDifficult(store),
-                selectGameLevel(store)
-            ),
-    })
-)(ShultzGame);
+export default ShultzGame;
 
 
 function shuffle(arr) {
