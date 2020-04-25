@@ -26,9 +26,9 @@ class ShultzGame extends Component {
     setTimer(){
         interval = setInterval(()=>{
             console.log('interval');
-            if(this.state.timer - 1 < 0){
+            if(this.state.timer - 1 < 1){
                 clearInterval(interval);
-                this.props.getLose();
+                this.props.getLose(true);
             }else{
                 this.setState((state) => {
                     return {timer: state.timer - 1};

@@ -28,12 +28,69 @@
     for(let i = 0; i < 5; i ++){
         mediumLevels.push({width: 6, sec: 100 - i*3})
     }
-    for(let i = 0; i < 10;i ++){
+    for(let i = 0; i < 4;i ++){
         mediumLevels.push({width: 4, sec: 21 - i})
     }
-
+    for(let i = 0; i < 6;i ++){
+        mediumLevels.push({width: 4, sec: 16 - 2*i})
+    }
+    const hardLevels = [];
+    for(let i = 0; i < 15;i ++){
+        hardLevels.push({width: 5, sec: 42 - i})
+    }
+    for(let i = 0; i < 15;i ++){
+        hardLevels.push({width: 6, sec: 88 - 2 * i})
+    }
+    for(let i = 0; i < 5;i ++){
+        hardLevels.push({width: 7, sec: 140 - 5 * i})
+    }
+    for(let i = 0; i < 5;i ++){
+        hardLevels.push({width: 5, sec: 28 - i})
+    }
+    for(let i = 0; i < 5;i ++){
+        hardLevels.push({width: 6, sec: 60 - 2*i})
+    }
+    for(let i = 0; i < 5;i ++){
+        hardLevels.push({width: 5, sec: 24 - i})
+    }
+    const expertLevels = [];
+    for(let i = 0; i < 5;i ++){
+        expertLevels.push({width: 5, sec: 20 - i})
+    }
+    for(let i = 0; i < 10;i ++){
+        expertLevels.push({width: 6, sec: 52 - i})
+    }
+    for(let i = 0; i < 5;i ++){
+        expertLevels.push({width: 7, sec: 120 - 5 * i})
+    }
+    for(let i = 0; i < 5 ;i ++){
+        expertLevels.push({width: 8, sec: 180 - 5 * i})
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({width: 5, sec: 16 - i})
+    }
+    for(let i = 0; i < 5;i ++){
+        expertLevels.push({width: 6, sec: 43 - 2*i})
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({width: 7, sec: 100 - 5 * i})
+    }
+    expertLevels.push({width: 5, sec: 12});
+    expertLevels.push({width: 5, sec: 12});
+    expertLevels.push({width: 5, sec: 11});
+    expertLevels.push({width: 5, sec: 11});
+    expertLevels.push({width: 5, sec: 10});
+    expertLevels.push({width: 6, sec: 32});
+    expertLevels.push({width: 6, sec: 30});
+    expertLevels.push({width: 7, sec: 75});
+    expertLevels.push({width: 7, sec: 70});
+    expertLevels.push({width: 9, sec: 220});
     console.log(mediumLevels);
-    localStorage.setItem('mediumLevels', JSON.stringify(mediumLevels));
+    console.log(hardLevels);
+    console.log(expertLevels);
+    // localStorage.setItem('mediumLevels', JSON.stringify(mediumLevels));
+    // localStorage.setItem('hardLevels', JSON.stringify(hardLevels));
+    localStorage.setItem('expertLevels', JSON.stringify(expertLevels));
     //Легкий
 
 </script>

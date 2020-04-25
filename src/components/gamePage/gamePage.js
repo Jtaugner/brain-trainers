@@ -17,6 +17,7 @@ import {moneyAndExpPerDifficult} from "../../projectCommon";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import {addDoneLevels, addExp, addMoney, chooseLevel} from "../../store/ac";
 import {getLevelsAmountByGameAndDiff} from "../../gamesCommon";
+import GameDoneLose from "./gameDoneLose/gameDoneLose";
 
 function GamePage(props) {
     console.log('game page');
@@ -25,6 +26,8 @@ function GamePage(props) {
         addMoney, addExp, chooseLevel, addDoneLevels} = props;
     let gameComponent;
     let [isWin, setWin] = useState(false);
+    let [isLose, setLose] = useState(false);
+    let [isTimeout, setIsTimeout] = useState(false);
     let [isGame, setIsGame] = useState(true);
     let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
     let exp, money;
@@ -46,8 +49,9 @@ function GamePage(props) {
         console.log('get win');
         setWin(true);
     };
-    const getLose = ()=>{
-        alert('lose');
+    const getLose = (isTimeout)=>{
+        setIsTimeout(isTimeout);
+        setLose(true);
     };
     const playAgain = ()=>{
         setWin(false);
@@ -92,7 +96,10 @@ function GamePage(props) {
                                        nextLevel={nextLevel}
                                        showNextLevel={levelsCount > level + 1}
 
-                    /> : gameComponent}
+                    /> : isLose ? <GameDoneLose
+                        isTimeout={isTimeout}
+                        allMoney={allMoney}
+                    /> :gameComponent}
                 </CSSTransition>
             </SwitchTransition> : ''}
 
