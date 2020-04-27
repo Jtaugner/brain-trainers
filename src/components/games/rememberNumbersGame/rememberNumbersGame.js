@@ -33,11 +33,9 @@ class RememberNumbersGame extends Component {
         }, 500)
     }
     showNumber(){
-        if(this.state.round === this.props.levelInfo.rounds){
-            return this.props.getWin();
-        }
         this.setState({
             arrNumbers: createArrNumbers(this.size),
+            enteredNumbers: [],
             showNumber: true,
         });
         timeout = setTimeout(()=>{
@@ -62,20 +60,30 @@ class RememberNumbersGame extends Component {
                 ({
                     round: state.round + 1
                 }));
+        }else if(this.props.difficult > 0){
+            return this.props.getLose(false)
         }
         timeout = setTimeout(()=>{
             this.setState({
                 enteredNumbers: [],
                 showAnswer: false
             });
-            timeout = setTimeout(()=> {
-                this.showNumber();
-            }, 800);
+            if(this.state.round === this.props.levelInfo.rounds){
+                    this.props.getWin();
+                    this.setState({
+                        isWin: true
+                    })
+            }else{
+                timeout = setTimeout(()=> {
+                    this.showNumber();
+                }, 800);
+            }
+
         }, 1000);
 
     };
     addNumber(num){
-
+        if(this.state.showNumber || this.state.showAnswer || this.state.isWin) return;
         let enteredNumbers = this.state.enteredNumbers;
         if(enteredNumbers.length === this.size) return;
         enteredNumbers.push(num);
@@ -87,6 +95,7 @@ class RememberNumbersGame extends Component {
         }
     }
     deleteNumber(){
+        if(this.state.showNumber || this.state.showAnswer || this.state.isWin) return;
         let enteredNumbers = this.state.enteredNumbers;
         if(enteredNumbers.length > 0){
             enteredNumbers.length = enteredNumbers.length-1;
@@ -100,7 +109,7 @@ class RememberNumbersGame extends Component {
 
     render() {
         return (
-            <div className={'rememberNumbers-game'}>
+            <div className={'rememberNumbers-game ' + ('remember-width' + this.props.levelInfo.size)}>
                 <div className="rememberNumbers__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                 <div className="rememberNumbers__numbers">
                     {

@@ -56,6 +56,7 @@ function GamePage(props) {
         setLose(true);
     };
     const playAgain = ()=>{
+        setLose(false);
         setWin(false);
     };
     const nextLevel = ()=>{
@@ -86,7 +87,7 @@ function GamePage(props) {
 
             {isGame ? <SwitchTransition>
                 <CSSTransition
-                    key={isWin}
+                    key={isWin || isLose}
                     addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
                     classNames='fade-game'
                 >
@@ -101,10 +102,12 @@ function GamePage(props) {
                     /> : isLose ? <GameDoneLose
                         isTimeout={isTimeout}
                         allMoney={allMoney}
+                        playAgain={playAgain}
                     /> :<GameComponent
                             getWin={getWin}
                             getLose={getLose}
                             levelInfo={levelInfo}
+                            difficult={difficult}
                         />}
                 </CSSTransition>
             </SwitchTransition> : ''}

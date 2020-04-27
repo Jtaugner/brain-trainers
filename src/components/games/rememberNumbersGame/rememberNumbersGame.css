@@ -1,7 +1,3 @@
-.rememberNumbers-game {
-  width: 100%;
-}
-
 .rememberNumbers__numbers, .rememberNumbers__number, .rememberNumbers__enter__number {
   display: flex;
   justify-content: center;
@@ -26,6 +22,7 @@
   margin: 0 0 25px 5px;
   color: #4b4b4b;
   font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 .rememberNumbers-game .right-answer {
@@ -39,7 +36,7 @@
 }
 
 .rememberNumbers__enter {
-  width: 306px;
+  width: 318px;
   display: flex;
   flex-flow: row wrap;
   margin: 40px auto 0 auto;
@@ -48,24 +45,47 @@
 .rememberNumbers__enter__number {
   width: 90px;
   height: 45px;
-  margin: 6px;
+  margin: 8px;
   font-size: 2.4rem;
   color: #414141;
   background-color: white;
   border-radius: 7px;
+  cursor: pointer;
 }
 
 .rememberNumbers__enter__number:active {
-  border: 1px solid #414141;
+  background-color: #e3e3e3;
 }
 
 .rememberNumbers__enter__number_null {
-  width: 186px;
+  width: 196px;
 }
 
 .rememberNumbers__enter__number_delete {
   background: url(deleteNumber.png) center center no-repeat, white;
   background-size: 50%;
+}
+
+.remember-width8 .rememberNumbers__number {
+  width: 32px;
+  margin-left: 6px;
+}
+
+.remember-width9 .rememberNumbers__number {
+  width: 30px;
+  margin-left: 5px;
+}
+
+@media (min-width: 359px) {
+  .remember-width9 .rememberNumbers__number {
+    width: 33px;
+    margin-left: 5px;
+  }
+
+  .remember-width8 .rememberNumbers__number {
+    width: 35px;
+    margin-left: 8px;
+  }
 }
 
 /*# sourceMappingURL=rememberNumbersGame.css.map */
