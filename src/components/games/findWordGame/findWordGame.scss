@@ -1,5 +1,36 @@
 @import '../../../root';
 
+
+.findWord__field{
+  background-color: white;
+}
+.findWord__cell{
+  width: 60px;
+  height: 60px;
+
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+
+  text-transform: uppercase;
+}
+.findWord-game__done-words{
+  text-align: center;
+  font-size: 1.9rem;
+  color: #414141;
+  margin-bottom: 10px;
+}
+.findWords__done-word{
+  text-decoration: line-through;
+}
+
+
+.findWord__cell_selected{
+  background-color: $lightMain;
+}
+.findWord__cell_done{
+  background-color: $darkMain;
+}
 @media (min-width: 359px) {
 
 }

@@ -56,8 +56,8 @@ export const getMoneyLevel= (lvl) => {
 export const gamesNames = {
     'shultz': 'Таблица Шульте',
     'rememberNumbers': 'Запомни числа',
-    'rememberWords': 'Запомни слова',
     'findWord': 'Найди слово',
+    'rememberWords': 'Запомни слова',
     'field': 'Поле зрения',
     'runWords': 'Бегущие слова',
     'chet': 'Чётные числа',

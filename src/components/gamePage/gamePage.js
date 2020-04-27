@@ -19,6 +19,7 @@ import {addDoneLevels, addExp, addMoney, chooseLevel} from "../../store/ac";
 import {getLevelsAmountByGameAndDiff, getLevelsInfoByGameDiffAndLevel} from "../../gamesCommon";
 import GameDoneLose from "./gameDoneLose/gameDoneLose";
 import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGame";
+import FindWordGame from "../games/findWordGame/findWordGame";
 
 function GamePage(props) {
     console.log('game page');
@@ -70,6 +71,7 @@ function GamePage(props) {
     switch (game) {
         case 'shultz': GameComponent = ShultzGame; break;
         case 'rememberNumbers': GameComponent = RememberNumbersGame; break;
+        case 'findWord': GameComponent = FindWordGame; break;
     }
 
     return (
