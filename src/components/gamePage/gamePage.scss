@@ -52,6 +52,21 @@
   transition: opacity 300ms;
 }
 
+
+.game-page__rounds{
+  margin: 0 0 25px 5px;
+  color: #4b4b4b;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.game-page__flex{
+  font-size: 1.2rem;
+  color: $gameColor;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 5px;
+}
 @media (min-width: 359px) {
 
 }

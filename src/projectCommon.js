@@ -57,12 +57,12 @@ export const gamesNames = {
     'shultz': 'Таблица Шульте',
     'rememberNumbers': 'Запомни числа',
     'findWord': 'Найди слово',
+    'wordInText': 'Слово в тексте',
     'rememberWords': 'Запомни слова',
     'field': 'Поле зрения',
     'runWords': 'Бегущие слова',
     'chet': 'Чётные числа',
     'findLetters': 'Поиск букв',
-    'wordInText': 'Слово в тексте',
     'couple': 'Пары слов',
 };
 export const moneyPrice = [

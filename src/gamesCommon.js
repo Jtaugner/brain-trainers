@@ -12,7 +12,10 @@ const games = {
         [{"size":7,"time":1100,"rounds":5},{"size":7,"time":1075,"rounds":5},{"size":7,"time":1050,"rounds":5},{"size":7,"time":1025,"rounds":5},{"size":7,"time":1000,"rounds":5},{"size":8,"time":1600,"rounds":5},{"size":8,"time":1575,"rounds":5},{"size":8,"time":1550,"rounds":5},{"size":8,"time":1525,"rounds":5},{"size":8,"time":1500,"rounds":5},{"size":7,"time":1000,"rounds":6},{"size":7,"time":975,"rounds":6},{"size":7,"time":950,"rounds":6},{"size":7,"time":925,"rounds":6},{"size":7,"time":900,"rounds":6},{"size":9,"time":2200,"rounds":3},{"size":9,"time":2170,"rounds":3},{"size":9,"time":2140,"rounds":3},{"size":9,"time":2110,"rounds":3},{"size":9,"time":2080,"rounds":3},{"size":6,"time":500,"rounds":6},{"size":6,"time":475,"rounds":6},{"size":6,"time":450,"rounds":6},{"size":6,"time":425,"rounds":6},{"size":6,"time":400,"rounds":6},{"size":7,"time":900,"rounds":5},{"size":7,"time":875,"rounds":5},{"size":7,"time":850,"rounds":5},{"size":7,"time":825,"rounds":5},{"size":7,"time":800,"rounds":5},{"size":8,"time":1500,"rounds":4},{"size":8,"time":1475,"rounds":4},{"size":8,"time":1450,"rounds":4},{"size":8,"time":1425,"rounds":4},{"size":8,"time":1400,"rounds":4},{"size":8,"time":1400,"rounds":5},{"size":8,"time":1375,"rounds":5},{"size":8,"time":1350,"rounds":5},{"size":8,"time":1325,"rounds":5},{"size":8,"time":1300,"rounds":5},{"size":9,"time":2000,"rounds":4},{"size":9,"time":1965,"rounds":4},{"size":9,"time":1930,"rounds":4},{"size":9,"time":1895,"rounds":4},{"size":9,"time":1860,"rounds":4},{"size":8,"time":1300,"rounds":6},{"size":8,"time":1265,"rounds":6},{"size":8,"time":1230,"rounds":6},{"size":8,"time":1195,"rounds":6},{"size":8,"time":1160,"rounds":6}]
     ],
     'findWord':[
-        [{words: ['кот', 'собака', 'енот'], height: 5}]
+        [{words: ['кот', 'собака', 'енот'], height: 5, sec: 5}]
+    ],
+    'wordInText': [
+        [{text: 'Он не умел видеть прежде великого, непостижимого и бесконечного ни в чем. Он только чувствовал, что оно должно быть где-то, и искал его. Во всем близком, понятном он видел одно ограниченное, мелкое, житейское, бессмысленное.', rounds: 5}]
     ]
 };
 export const getAllLevelsByGame = (game) => {

@@ -1,27 +1,10 @@
-import React, {Component} from 'react';
+import React  from 'react';
 import './shultzGame.scss'
+import GameWrapper from "../gameWrapper";
 
-let interval;
-class ShultzGame extends Component {
+class ShultzGame extends GameWrapper {
     width = this.props.levelInfo.width;
     lastNumber = this.width * this.width;
-    interval;
-    setTimer(){
-        interval = setInterval(()=>{
-            console.log('interval');
-            if(this.state.timer - 1 < 1){
-                clearInterval(interval);
-                this.props.getLose(true);
-            }else{
-                this.setState((state) => {
-                    return {timer: state.timer - 1};
-                });
-            }
-        }, 1000)
-    }
-    componentWillUnmount() {
-        clearInterval(interval);
-    }
 
     constructor(props) {
         super(props);
@@ -72,7 +55,7 @@ class ShultzGame extends Component {
         return (
             <div className={'shultz-game ' + ('shultz-width-' + this.width)}
             >
-                <div className="shultz-game__flex">
+                <div className="game-page__flex">
                     <div className="next-num">Следующее: {this.state.nowNumber}</div>
                     {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}
                 </div>

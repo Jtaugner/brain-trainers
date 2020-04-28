@@ -20,6 +20,7 @@ import {getLevelsAmountByGameAndDiff, getLevelsInfoByGameDiffAndLevel} from "../
 import GameDoneLose from "./gameDoneLose/gameDoneLose";
 import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGame";
 import FindWordGame from "../games/findWordGame/findWordGame";
+import WordInTextGame from "../games/wordInTextGame/wordInTextGame";
 
 function GamePage(props) {
     console.log('game page');
@@ -72,6 +73,7 @@ function GamePage(props) {
         case 'shultz': GameComponent = ShultzGame; break;
         case 'rememberNumbers': GameComponent = RememberNumbersGame; break;
         case 'findWord': GameComponent = FindWordGame; break;
+        case 'wordInText': GameComponent = WordInTextGame; break;
     }
 
     return (

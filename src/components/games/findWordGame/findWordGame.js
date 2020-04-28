@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './findWordGame.scss'
-const classNames = require('classnames')
+import GameWrapper from "../gameWrapper";
+const classNames = require('classnames');
 let timeout;
 
-class FindWordGame extends Component {
+class FindWordGame extends GameWrapper {
     selectedMode = false;
     componentWillUnmount() {
         clearInterval(timeout);
@@ -11,7 +12,8 @@ class FindWordGame extends Component {
 
     constructor(props) {
         super(props);
-        const [words, answers] = getFillWordAndPlacesWords(this.props.levelInfo.words, this.props.levelInfo.height);
+        const [words, answers] =
+            getFillWordAndPlacesWords(this.props.levelInfo.words, this.props.levelInfo.height);
         this.state = {
             arrWords: words,
             rightAnswersWords: answers,
@@ -19,18 +21,12 @@ class FindWordGame extends Component {
             doneCells: [],
             doneWords: [],
             selectedCells: [],
+            timer: props.levelInfo.sec,
             isWin: false
         };
-        this.startGame();
-    }
-
-    startGame() {
-        if (this.props.levelInfo.time) {
-            timeout = setTimeout(() => {
-
-            }, this.props.levelInfo.time)
+        if(this.state.timer){
+            this.setTimer();
         }
-
     }
 
     testWord() {
@@ -47,7 +43,7 @@ class FindWordGame extends Component {
         if (this.props.levelInfo.words.includes(word)) {
             let places = this.state.rightAnswersWords[word];
             for (let i = 0; i < selectedCells.length; i++) {
-                this.setState({selectedCells: []})
+                this.setState({selectedCells: []});
                 this.selectedMode = false;
                 if(places[i] !== selectedCells[i]) return false;
             }
@@ -55,7 +51,7 @@ class FindWordGame extends Component {
             let doneWords = [...this.state.doneWords];
             doneWords.push(word);
             if(doneWords.length === this.props.levelInfo.words.length){
-                setTimeout(()=>{
+                timeout = setTimeout(()=>{
                     this.props.getWin();
                 }, 500)
             }
@@ -64,7 +60,7 @@ class FindWordGame extends Component {
                 doneCells
             }));
         }
-        this.setState({selectedCells: []})
+        this.setState({selectedCells: []});
         this.selectedMode = false;
     };
 
@@ -147,6 +143,9 @@ class FindWordGame extends Component {
     render() {
         return (
              <div className={'findWord-game'} onTouchEnd={()=>this.finishSelectCells()} onMouseUp={()=>this.finishSelectCells()}>
+                 <div className="game-page__flex">
+                     {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}
+                 </div>
                  <div className="findWord-game__done-words">
                      {this.props.levelInfo.words.map((word)=>{
                          return <span

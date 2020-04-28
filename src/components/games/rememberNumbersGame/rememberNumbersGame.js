@@ -110,7 +110,7 @@ class RememberNumbersGame extends Component {
     render() {
         return (
             <div className={'rememberNumbers-game ' + ('remember-width' + this.props.levelInfo.size)}>
-                <div className="rememberNumbers__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
+                <div className="game-page__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                 <div className="rememberNumbers__numbers">
                     {
                         this.state.arrNumbers.map((num, index)=>{

@@ -1,0 +1,30 @@
+.wordInText-game {
+  padding: 15px 15px 55px 15px;
+}
+
+.wordInText-game__word {
+  font-size: 1.7rem;
+  text-align: center;
+  color: #302f2f;
+  border-bottom: 1px solid #302f2f;
+  margin-bottom: 30px;
+}
+
+.wordInText-game__text {
+  font-size: 1.5rem;
+  color: #302f2f;
+}
+
+.wordInText-game .right-word {
+  color: #35c63f;
+}
+
+.wordInText-game .wrong-word {
+  color: #ef6565;
+}
+
+.wordInText-game .game-page__flex {
+  margin-bottom: 40px;
+}
+
+/*# sourceMappingURL=wordInTextGame.css.map */
