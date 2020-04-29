@@ -9,8 +9,8 @@ class WordInTextGame extends GameWrapper {
     rounds = this.props.levelInfo.rounds;
     doneWords = [];
     componentWillUnmount() {
-        clearInterval(timeoutGame);
-        clearInterval(timeout);
+        clearTimeout(timeoutGame);
+        clearTimeout(timeout);
     }
 
     constructor(props) {

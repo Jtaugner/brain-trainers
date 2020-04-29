@@ -7,7 +7,7 @@ let timeout;
 class FindWordGame extends GameWrapper {
     selectedMode = false;
     componentWillUnmount() {
-        clearInterval(timeout);
+        clearTimeout(timeout);
     }
 
     constructor(props) {
@@ -194,7 +194,7 @@ class FindWordGame extends GameWrapper {
 
 export default FindWordGame;
 
-let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Э', 'Ю', 'Я'];
+let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
 
 function getFillWordAndPlacesWords(wordArray, height) {
     let fillWord = [];
@@ -215,7 +215,7 @@ function getFillWordAndPlacesWords(wordArray, height) {
     for (let i = 0; i < fillWord.length; i++) {
         for (let j = 0; j < fillWord[0].length; j++) {
             if (fillWord[i][j] !== 0) {
-                let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Э', 'Ю', 'Я'];
+                let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
                 if (i !== 0) arr_RU.splice(arr_RU.indexOf(fillWord[i - 1][j]), 1);
                 if (i !== fillWord.length - 1) arr_RU.splice(arr_RU.indexOf(fillWord[i + 1][j]), 1);
                 if (j !== 0) arr_RU.splice(arr_RU.indexOf(fillWord[i][j - 1]), 1);

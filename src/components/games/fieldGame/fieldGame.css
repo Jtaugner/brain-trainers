@@ -1,0 +1,41 @@
+.field-game__rounds {
+  width: 250px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+.done-round {
+  height: 100%;
+  background-color: #d8d0ff;
+  border-radius: 5px;
+}
+
+.field-game td {
+  font-size: 3.5rem;
+  width: 50px;
+  height: 50px;
+}
+
+.field-game td, .field-game tr, .field-game table {
+  border: none;
+}
+
+.field-game__mistake-button {
+  display: block;
+  font-size: 2rem;
+  padding: 8px 32px;
+  background-color: white;
+  border-radius: 8px;
+  margin: 100px auto 10px auto;
+  outline: none;
+}
+
+.field-game__mistake-button:active {
+  border: 1px solid #414141;
+  transform: scale(0.99);
+  outline: none;
+}
+
+/*# sourceMappingURL=fieldGame.css.map */

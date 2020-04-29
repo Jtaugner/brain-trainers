@@ -118,4 +118,9 @@ table, tr, td {
   color: #414141;
 }
 
+td {
+  text-align: center;
+  vertical-align: center;
+}
+
 /*# sourceMappingURL=App.css.map */
