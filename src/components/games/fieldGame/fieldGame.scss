@@ -1,19 +1,4 @@
 @import '../../../root';
-.field-game__rounds{
-  width: 250px;
-  height: 8px;
-  border-radius: 5px;
-
-  background-color: white;
-
-  margin-bottom: 100px;
-}
-.done-round{
-  height: 100%;
-  background-color: $lightMain;
-  border-radius: 5px;
-}
-
 .field-game td{
   font-size: 3.5rem;
   width: 50px;

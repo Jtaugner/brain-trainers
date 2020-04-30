@@ -20,7 +20,6 @@ const gameLevelOpen = [
     {money: 1000, level: 9},
     {money: 1400, level: 11},
     {money: 1800, level: 12},
-    {money: 2300, level: 15},
 ];
 export const getGameLevelOpenCosts = (lvl) => {
     return gameLevelOpen[lvl].money;
@@ -58,7 +57,6 @@ export const gamesNames = {
     'rememberNumbers': 'Запомни числа',
     'findWord': 'Найди слово',
     'wordInText': 'Слово в тексте',
-    'rememberWords': 'Запомни слова',
     'field': 'Поле зрения',
     'runWords': 'Бегущие слова',
     'chet': 'Чётные числа',
@@ -91,3 +89,14 @@ export const moneyAndExpPerDifficult = [
     {exp: 40, money: 5},
     {exp: 70, money: 10},
 ];
+
+export const shuffle = (arr)=> {
+    let j, temp;
+    for (let i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+    }
+    return arr;
+};

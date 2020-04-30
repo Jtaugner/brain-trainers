@@ -1,6 +1,7 @@
 import React from 'react';
 import './fieldGame.scss'
 import GameWrapper from "../gameWrapper";
+import GameProgressLine from "../gameProgressLine/gameProgressLine";
 let interval;
 let timeout;
 let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
@@ -132,9 +133,7 @@ class FieldGame extends GameWrapper {
     render() {
         return (
              <div className={'field-game'}>
-                 <div className="field-game__rounds">
-                     <div className="done-round" style={{width: (this.state.round / this.rounds * 100 + '%')}} />
-                 </div>
+                    <GameProgressLine round={this.state.round} rounds={this.rounds}/>
                  <table>
                      <tbody>
                  {

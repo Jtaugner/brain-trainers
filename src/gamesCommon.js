@@ -21,6 +21,9 @@ const games = {
         [
             {rounds: 10, mistakes: 4, time: 2000, rows: 3, cols: 5}
         ]
+    ],
+    'runWords':[
+        [{amount: 3, time: 1300, rounds: 3}]
     ]
 };
 export const getAllLevelsByGame = (game) => {

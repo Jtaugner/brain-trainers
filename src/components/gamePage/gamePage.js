@@ -22,6 +22,7 @@ import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGam
 import FindWordGame from "../games/findWordGame/findWordGame";
 import WordInTextGame from "../games/wordInTextGame/wordInTextGame";
 import FieldGame from "../games/fieldGame/fieldGame";
+import RunWordsGame from "../games/runWordsGame/runWordsGame";
 function GamePage(props) {
     const {gameName, game, difficult, level, allMoney,
         doneLevels,
@@ -74,6 +75,7 @@ function GamePage(props) {
         case 'findWord': GameComponent = FindWordGame; break;
         case 'wordInText': GameComponent = WordInTextGame; break;
         case 'field': GameComponent = FieldGame; break;
+        case 'runWords': GameComponent = RunWordsGame; break;
     }
 
     return (

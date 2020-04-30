@@ -1,6 +1,7 @@
 import React  from 'react';
 import './shultzGame.scss'
 import GameWrapper from "../gameWrapper";
+import {shuffle} from "../../../projectCommon";
 
 class ShultzGame extends GameWrapper {
     width = this.props.levelInfo.width;
@@ -95,16 +96,7 @@ class ShultzGame extends GameWrapper {
 export default ShultzGame;
 
 
-function shuffle(arr) {
-    let j, temp;
-    for (let i = arr.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = arr[j];
-        arr[j] = arr[i];
-        arr[i] = temp;
-    }
-    return arr;
-}
+
 
 function getAndDeleteRandElement(arr) {
     const rand = Math.floor(Math.random() * arr.length);

@@ -1,0 +1,52 @@
+@import '../../../root';
+
+.running-words, .select-words {
+  width: 310px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.running-words__word {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 90px;
+  height: 60px;
+
+
+  font-size: 1.5rem;
+  color: $gameColor;
+
+  border-bottom: 1px solid $gameColor;
+
+}
+.select-words__word{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 60px;
+
+  background-color: white;
+  border-radius: 8px;
+
+  font-size: 1.3rem;
+  color: $gameColor;
+
+  margin-bottom: 10px;
+}
+.select-words__word:active{
+  transform: scale(0.99);
+  border: 1px solid $gameColor;
+}
+.runWords-game .right-word{
+  color: $right;
+}
+.runWords-game .wrong-word{
+  color: $wrong;
+}
+@media (min-width: 359px) {
+
+}
