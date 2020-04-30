@@ -1,5 +1,26 @@
 @import '../../../root';
 
-.game-done_lose .game-done__buttons{
+.game-done_lose {
+  border-color: white;
+  padding: 45px 25px 10px 25px;
+}
+
+.game-done_lose .game-done__buttons {
   margin-top: 25px;
+}
+
+.game-done_lose .close-game__header {
+  background-color: $wrong;
+}
+
+.game-done_lose .game-done__again {
+  background: url(lose-again.png) center center no-repeat;
+  background-size: 100%;
+}
+.game-done_lose p{
+  font-size: 2rem;
+}
+.game-done_lose .game-done__home{
+background: url(../../../assets/images/home.png) center center no-repeat;
+  background-size: 100%;
 }

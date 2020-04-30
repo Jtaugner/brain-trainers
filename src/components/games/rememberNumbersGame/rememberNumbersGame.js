@@ -61,7 +61,7 @@ class RememberNumbersGame extends Component {
                     round: state.round + 1
                 }));
         }else if(this.props.difficult > 0){
-            return this.props.getLose(false)
+            return this.props.getLose('Введённое число оказалось неверным')
         }
         timeout = setTimeout(()=>{
             this.setState({

@@ -27,11 +27,6 @@ class WordInTextGame extends GameWrapper {
         }
     }
 
-    startGame() {
-        if (this.props.levelInfo.time) {
-            this.setTimer();
-        }
-    }
     getRandWord(){
         let newWord = deleteNonLetters(getWord(this.words));
         if(this.doneWords.includes(newWord)){

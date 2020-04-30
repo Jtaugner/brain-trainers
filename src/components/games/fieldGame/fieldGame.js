@@ -19,6 +19,7 @@ class FieldGame extends GameWrapper {
     time = this.props.levelInfo.time;
     rows = this.props.levelInfo.rows;
     cols = this.props.levelInfo.cols;
+    isClicked = false;
     gameStart = false;
     mistakes = getMistakesArray(this.rounds, this.props.levelInfo.mistakes);
 
@@ -55,9 +56,9 @@ class FieldGame extends GameWrapper {
         this.startGame();
     }
     mistake(){
-        if(!this.gameStart) return;
+        if(!this.gameStart || this.isClicked) return;
         this.allClickedMistakes++;
-
+        this.isClicked = true;
         if(this.wasMistake){
             this.rightClickedMistakes++;
         }
@@ -87,10 +88,17 @@ class FieldGame extends GameWrapper {
         let allClickedCoef = this.rightClickedMistakes / this.allClickedMistakes;
         console.log(this.rightClickedMistakes, this.allClickedMistakes);
         console.log(gameCoef, coef, allClickedCoef);
-        if(gameCoef >= coef && allClickedCoef >= coef){
-            this.props.getWin();
+        if(gameCoef >= coef){
+            if(allClickedCoef >= coef){
+                this.props.getWin();
+            }else{
+                console.log('Вы слишком много раз ответили неправильно (' +
+                    (this.allClickedMistakes-this.rightClickedMistakes)+')');
+                this.props.getLose('Вы слишком много раз ответили неправильно (' +
+                    (this.allClickedMistakes-this.rightClickedMistakes)+')');
+            }
         }else{
-            this.props.getLose();
+            this.props.getLose('Вы не набрали нужное количество верных ответов (' +this.rightClickedMistakes+ '/' + allMistakes+')');
         }
     }
     changeLetters(){
@@ -105,6 +113,7 @@ class FieldGame extends GameWrapper {
         }else{
             this.wasMistake = false;
         }
+        this.isClicked = false;
         this.lettersForChange.forEach((a, index)=>{
             if(mistakeLetter && index === randPlace){
                 field[a[0]][a[1]] = mistakeLetter;

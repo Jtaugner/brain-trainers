@@ -7,7 +7,7 @@ class GameWrapper extends Component{
         interval = setInterval(()=>{
             if(this.state.timer - 1 < 1){
                 clearInterval(interval);
-                this.props.getLose(true);
+                this.props.getLose('К сожалению, вы не уложились в нужное время');
             }else{
                 this.setState((state) => {
                     return {timer: state.timer - 1};

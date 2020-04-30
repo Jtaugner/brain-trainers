@@ -22,9 +22,7 @@ import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGam
 import FindWordGame from "../games/findWordGame/findWordGame";
 import WordInTextGame from "../games/wordInTextGame/wordInTextGame";
 import FieldGame from "../games/fieldGame/fieldGame";
-
 function GamePage(props) {
-    console.log('game page');
     const {gameName, game, difficult, level, allMoney,
         doneLevels,
         addMoney, addExp, chooseLevel, addDoneLevels} = props;
@@ -32,7 +30,7 @@ function GamePage(props) {
         getLevelsInfoByGameDiffAndLevel(game, difficult, level);
     let [isWin, setWin] = useState(false);
     let [isLose, setLose] = useState(false);
-    let [isTimeout, setIsTimeout] = useState(false);
+    let [loseMsg, setLoseMsg] = useState('Попробуйте снова!');
     let [isGame, setIsGame] = useState(true);
     let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
     let exp, money;
@@ -54,8 +52,8 @@ function GamePage(props) {
         console.log('get win');
         setWin(true);
     };
-    const getLose = (isTimeout)=>{
-        setIsTimeout(isTimeout);
+    const getLose = (msg)=>{
+        setLoseMsg(msg);
         setLose(true);
     };
     const playAgain = ()=>{
@@ -106,7 +104,7 @@ function GamePage(props) {
                                        showNextLevel={levelsCount > level + 1}
 
                     /> : isLose ? <GameDoneLose
-                        isTimeout={isTimeout}
+                        msg={loseMsg}
                         allMoney={allMoney}
                         playAgain={playAgain}
                     /> :<GameComponent
