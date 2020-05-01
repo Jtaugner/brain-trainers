@@ -1,0 +1,26 @@
+.chet-game__numbers {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.chet-game__numbers__num {
+  width: 70px;
+  height: 55px;
+  font-size: 2rem;
+  color: #414141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chet-game .wrong-number {
+  color: #ef6565;
+}
+
+.chet-game .right-number {
+  color: #35c63f;
+}
+
+/*# sourceMappingURL=chetGame.css.map */

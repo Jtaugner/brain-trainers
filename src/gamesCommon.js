@@ -24,6 +24,14 @@ const games = {
     ],
     'runWords':[
         [{amount: 3, time: 1300, rounds: 3}]
+    ],
+    'chet':[
+        [{
+        rounds: 5,
+            rows: 4,
+            amount: 4,
+            numberLength: 2
+        }]
     ]
 };
 export const getAllLevelsByGame = (game) => {
