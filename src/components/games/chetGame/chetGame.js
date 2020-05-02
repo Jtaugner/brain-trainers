@@ -10,7 +10,7 @@ class ChetGame extends GameWrapper {
     numberLength = this.props.levelInfo.numberLength;
     amount = this.props.levelInfo.amount;
     answers;
-    mistakes;
+    mistakes = 0;
 
 
     componentWillUnmount() {
@@ -34,6 +34,7 @@ class ChetGame extends GameWrapper {
     }
 
     startRound() {
+        this.mistakes = 0;
         timeout = setTimeout(() => {
             const {field, answers} = createField(this.rows, this.amount, this.numberLength);
             let round = this.state.round;
@@ -85,11 +86,11 @@ class ChetGame extends GameWrapper {
                     <div className="game-page__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                     {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}
                 </div>
-                <div className="chet-game__numbers">
+                <div className="findSomething-game__numbers">
                     {
                         this.state.field.map((num, index) =>
                             <div
-                                className={"chet-game__numbers__num "
+                                className={"findSomething-game__numbers__num "
                                 + (this.state.rightNumbers.includes(index) ? 'right-number' :
                                     this.state.wrongNumber === index ? 'wrong-number' : '')
                                 }

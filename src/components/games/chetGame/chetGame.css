@@ -1,11 +1,11 @@
-.chet-game__numbers {
+.findSomething-game__numbers {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   width: 300px;
 }
 
-.chet-game__numbers__num {
+.findSomething-game__numbers__num {
   width: 70px;
   height: 55px;
   font-size: 2rem;
@@ -15,11 +15,11 @@
   align-items: center;
 }
 
-.chet-game .wrong-number {
+.wrong-number {
   color: #ef6565;
 }
 
-.chet-game .right-number {
+.right-number {
   color: #35c63f;
 }
 

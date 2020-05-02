@@ -24,6 +24,7 @@ import WordInTextGame from "../games/wordInTextGame/wordInTextGame";
 import FieldGame from "../games/fieldGame/fieldGame";
 import RunWordsGame from "../games/runWordsGame/runWordsGame";
 import ChetGame from "../games/chetGame/chetGame";
+import FindLettersGame from "../games/findLettersGame/findLettersGame";
 function GamePage(props) {
     const {gameName, game, difficult, level, allMoney,
         doneLevels,
@@ -78,6 +79,7 @@ function GamePage(props) {
         case 'field': GameComponent = FieldGame; break;
         case 'runWords': GameComponent = RunWordsGame; break;
         case 'chet': GameComponent = ChetGame; break;
+        case 'findLetters': GameComponent = FindLettersGame; break;
     }
 
     return (

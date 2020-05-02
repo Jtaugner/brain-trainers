@@ -1,0 +1,12 @@
+.wrong-letter {
+  color: #ef6565;
+}
+
+.letterToFind {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #414141;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=findLettersGame.css.map */

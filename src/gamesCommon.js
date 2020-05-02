@@ -27,10 +27,17 @@ const games = {
     ],
     'chet':[
         [{
-        rounds: 5,
+            rounds: 5,
             rows: 4,
             amount: 4,
             numberLength: 2
+        }]
+    ],
+    'findLetters':[
+        [{
+            rounds: 5,
+            rows: 4,
+            amount: 4
         }]
     ]
 };

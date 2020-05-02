@@ -1,12 +1,12 @@
 @import '../../../root';
-.chet-game__numbers{
+.findSomething-game__numbers{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 
   width: 300px;
 }
-.chet-game__numbers__num{
+.findSomething-game__numbers__num{
   width: 70px;
   height: 55px;
 
@@ -17,10 +17,10 @@
   justify-content: center;
   align-items: center;
 }
-.chet-game .wrong-number{
+.wrong-number{
   color: $wrong;
 }
-.chet-game .right-number{
+.right-number{
   color: $right;
 }
 @media (min-width: 359px) {
