@@ -29,7 +29,7 @@ class WordInTextGame extends GameWrapper {
 
     getRandWord(){
         let newWord = deleteNonLetters(getWord(this.words));
-        if(this.doneWords.includes(newWord)){
+        if(this.doneWords.includes(newWord) || newWord === '' || newWord === '-'){
             this.getRandWord();
         }else{
             this.doneWords.push(newWord);
@@ -79,7 +79,7 @@ class WordInTextGame extends GameWrapper {
                      {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}
                  </div>
 
-                 <div className="wordInText-game__word">{this.state.nowWord}</div>
+                 <div className="wordInText-game__word">{this.state.nowWord.toLowerCase()}</div>
                  <div
                       className="wordInText-game__text"
                       onClick={(e)=>{this.testWord(e)}}
@@ -116,7 +116,7 @@ function getWord(words) {
    }
 }
 function deleteNonLetters(word){
-    return word.replace(/[.|,|\s|'|"|;|?|!]/g, '')
+    return word.replace(/[.|,|\s|'|"|;|?|!|«|»]/g, '')
 }
 function isAnswerRight(str1, str2){
     str1 = deleteNonLetters(str1).toLowerCase();

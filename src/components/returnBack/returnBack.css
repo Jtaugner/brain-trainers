@@ -1,7 +1,7 @@
 .return-back {
   position: fixed;
   left: 15px;
-  bottom: 15px;
+  bottom: 10px;
   width: 40px;
   height: 40px;
   background: url("angle-left.svg") 45% center no-repeat, #b09cfd;

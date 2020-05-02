@@ -53,7 +53,6 @@ class RunWordsGame extends GameWrapper {
         if(this.state.round === this.rounds){
             return this.props.getWin();
         }
-        console.log("START ROUND");
         this.wordsArr = getWordsArr(this.amount);
         let index = -1;
         timeout= setTimeout(()=>{
