@@ -5,8 +5,8 @@ const gamesProgress = {};
 function getGameProgress() {
     return {
         gameOpen: false,
-        doneLevels: [0, 0, 0, 0],
-        openedLevels: [1, 1, 1, 1]
+        doneLevels: [50, 50, 50, 50],
+        openedLevels: [1, 1, 1, 0]
     }
 }
 Object.keys(gamesNames).forEach((key, index)=>{

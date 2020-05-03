@@ -12,14 +12,13 @@ function PlayerLevel(props) {
         "playerLevel_level": true,
         "playerLevel_level_small": level > 9
     });
-    const expProgress = exp / getExpLevel(level) * 100;
+    const bg = 'linear-gradient(to right, #d8d0ff ' + (exp / getExpLevel(level) * 100)+ '%, #eee 0%)';
     return (
         <div className="playerLevel">
-            <div className="playerLevel__progress-bar">
+            <div className="playerLevel__progress-bar"
+            style={{background: bg}}
+            >
                 <div className={levelClasses}>{level + 1}</div>
-                <div className="progress"
-                     style={{width: expProgress + '%'}}/>
-
                 <div className="progress-bar__dec progress-bar__dec_1"/>
                 <div className="progress-bar__dec progress-bar__dec_2"/>
                 <div className="progress-bar__dec progress-bar__dec_3"/>

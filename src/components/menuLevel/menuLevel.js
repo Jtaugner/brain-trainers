@@ -15,6 +15,7 @@ function MenuLevel(props) {
         'menu-game_closed': isGameClosed,
         'difficult-icon': (difficult + 1)
     });
+    const bgStyle = 'linear-gradient(to right, #d8d0ff ' + (levelsDone/allLevels*100)+ '%, #eee 0%)';
     return (
         <div className={menuGameClasses}
              onClick={() => {
@@ -29,10 +30,7 @@ function MenuLevel(props) {
             </div>
             <div className="menu-game__additional">
                 <div className="game-name">{name}</div>
-                <div className="game-progress">
-                    <div className="game-progress_done"
-                         style={{width: (levelsDone/allLevels*100) + '%'}}/>
-                </div>
+                <div className="game-progress" style={{background: bgStyle}} />
                 <div className="game-doneLevels">
                     Пройдено: {levelsDone} / {allLevels}
                 </div>

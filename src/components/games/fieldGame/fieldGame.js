@@ -86,11 +86,16 @@ class FieldGame extends GameWrapper {
         let coef = coefByDiff[this.props.difficult];
         let allMistakes = this.mistakes.length;
         let gameCoef = this.rightClickedMistakes / allMistakes;
-        let allClickedCoef = this.rightClickedMistakes / this.allClickedMistakes;
+        let allClickedCoef = this.allClickedMistakes - this.rightClickedMistakes;
         console.log(this.rightClickedMistakes, this.allClickedMistakes);
         console.log(gameCoef, coef, allClickedCoef);
         if(gameCoef >= coef){
-            if(allClickedCoef >= coef){
+            if(
+                (this.props.difficult === 0 && allClickedCoef <= 3) ||
+                (this.props.difficult === 1 && allClickedCoef <= 2) ||
+                (this.props.difficult >= 2 && allClickedCoef <= 1)
+
+                ){
                 this.props.getWin();
             }else{
                 console.log('Вы слишком много раз ответили неправильно (' +
@@ -132,7 +137,7 @@ class FieldGame extends GameWrapper {
 
     render() {
         return (
-             <div className={'field-game'}>
+             <div className={'field-game ' + ('field-game-cols'+this.cols)}>
                     <GameProgressLine round={this.state.round} rounds={this.rounds}/>
                  <table>
                      <tbody>

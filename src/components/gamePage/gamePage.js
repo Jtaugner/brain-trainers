@@ -26,7 +26,7 @@ import RunWordsGame from "../games/runWordsGame/runWordsGame";
 import ChetGame from "../games/chetGame/chetGame";
 import FindLettersGame from "../games/findLettersGame/findLettersGame";
 import CoupleGame from "../games/coupleGame/coupleGame";
-
+let timeout;
 function GamePage(props) {
     const {gameName, game, difficult, level, allMoney,
         doneLevels,
@@ -61,14 +61,21 @@ function GamePage(props) {
         setLoseMsg(msg);
         setLose(true);
     };
-    const playAgain = ()=>{
+    const playAgain = (nextLevel)=>{
+        setIsGame(false);
         setLose(false);
         setWin(false);
+        timeout = setTimeout(()=>{
+            if(nextLevel) chooseLevel(level + 1);
+            console.log(nextLevel, level);
+            setIsGame(true);
+        }, 500);
+
+
     };
-    const nextLevel = ()=>{
+    const nextLevel = () =>{
         if(levelsCount > level + 1){
-            chooseLevel(level + 1);
-            setWin(false);
+            playAgain(true);
         }
     };
     let GameComponent;
@@ -97,8 +104,14 @@ function GamePage(props) {
 
                 }}/>
             </TopMenu>
+            {isGame ? <GameComponent
+                getWin={getWin}
+                getLose={getLose}
+                levelInfo={levelInfo}
+                difficult={difficult}
+            />: ''}
 
-            {isGame ? <SwitchTransition>
+            <SwitchTransition>
                 <CSSTransition
                     key={isWin || isLose}
                     addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
@@ -108,23 +121,17 @@ function GamePage(props) {
                                        exp={exp}
                                        money={money}
                                        allMoney={allMoney}
-                                       playAgain={playAgain}
+                                       playAgain={()=>playAgain(false)}
                                        nextLevel={nextLevel}
                                        showNextLevel={levelsCount > level + 1}
 
                     /> : isLose ? <GameDoneLose
                         msg={loseMsg}
                         allMoney={allMoney}
-                        playAgain={playAgain}
-                    /> :<GameComponent
-                            getWin={getWin}
-                            getLose={getLose}
-                            levelInfo={levelInfo}
-                            difficult={difficult}
-                        />}
+                        playAgain={()=>playAgain(false)}
+                    /> : <div />}
                 </CSSTransition>
-            </SwitchTransition> : ''}
-
+            </SwitchTransition>
 
 
             <ReturnBack to={'/levels'}/>

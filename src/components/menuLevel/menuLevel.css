@@ -30,11 +30,6 @@
   background-color: #eeeeee;
 }
 
-.game-progress_done {
-  height: 100%;
-  background-color: #d8d0ff;
-}
-
 .game-progress, .game-progress_done {
   border-radius: 5px;
 }

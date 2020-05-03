@@ -35,6 +35,7 @@
 .progress {
   height: 100%;
   background-color: #d8d0ff;
+  border-radius: 0 5px 5px 0;
 }
 
 .progress-bar__dec {
