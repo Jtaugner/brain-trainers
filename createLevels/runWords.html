@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RunWords create</title>
+    <script src="allWords.js"></script>
+</head>
+<body>
+<script>
+    //{game: [[game]], sec: Number(seconds)}
+    //Квадрат
+    const easyLevels = [];
+    easyLevels.push({amount: 3, time: 1500, rounds: 3});
+    easyLevels.push({amount: 4, time: 1500, rounds: 3});
+    easyLevels.push({amount: 4, time: 1400, rounds: 3});
+    easyLevels.push({amount: 4, time: 1300, rounds: 4});
+    easyLevels.push({amount: 4, time: 1200, rounds: 5});
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 4, time: 1200 - i*50, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 4, time: 1000 - i*50, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 4, time: 800 - i*50, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 5, time: 1200 - i*50, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 5, time: 1000 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 5, time: 900 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 6, time: 1600 - i*50, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 6, time: 1500 - i*50, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({amount: 6, time: 1400 - i*50, rounds: 5});
+    }
+    const mediumLevels = [];
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 6, time: 1300 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 5, time: 800 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 6, time: 1200 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 5, time: 700 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 7, time: 1900 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 7, time: 1800 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 7, time: 1700 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 6, time: 1100 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 7, time: 1600 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({amount: 8, time: 1500 - i*25, rounds: 5});
+    }
+    const hardLevels = [];
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 7, time: 1500 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 8, time: 2000 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 7, time: 1400 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 8, time: 1900 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 7, time: 1300 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 8, time: 1800 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 9, time: 2000 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 8, time: 1700 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 9, time: 1900 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push({amount: 8, time: 1600 - i*25, rounds: 5});
+    }
+    const expertLevels = [];
+    for(let i = 0; i < 10; i++){
+        expertLevels.push({amount: 9, time: 1800 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 9, time: 1600 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 10, time: 1900 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 10, time: 1800 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 9, time: 1500 - i*25, rounds: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 10, time: 1700 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 11, time: 2000 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 12, time: 2000 - i*25, rounds: 4});
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push({amount: 13, time: 2000 - i*25, rounds: 4});
+    }
+    console.log(easyLevels);
+    console.log(mediumLevels);
+    console.log(hardLevels);
+    console.log(expertLevels);
+    localStorage.setItem('easyLevels', JSON.stringify(easyLevels));
+    localStorage.setItem('mediumLevels', JSON.stringify(mediumLevels));
+    localStorage.setItem('hardLevels', JSON.stringify(hardLevels));
+    localStorage.setItem('expertLevels', JSON.stringify(expertLevels));
+    //Легкий
+
+</script>
+</body>
+</html>

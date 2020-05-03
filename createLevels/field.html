@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Field create</title>
+</head>
+<body>
+<script>
+    const easyLevels = [];
+    easyLevels.push({rounds: 10, mistakes: 4, time: 2000, rows: 3, cols: 5});
+    easyLevels.push({rounds: 10, mistakes: 4, time: 1900, rows: 3, cols: 5});
+    easyLevels.push({rounds: 10, mistakes: 5, time: 1900, rows: 3, cols: 5});
+    easyLevels.push({rounds: 10, mistakes: 5, time: 1850, rows: 3, cols: 5});
+    easyLevels.push({rounds: 10, mistakes: 5, time: 1800, rows: 3, cols: 5});
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({rounds: 10 + i, mistakes: Math.floor(5 + i*0.5), time: 1900-i*50, rows: 3, cols: 7});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({rounds: 11 + i, mistakes: 6, time: 1900-i*50, rows: 5, cols: 5});
+    }
+    for(let i = 0; i < 10; i++){
+        easyLevels.push({rounds: 13+ i, mistakes: Math.floor(7 + i*0.4), time: 1700-i*25, rows: 5, cols: 5});
+    }
+    for(let i = 0; i < 10; i++){
+        easyLevels.push({rounds: 11+ i, mistakes: Math.floor(5 + i*0.4), time: 1500-i*25, rows: 5, cols: 7});
+    }
+    for(let i = 0; i < 10; i++){
+        easyLevels.push({rounds: 10+ i, mistakes: Math.floor(5 + i*0.5), time: 1300-i*25, rows: 5, cols: 7});
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push({rounds: 15 + i, mistakes: Math.floor(7 + i*0.5), time: 1100-i*25, rows: 7, cols: 7});
+    }
+    const mediumLevels = [];
+    for(let i = 0; i < 10; i++){
+        mediumLevels.push({rounds: 15+ i, mistakes: Math.floor(9 + i*0.35), time: 1500-i*50, rows: 5, cols: 5});
+    }
+    for(let i = 0; i < 10; i++){
+        mediumLevels.push({rounds: 16+ i, mistakes: Math.floor(8 + i*0.35), time: 1500-i*50, rows: 7, cols: 5});
+    }
+    for(let i = 0; i < 10; i++){
+        mediumLevels.push({rounds: 17+ i, mistakes: Math.floor(9 + i*0.35), time: 1500-i*50, rows: 7, cols: 7});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({rounds: 10+ i*2, mistakes: Math.floor(6 + i*0.4), time: 1000-i*35, rows: 5, cols: 5});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({rounds: 10+ i*2, mistakes: Math.floor(6 + i*0.4), time: 1000-i*35, rows: 5, cols: 7});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({rounds: 10+ i*2, mistakes: Math.floor(6 + i*0.4), time: 1000-i*35, rows: 7, cols: 7});
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push({rounds: 10+ i*2, mistakes: Math.floor(6 + i*0.4), time: 1200-i*35, rows: 7, cols: 9});
+    }
+    const hardLevels = [];
+    for(let i = 0; i < 10; i++){
+        hardLevels.push({rounds: 10+ i, mistakes: 5, time: 850-i*25, rows: 5, cols: 7});
+    }
+    for(let i = 0; i < 10; i++){
+        hardLevels.push({rounds: 10+ i*2, mistakes: 6, time: 860-i*25, rows: 7, cols: 7});
+    }
+    for(let i = 0; i < 10; i++){
+        hardLevels.push({rounds: 10+ i*2, mistakes: 6, time: 1050-i*25, rows: 9, cols: 7});
+    }
+    for(let i = 0; i < 10; i++){
+        hardLevels.push({rounds: 10+ i*2, mistakes: 7, time: 1250-i*25, rows: 9, cols: 9});
+    }
+    for(let i = 0; i < 10; i++){
+        hardLevels.push({rounds: 14+ i*2, mistakes: 9, time: 1000-i*25, rows: 9, cols: 9});
+    }
+    const expertLevels = [];
+
+    console.log(easyLevels);
+    console.log(mediumLevels);
+    console.log(hardLevels);
+    console.log(expertLevels);
+    localStorage.setItem('easyLevels', JSON.stringify(easyLevels));
+    localStorage.setItem('mediumLevels', JSON.stringify(mediumLevels));
+    localStorage.setItem('hardLevels', JSON.stringify(hardLevels));
+    localStorage.setItem('expertLevels', JSON.stringify(expertLevels));
+    //Легкий
+
+</script>
+</body>
+</html>

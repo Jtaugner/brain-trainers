@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/createLevels
 /.pnp
 .pnp.js
 /.idea

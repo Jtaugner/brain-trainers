@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="words.js"></script>
+<script>
+    let couples = [];
+    let shuffle = (arr)=> {
+        let j, temp;
+        for (let i = arr.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+        return arr;
+    };
+    words = shuffle(words);
+    for(let i = 0; i < words.length; i++){
+        if(couples.length > 2000) break;
+        let word = words[i];
+        if(word.length > 3 && word.length < 8){
+            for(let q = i+1; q < words.length; q++){
+                let mistakes = 0;
+                if(word.length === words[q].length
+                    && word[0] === words[q][0]
+                    && word[word.length-1] === words[q][word.length-1]
+                ){
+                    for(let z = 1; z < word.length - 1; z++){
+                        if(word[z] !== words[q][z]){
+                            mistakes++;
+                            if(mistakes > 1) break;
+                        }
+                    }
+                    if(mistakes === 1) couples.push([word, words[q]]);
+                }
+            }
+        }
+    }
+    localStorage.setItem('wordsCouple', JSON.stringify(couples));
+    console.log(couples);
+</script>
+</body>
+</html>
