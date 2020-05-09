@@ -1,3 +1,16 @@
+.field-game {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 80px 0;
+}
+
+.field-game .game-line-rounds {
+  margin: 0;
+}
+
 .field-game td {
   font-size: 3.5rem;
   width: 50px;
@@ -20,13 +33,18 @@
   height: 35px;
 }
 
+.field-game-cols11 td {
+  font-size: 2.2rem;
+  width: 32px;
+  height: 32px;
+}
+
 .field-game__mistake-button {
   display: block;
   font-size: 2rem;
   padding: 8px 32px;
   background-color: white;
   border-radius: 8px;
-  margin: 100px auto 10px auto;
   outline: none;
   cursor: pointer;
 }
