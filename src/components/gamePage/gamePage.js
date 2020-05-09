@@ -37,6 +37,7 @@ function GamePage(props) {
     let [isLose, setLose] = useState(false);
     let [loseMsg, setLoseMsg] = useState('Попробуйте снова!');
     let [isGame, setIsGame] = useState(true);
+    let [gameDone, setGameDone] = useState(false);
     let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
     let exp, money;
     if(doneLevels === level) {
@@ -47,6 +48,7 @@ function GamePage(props) {
         money = 0;
     }
     const getWin = ()=>{
+        if(gameDone) return;
         if(doneLevels === level){
             addMoney(money);
             addExp(exp);
@@ -54,17 +56,20 @@ function GamePage(props) {
                 addDoneLevels(game, difficult, level+1);
             }
         }
-        console.log('get win');
+        setGameDone(true);
         setWin(true);
     };
     const getLose = (msg)=>{
+        if(gameDone) return;
         setLoseMsg(msg);
         setLose(true);
+        setGameDone(true);
     };
     const playAgain = (nextLevel)=>{
         setIsGame(false);
         setLose(false);
         setWin(false);
+        setGameDone(false);
         timeout = setTimeout(()=>{
             if(nextLevel) chooseLevel(level + 1);
             console.log(nextLevel, level);
@@ -109,6 +114,7 @@ function GamePage(props) {
                 getLose={getLose}
                 levelInfo={levelInfo}
                 difficult={difficult}
+                gameDone={gameDone}
             />: ''}
 
             <SwitchTransition>
