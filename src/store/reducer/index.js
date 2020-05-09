@@ -9,6 +9,7 @@ import {soundsReducer} from "./soundsReducer";
 import {gameReducer} from "./gameReducer";
 import {difficultReducer} from "./difficultReducer";
 import {gameLevelReducer} from "./gameLevelReducer";
+import {advTimeReducer, rewardedVideoTimeReducer} from "./advTimeReducer";
 
 const reducer = combineReducers({
 
@@ -21,7 +22,10 @@ const reducer = combineReducers({
     sounds: soundsReducer,
     game: gameReducer,
     difficult: difficultReducer,
-    gameLevel: gameLevelReducer
+    gameLevel: gameLevelReducer,
+    advTime: advTimeReducer,
+    rewardedVideoTime: rewardedVideoTimeReducer
+
 });
 
 export {reducer};
