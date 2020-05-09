@@ -8,7 +8,7 @@
 }
 .findSomething-game__numbers__num{
   width: 70px;
-  height: 55px;
+  height: 45px;
 
   font-size: 2rem;
   color: $gameColor;
@@ -16,6 +16,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.chet-length5 .findSomething-game__numbers__num{
+  font-size: 1.8rem;
+}
+.chet-length6 .findSomething-game__numbers__num{
+  font-size: 1.7rem;
+}
+.chet-length7 .findSomething-game__numbers__num{
+  font-size: 1.6rem;
+}
+.chet-length8 .findSomething-game__numbers__num{
+  font-size: 1.5rem;
 }
 .wrong-number{
   color: $wrong;

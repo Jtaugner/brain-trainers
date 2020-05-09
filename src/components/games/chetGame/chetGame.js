@@ -64,16 +64,16 @@ class ChetGame extends GameWrapper {
             }
         } else {
             this.mistakes++;
-            if (this.props.difficult > 0 && this.mistakes >= 3) {
-                return this.props.getLose('Вы слишком много раз выбрали неверное число')
-            }
             this.setState({
                 wrongNumber: index
             });
             timeout = setTimeout(() => {
                 this.setState({
                     wrongNumber: -1
-                })
+                });
+                if (this.props.difficult > 0 && this.mistakes >= 3) {
+                    return this.props.getLose('Вы слишком много раз выбрали неверное число')
+                }
             }, 200)
         }
     }
@@ -81,7 +81,7 @@ class ChetGame extends GameWrapper {
 
     render() {
         return (
-            <div className={'chet-game'}>
+            <div className={'chet-game ' + ('chet-length' + this.numberLength)}>
                 <div className="game-page__flex">
                     <div className="game-page__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                     {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}
@@ -113,7 +113,7 @@ class ChetGame extends GameWrapper {
 export default ChetGame;
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const chetNumbers = [0, 2, 4, 6, 8];
+const chetNumbers = [2, 4, 6, 8];
 const notChetNumbers = [1, 3, 5, 7, 9];
 
 function getRandNum(numbers) {
