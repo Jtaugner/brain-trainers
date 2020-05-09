@@ -15,7 +15,7 @@ import GamePage from "./components/gamePage/gamePage";
 
 
 function App(props) {
-    const {settings} = props;
+    const {settings, ysdkGame} = props;
     return (
         <>
             <Switch
@@ -24,7 +24,7 @@ function App(props) {
                        render={() => <MainPage/>}
                 />
                 <Route path={'/shop'}
-                       render={() => <Shop/>}/>
+                       render={() => <Shop ysdkGame={ysdkGame}/>}/>
 
                 <Route path={'/settings'}
                        render={() => <Settings/>}/>

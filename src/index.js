@@ -5,7 +5,7 @@ import App from './App';
 import {Provider} from 'react-redux'
 import {store} from "./store";
 import {MemoryRouter} from "react-router-dom";
-var playerGame, payments, showAdvert, showRewarded;
+var playerGame, payments, showAdvert, showRewarded, ysdkGame;
 var rewardedTime = true;
 function createApp() {
     ReactDOM.render(
@@ -13,9 +13,9 @@ function createApp() {
             <MemoryRouter
                 initialEntries={['/home']}
                 initialIndex={0}
-                showRewarded={showRewarded}
             >
                 <App
+                    ysdkGame={ysdkGame}
                 />
             </MemoryRouter>
         </Provider>
@@ -72,9 +72,7 @@ if(window.YaGames) {
                         });
                 };
             }
-            console.log(ysdk);
-            showAdvert = ysdk.adv.showFullscreenAdv;
-            showRewarded = ysdk.adv.showRewardedVideo;
+            ysdkGame = ysdk;
             initPlayer(ysdk);
         });
 }else{

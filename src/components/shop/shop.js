@@ -10,7 +10,7 @@ import {premiumPrice} from "../../projectCommon";
 import ShopItemPremium from "./shop-item/shop-item-premium";
 
 function Shop(props) {
-    const {money, rewardedVideoTime, showRewarded} = props;
+    const {money, rewardedVideoTime, ysdkGame} = props;
     return (
         <div className="shop">
             <TopMenu><div className={'shop__header'}>МАГАЗИН</div></TopMenu>
@@ -19,14 +19,13 @@ function Shop(props) {
             >У вас  <span className={'color-money'}> {money} </span> <div className="money-img" /> монет
             </div>
             {
-                rewardedVideoTime && showRewarded ?
+                rewardedVideoTime && ysdkGame ?
                     <ShopItem
                         className={'shop-item__free'}
                         money={25}
                         price={0}
                         onClick={()=>{
-
-                            showRewarded({
+                            ysdkGame.adv.showRewardedVideo({
                                 callbacks: {
                                     onOpen: () => {
                                         console.log('Video ad open.');
