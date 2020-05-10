@@ -9,7 +9,7 @@ import {getLevelsAmountByGameAndDiff} from "../../../gamesCommon";
 
 function DifficultLevel(props) {
     const {
-        progress, chooseDifficult, difficult, game
+        progress, chooseDifficult, difficult, game, randomGame
     } = props;
     let isGameClosed = !progress.openedLevels[difficult];
     let levelsDone = progress.doneLevels[difficult];
@@ -20,9 +20,15 @@ function DifficultLevel(props) {
             difficult={difficult}
             allLevels={allLevels}
             chooseLevel={chooseDifficult}
+            showProgress={!randomGame}
         />
     );
     if(isGameClosed) return Component;
+    if(randomGame){
+        return <Link to={'/game'}>
+            {Component}
+        </Link>
+    }
     return (
         <Link to={'/levels'}>
             {Component}

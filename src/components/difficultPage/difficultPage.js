@@ -5,7 +5,7 @@ import PlayerLevel from "../playerLevel/playerLevel";
 import Premium from "../premium/premium";
 import Money from "../money/money";
 import TopMenu from "../topMenu/topMenu"
-import {selectGame, selectGameName} from "../../store/selectors";
+import {selectGame, selectGameName, selectRandGame} from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
@@ -13,7 +13,7 @@ import {difficultNames} from "../../projectCommon";
 import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 
 function DifficultPage(props) {
-    const {gameName, game} = props;
+    const {gameName, game, randomGame} = props;
     let [popUpExpert, setPopUp] = useState(false);
     return (
         <div className={'mainPage difficultPage'}>
@@ -33,6 +33,7 @@ function DifficultPage(props) {
                     game={game}
                     gameClass={obj.key}
                     difficult={index}
+                    randomGame={randomGame}
                     onClick={()=>{setPopUp(true)}}
                 />
             )}
@@ -46,5 +47,6 @@ function DifficultPage(props) {
 export default connect((store, ownProps) => ({
     game: selectGame(store),
     gameName: selectGameName(store),
+    randomGame: selectRandGame(store)
     })
 )(DifficultPage);

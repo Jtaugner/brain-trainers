@@ -56,13 +56,16 @@ class FindSomethingGameWrapper extends GameWrapper {
     }
 
     chooseLetter(index) {
+        console.log(this.state.rightLetters.length, index);
+        if(this.state.rightLetters.includes(index)) return;
+        console.log(this.answers.length);
         if (this.answers.includes(index)) {
             const rightLetters = this.state.rightLetters;
             rightLetters.push(index);
             this.setState({
                 rightLetters
             });
-            if (rightLetters.length === this.answers.length) {
+            if (rightLetters.length >= this.answers.length) {
                 this.startRound();
             }
         } else {

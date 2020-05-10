@@ -5,7 +5,7 @@ import {
     CHANGE_EXP_FROM_PLAYER_DATA,
     CHANGE_LEVEL_FROM_PLAYER_DATA,
     CHANGE_MONEY_FROM_PLAYER_DATA,
-    CHANGE_PROGRESS_FROM_PLAYER_DATA,
+    CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
     CHOOSE_LEVEL,
@@ -74,4 +74,9 @@ export const changeExp = (exp) => ({
 export const changeMoney = (money) => ({
     type: CHANGE_MONEY_FROM_PLAYER_DATA,
     money
+});
+//Random game
+export const changeRandomGame = (isRandGame) => ({
+    type: CHANGE_RAND_GAME,
+    isRandGame
 });

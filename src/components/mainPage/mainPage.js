@@ -11,12 +11,12 @@ import Gift from "../gift";
 import CloseGame from "../close-game";
 import {getGameLevelOpenCosts, getGameLevelOpenLevel} from '../../projectCommon'
 import RandomMenuGame from '../randomMenuGame/randomMenuGame'
-import {chooseGame} from "../../store/ac";
+import {changeRandomGame} from "../../store/ac";
 import BottomMainMenu from "../bottomMainMenu/bottomMenu";
 let indexGame = 0;
 let gamesClosedName = [];
 function MainPage(props) {
-    const {chooseGame} = props;
+    const {} = props;
     const [gameClosed, changeGameClosed] = useState(false);
     return (
         <div className={'mainPage'}>
@@ -55,5 +55,6 @@ function MainPage(props) {
     );
 }
 
-export default connect((store, ownProps) => ({})
+export default connect(
+
 )(MainPage);

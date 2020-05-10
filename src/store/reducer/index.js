@@ -10,6 +10,7 @@ import {gameReducer} from "./gameReducer";
 import {difficultReducer} from "./difficultReducer";
 import {gameLevelReducer} from "./gameLevelReducer";
 import {advTimeReducer, rewardedVideoTimeReducer} from "./advTimeReducer";
+import {randomGameReducer} from "./randomGameReducer";
 
 const reducer = combineReducers({
 
@@ -24,7 +25,8 @@ const reducer = combineReducers({
     difficult: difficultReducer,
     gameLevel: gameLevelReducer,
     advTime: advTimeReducer,
-    rewardedVideoTime: rewardedVideoTimeReducer
+    rewardedVideoTime: rewardedVideoTimeReducer,
+    randomGame: randomGameReducer,
 
 });
 

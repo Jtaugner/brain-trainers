@@ -8,7 +8,7 @@ import {
     selectGameLevel,
     selectGameName,
     selectGameProgressByDifficult,
-    selectMoney
+    selectMoney, selectRandGame
 } from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import ShultzGame from '../games/shultzGame/shultzGame'
@@ -28,9 +28,14 @@ import FindLettersGame from "../games/findLettersGame/findLettersGame";
 import CoupleGame from "../games/coupleGame/coupleGame";
 let timeout;
 function GamePage(props) {
-    const {gameName, game, difficult, level, allMoney,
-        doneLevels,
+    const {gameName, game, difficult, allMoney,
+        doneLevels, randomGame,
         addMoney, addExp, chooseLevel, addDoneLevels} = props;
+    let {level} = props;
+    let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
+    if(randomGame){
+        level = Math.floor(Math.random() * levelsCount);
+    }
     const levelInfo =
         getLevelsInfoByGameDiffAndLevel(game, difficult, level);
     let [isWin, setWin] = useState(false);
@@ -38,7 +43,6 @@ function GamePage(props) {
     let [loseMsg, setLoseMsg] = useState('Попробуйте снова!');
     let [isGame, setIsGame] = useState(true);
     let [gameDone, setGameDone] = useState(false);
-    let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
     let exp, money;
     if(doneLevels === level) {
         exp = moneyAndExpPerDifficult[difficult].exp;
@@ -49,7 +53,7 @@ function GamePage(props) {
     }
     const getWin = ()=>{
         if(gameDone) return;
-        if(doneLevels === level){
+        if(doneLevels === level && !randomGame){
             addMoney(money);
             addExp(exp);
             if(levelsCount > level + 1){
@@ -139,8 +143,13 @@ function GamePage(props) {
                 </CSSTransition>
             </SwitchTransition>
 
+            {
+                randomGame ?
+                    <ReturnBack to={'/difficult'} onClick={()=>{setGameDone(true)}}/>
+                :
+                    <ReturnBack to={'/levels'} onClick={()=>{setGameDone(true)}}/>
+            }
 
-            <ReturnBack to={'/levels'} onClick={()=>{console.log('ss');setGameDone(true)}}/>
         </div>
     );
 }
@@ -150,6 +159,7 @@ export default connect((store, ownProps) => ({
     gameName: selectGameName(store),
     difficult: selectDifficult(store),
     level: selectGameLevel(store),
+        randomGame: selectRandGame(store),
     allMoney: selectMoney(store),
         doneLevels: selectGameProgressByDifficult(store),
     }),

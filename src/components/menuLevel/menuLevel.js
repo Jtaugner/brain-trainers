@@ -7,7 +7,8 @@ function MenuLevel(props) {
     const {
         name, gameClass, chooseLevel,
         levelsDone, isGameClosed, allLevels,
-        difficult
+        difficult,
+        showProgress
     } = props;
     const menuGameClasses = classNames({
         'menu-game': true,
@@ -30,10 +31,15 @@ function MenuLevel(props) {
             </div>
             <div className="menu-game__additional">
                 <div className="game-name">{name}</div>
-                <div className="game-progress" style={{background: bgStyle}} />
-                <div className="game-doneLevels">
-                    Пройдено: {levelsDone} / {allLevels}
-                </div>
+                {
+                    showProgress ? <>
+                        <div className="game-progress" style={{background: bgStyle}} />
+                        <div className="game-doneLevels">
+                            Пройдено: {levelsDone} / {allLevels}
+                        </div>
+                    </> : ''
+                }
+
             </div>
         </div>
     )
