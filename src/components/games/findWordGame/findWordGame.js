@@ -8,6 +8,7 @@ class FindWordGame extends GameWrapper {
     selectedMode = false;
     componentWillUnmount() {
         clearTimeout(timeout);
+        this.clearTimer();
     }
 
     constructor(props) {

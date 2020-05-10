@@ -2,7 +2,8 @@ import React from 'react';
 import './findSomethinGameWrapper.scss'
 import GameWrapper from "./gameWrapper";
 
-let timeout;
+let timeout1;
+let timeout2;
 
 class FindSomethingGameWrapper extends GameWrapper {
     rounds = this.props.levelInfo.rounds;
@@ -10,11 +11,13 @@ class FindSomethingGameWrapper extends GameWrapper {
     amount = this.props.levelInfo.amount;
     useSmallLetters = this.props.difficult > 0;
     answers = [];
-    mistakes;
+    mistakes = 0;
 
 
     componentWillUnmount() {
-        clearTimeout(timeout);
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
+        this.clearTimer();
     }
 
     constructor(props) {
@@ -29,16 +32,19 @@ class FindSomethingGameWrapper extends GameWrapper {
             rightLetters: [],
             wrongLetter: -1
         };
-        console.log(field);
         if (this.state.timer) this.setTimer();
     }
 
     startRound() {
         this.mistakes = 0;
-        timeout = setTimeout(() => {
+        timeout1 = setTimeout(() => {
             const {field, answers, answerLetter} = this.props.createField(this.rows, this.amount, this.useSmallLetters);
             let round = this.state.round;
-            if(round === this.rounds) return this.props.getWin();
+            if(round === this.rounds) {
+                console.log('end GAME');
+                return this.props.getWin();
+            }
+            console.log('end round');
             this.answers = answers;
             this.setState({
                 answerLetter,
@@ -61,13 +67,14 @@ class FindSomethingGameWrapper extends GameWrapper {
             }
         } else {
             this.mistakes++;
-            if (this.props.difficult > 0 && this.mistakes >= 3) {
-                return this.props.getLose('Вы слишком много раз нажали на неверную букву')
-            }
             this.setState({
                 wrongLetter: index
             });
-            timeout = setTimeout(() => {
+            if (this.props.difficult > 0 && this.mistakes >= 3) {
+                return this.props.getLose('Вы слишком много раз нажали на неверную букву')
+            }
+            timeout2 = setTimeout(() => {
+                console.log('leak');
                 this.setState({
                     wrongLetter: -1
                 })

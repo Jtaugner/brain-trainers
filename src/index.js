@@ -5,8 +5,7 @@ import App from './App';
 import {Provider} from 'react-redux'
 import {store} from "./store";
 import {MemoryRouter} from "react-router-dom";
-var playerGame, payments, showAdvert, showRewarded, ysdkGame;
-var rewardedTime = true;
+var playerGame, payments, ysdkGame;
 function createApp() {
     ReactDOM.render(
         <Provider store={store}>

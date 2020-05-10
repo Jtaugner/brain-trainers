@@ -140,7 +140,7 @@ function GamePage(props) {
             </SwitchTransition>
 
 
-            <ReturnBack to={'/levels'}/>
+            <ReturnBack to={'/levels'} onClick={()=>{console.log('ss');setGameDone(true)}}/>
         </div>
     );
 }

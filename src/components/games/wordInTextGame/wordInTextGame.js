@@ -11,6 +11,7 @@ class WordInTextGame extends GameWrapper {
     componentWillUnmount() {
         clearTimeout(timeoutGame);
         clearTimeout(timeout);
+        this.clearTimer();
     }
 
     constructor(props) {

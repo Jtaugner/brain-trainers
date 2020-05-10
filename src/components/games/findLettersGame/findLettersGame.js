@@ -1,5 +1,6 @@
 import React from 'react';
 import FindSomethingGameWrapper from "../findSomethinGameWrapper";
+import './findLettersGame.scss'
 
 let arr_ru = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ы', 'ъ', 'э', 'ю', 'я'];
 let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
@@ -41,6 +42,7 @@ function findLettersGame(OriginalComponent) {
         return (
             <OriginalComponent
                 {...props}
+                mainClass={'findLetters-game'}
                 createField={createFieldLetters}
                 findLetter={true}
 

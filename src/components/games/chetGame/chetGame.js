@@ -15,6 +15,7 @@ class ChetGame extends GameWrapper {
 
     componentWillUnmount() {
         clearTimeout(timeout);
+        this.clearTimer();
     }
 
     constructor(props) {

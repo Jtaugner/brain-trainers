@@ -1,4 +1,4 @@
-import {SUBTRACT_MONEY} from "../common";
+import {CHANGE_MONEY_FROM_PLAYER_DATA, SUBTRACT_MONEY} from "../common";
 import {ADD_MONEY} from "../common";
 
 export const moneyReducer = (state = 15, action) => {
@@ -6,6 +6,8 @@ export const moneyReducer = (state = 15, action) => {
         return state - action.money;
     }else if(action.type === ADD_MONEY){
         return state + action.money;
+    }else if(action.type === CHANGE_MONEY_FROM_PLAYER_DATA){
+        return action.money;
     }
     return state;
 };

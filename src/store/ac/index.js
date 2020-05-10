@@ -2,6 +2,10 @@ import {
     ADD_DONE_LEVEL,
     ADD_EXP,
     ADD_MONEY,
+    CHANGE_EXP_FROM_PLAYER_DATA,
+    CHANGE_LEVEL_FROM_PLAYER_DATA,
+    CHANGE_MONEY_FROM_PLAYER_DATA,
+    CHANGE_PROGRESS_FROM_PLAYER_DATA,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
     CHOOSE_LEVEL,
@@ -53,4 +57,21 @@ export const addDoneLevels = (game, difficult, doneLevels) => ({
     payload:{
         game, difficult, doneLevels
     }
+});
+//Player Data
+export const changeProgress = (progress) => ({
+    type: CHANGE_PROGRESS_FROM_PLAYER_DATA,
+    progress
+});
+export const changeLevel = (level) => ({
+    type: CHANGE_LEVEL_FROM_PLAYER_DATA,
+    level
+});
+export const changeExp = (exp) => ({
+    type: CHANGE_EXP_FROM_PLAYER_DATA,
+    exp
+});
+export const changeMoney = (money) => ({
+    type: CHANGE_MONEY_FROM_PLAYER_DATA,
+    money
 });

@@ -1,6 +1,7 @@
 import {} from "../common";
 import {gamesNames} from "../../projectCommon";
 import {ADD_DONE_LEVEL} from "../common";
+import {CHANGE_PROGRESS_FROM_PLAYER_DATA} from "../common";
 const gamesProgress = {};
 function getGameProgress() {
     return {
@@ -23,6 +24,8 @@ export const progressReducer = (state = gamesProgress, action) => {
         newState[action.payload.game]
             .doneLevels[action.payload.difficult]
         = action.payload.doneLevels;
+    }else if(action.type === CHANGE_PROGRESS_FROM_PLAYER_DATA){
+        return action.progress;
     }
     return state;
 };
