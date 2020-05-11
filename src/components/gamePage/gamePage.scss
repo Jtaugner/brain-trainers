@@ -21,18 +21,20 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
 }
 .playAgain{
   left: 8px;
   background: url(again.png) center center no-repeat;
   background-size: 100%;
+  width: 30px;
+  height: 30px;
 }
 .pause{
   right: 8px;
   background: url(pause.png) center center no-repeat;
   background-size: 100%;
+  width: 18px;
+  height: 30px;
 }
 .pause-block{
   position: absolute;
