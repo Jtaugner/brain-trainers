@@ -1,13 +1,12 @@
-import {} from "../common";
+import {ADD_DONE_LEVEL, BUY_GAME, BUY_LEVELS_DIFF, CHANGE_PROGRESS_FROM_PLAYER_DATA} from "../common";
 import {gamesNames} from "../../projectCommon";
-import {ADD_DONE_LEVEL} from "../common";
-import {CHANGE_PROGRESS_FROM_PLAYER_DATA} from "../common";
+
 const gamesProgress = {};
 function getGameProgress() {
     return {
         gameOpen: false,
         doneLevels: [50, 50, 50, 50],
-        openedLevels: [1, 1, 1, 1]
+        openedLevels: [1, 1, 1, 0]
     }
 }
 Object.keys(gamesNames).forEach((key, index)=>{
@@ -26,6 +25,14 @@ export const progressReducer = (state = gamesProgress, action) => {
         = action.payload.doneLevels;
     }else if(action.type === CHANGE_PROGRESS_FROM_PLAYER_DATA){
         return action.progress;
+    }else if(action.type === BUY_GAME){
+        const newState = {...gamesProgress};
+        newState[action.payload.game].gameOpen = true;
+        return newState;
+    }else if(action.type === BUY_LEVELS_DIFF){
+        const newState = {...gamesProgress};
+        newState[action.payload.game].openedLevels[action.payload.level] = 1;
+        return newState;
     }
     return state;
 };

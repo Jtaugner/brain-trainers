@@ -11,12 +11,12 @@ import Gift from "../gift";
 import CloseGame from "../close-game";
 import {getGameLevelOpenCosts, getGameLevelOpenLevel} from '../../projectCommon'
 import RandomMenuGame from '../randomMenuGame/randomMenuGame'
-import {changeRandomGame} from "../../store/ac";
+import {buyGame, changeRandomGame, switchOffConfetti} from "../../store/ac";
 import BottomMainMenu from "../bottomMainMenu/bottomMenu";
 let indexGame = 0;
 let gamesClosedName = [];
 function MainPage(props) {
-    const {} = props;
+    const {buyGame, switchOffConfetti} = props;
     const [gameClosed, changeGameClosed] = useState(false);
     return (
         <div className={'mainPage'}>
@@ -45,9 +45,13 @@ function MainPage(props) {
             }
             {gameClosed ? <CloseGame gameClass={gamesClosedName}
                                      name={gamesNames[gamesClosedName]}
-                                            onClick={()=>{changeGameClosed(false)}}
+                                     buyGame={()=>buyGame(gamesClosedName, getGameLevelOpenCosts(indexGame))}
+                                            onClick={()=>{
+                                                changeGameClosed(false);
+
+                                                switchOffConfetti();
+                                            }}
                                            money={getGameLevelOpenCosts(indexGame)}
-                                           level={getGameLevelOpenLevel(indexGame)}
 
             /> : ''}
             <BottomMainMenu/>
@@ -55,6 +59,10 @@ function MainPage(props) {
     );
 }
 
-export default connect(
+export default connect(null,
+    (dispatch)=>({
+        buyGame: (game, money) => dispatch(buyGame(game, money)),
+        switchOffConfetti: () => dispatch(switchOffConfetti())
+    })
 
-)(MainPage);
+    )(MainPage);

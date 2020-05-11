@@ -7,6 +7,7 @@
     "autoprefixer": "^9.7.6",
     "body-scroll-lock": "^3.0.1",
     "classnames": "^2.2.6",
+    "confetti-js": "0.0.18",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-infinite-scroll-component": "^5.0.4",

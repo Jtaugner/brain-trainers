@@ -25,3 +25,5 @@ export const selectGameProgressByDifficult= (store) => store.progress[selectGame
 export const selectRewardedVideoTime = (store) => store.rewardedVideoTime;
 //rand game
 export const selectRandGame = (store) => store.randomGame;
+//confetti
+export const selectShowConfetti = (store) => store.showConfetti;

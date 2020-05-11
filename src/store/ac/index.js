@@ -1,7 +1,7 @@
 import {
     ADD_DONE_LEVEL,
     ADD_EXP,
-    ADD_MONEY,
+    ADD_MONEY, BUY_GAME, BUY_LEVELS_DIFF,
     CHANGE_EXP_FROM_PLAYER_DATA,
     CHANGE_LEVEL_FROM_PLAYER_DATA,
     CHANGE_MONEY_FROM_PLAYER_DATA,
@@ -9,20 +9,14 @@ import {
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
     CHOOSE_LEVEL,
-    SKIP_LEVEL,
+    SKIP_LEVEL, SWITCH_OFF_CONFETTI,
     TOGGLE_SETTINGS,
     TOGGLE_SOUNDS
 } from "../common";
 
 
-export const skipLevel = (game, level) => ({
-    type: SKIP_LEVEL,
-    payload:{
-        game, level,
-        money: 10
-    },
-    buying: true
-});
+
+
 
 export const toggleSettings = () => ({
     type: TOGGLE_SETTINGS,
@@ -30,6 +24,8 @@ export const toggleSettings = () => ({
 export const toggleSounds = () => ({
     type: TOGGLE_SOUNDS,
 });
+
+//Выбор игры, сложности, уровня
 export const chooseGame = (game) => ({
     type: CHOOSE_GAME,
     game
@@ -43,7 +39,22 @@ export const chooseLevel = (level) => ({
     level
 });
 
-
+//Покупки
+export const buyGame = (game, money) => ({
+    type: BUY_GAME,
+    payload:{
+        money, game
+    },
+    buying: true
+});
+export const buyLevelsDiff = (game, level, money) => ({
+    type: BUY_LEVELS_DIFF,
+    payload:{
+        game, level, money
+    },
+    buying: true
+});
+//Прогресс
 export const addMoney = (money) => ({
     type: ADD_MONEY,
     money
@@ -79,4 +90,8 @@ export const changeMoney = (money) => ({
 export const changeRandomGame = (isRandGame) => ({
     type: CHANGE_RAND_GAME,
     isRandGame
+});
+//confetti
+export const switchOffConfetti = ()=>({
+    type: SWITCH_OFF_CONFETTI
 });

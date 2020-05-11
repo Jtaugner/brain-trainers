@@ -16,8 +16,8 @@ export const SUBTRACT_MONEY = "SUBTRACT_MONEY";
 export const ADD_MONEY = "ADD_MONEY";
 
 export const BUY_GAME = "BUY_GAME";
-export const BUY_EXPERT_DIFF = "BUY_EXPERT_DIFF";
-export const SKIP_LEVEL = "SKIP_LEVEL";
+export const BUY_LEVELS_DIFF = "BUY_LEVELS_DIFF";
+
 //Уровень
 export const ADD_EXP = "ADD_EXP";
 export const GET_NEW_LEVEL = "GET_NEW_LEVEL";
@@ -31,3 +31,5 @@ export const CHANGE_EXP_FROM_PLAYER_DATA = "CHANGE_EXP_FROM_PLAYER_DATA";
 export const CHANGE_MONEY_FROM_PLAYER_DATA = "CHANGE_MONEY_FROM_PLAYER_DATA";
 //Рандомная игра
 export const CHANGE_RAND_GAME = "CHANGE_RAND_GAME";
+//Конфетти
+export const SWITCH_OFF_CONFETTI =  "SWITCH_OFF_CONFETTI";

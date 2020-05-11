@@ -11,9 +11,12 @@ import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
 import {difficultNames} from "../../projectCommon";
 import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
+import {buyLevelsDiff, switchOffConfetti} from "../../store/ac";
 
+const expertCosts = 150;
 function DifficultPage(props) {
-    const {gameName, game, randomGame} = props;
+    const {gameName, game, randomGame,
+        buyLevelsDiff, switchOffConfetti} = props;
     let [popUpExpert, setPopUp] = useState(false);
     return (
         <div className={'mainPage difficultPage'}>
@@ -37,7 +40,16 @@ function DifficultPage(props) {
                     onClick={()=>{setPopUp(true)}}
                 />
             )}
-            {popUpExpert ? <CloseDifficultLevel onClick={()=>{setPopUp(false)}}/>: ''}
+            {popUpExpert ? <CloseDifficultLevel
+                name={'Эксперт'}
+                number={4}
+                money={expertCosts}
+                buyLevelsDiff={()=>buyLevelsDiff(game, 3, expertCosts)}
+                onClick={()=>{
+                    setPopUp(false);
+                    switchOffConfetti();
+                }}
+            />: ''}
 
             <ReturnBack to={'/home'}/>
         </div>
@@ -48,5 +60,9 @@ export default connect((store, ownProps) => ({
     game: selectGame(store),
     gameName: selectGameName(store),
     randomGame: selectRandGame(store)
+    }),
+    (dispatch)=>({
+        buyLevelsDiff: (game, level, money) => dispatch(buyLevelsDiff(game, level, money)),
+        switchOffConfetti: () => dispatch(switchOffConfetti())
     })
 )(DifficultPage);

@@ -11,21 +11,10 @@ export const getExpForGameLevel = (difficult) => {
     return valueForDoneLevel[difficult].exp;
 };
 const gameLevelOpen = [
-    {money: 0, level: 0},
-    {money: 0, level: 0},
-    {money: 0, level: 0},
-    {money: 100, level: 3},
-    {money: 300, level: 5},
-    {money: 600, level: 7},
-    {money: 1000, level: 9},
-    {money: 1400, level: 11},
-    {money: 1800, level: 12},
+    0, 0, 0, 100, 300, 600, 1000, 1400, 1800
 ];
 export const getGameLevelOpenCosts = (lvl) => {
-    return gameLevelOpen[lvl].money;
-};
-export const getGameLevelOpenLevel = (lvl) => {
-    return gameLevelOpen[lvl].level;
+    return gameLevelOpen[lvl];
 };
 const level = [
     {exp: 50, money: 5},

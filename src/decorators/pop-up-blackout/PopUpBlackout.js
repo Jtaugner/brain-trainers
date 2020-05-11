@@ -11,7 +11,9 @@ function popUpBlackout(OriginalComponent) {
             props.onClick();
         };
         return (
+            <>
             <div className={'pop-up-anim'}>
+                <canvas id="show-confetti" onClick={enableScrollAndExit}/>
                 <div className={'blackout'} onClick={enableScrollAndExit}/>
                 <div className="pop-up">
                     <OriginalComponent
@@ -21,6 +23,7 @@ function popUpBlackout(OriginalComponent) {
                 </div>
 
             </div>
+            </>
         )
     }
 

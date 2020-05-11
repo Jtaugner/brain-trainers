@@ -10,7 +10,7 @@ export const moneyOperation  = store => next => action => {
             });
             next(action);
         }else{
-
+            alert('Недостаточнос средств');
         }
     }else{
         next(action);
