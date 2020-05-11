@@ -17,18 +17,41 @@
   font-size: 1.8rem;
   border-color: #5a5a5a;
 }
-.playAgain{
+.playAgain, .pause{
   position: absolute;
   top: 50%;
-  left: 8px;
   transform: translateY(-50%);
-
   width: 30px;
   height: 30px;
-
+}
+.playAgain{
+  left: 8px;
   background: url(again.png) center center no-repeat;
   background-size: 100%;
+}
+.pause{
+  right: 8px;
+  background: url(pause.png) center center no-repeat;
+  background-size: 100%;
+}
+.pause-block{
+  position: absolute;
+  left: 0;
+  top: 0;
 
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 2rem;
+
+  color: white;
+
+  background-color: #4b4b4b;
 }
 
 .gamePage .return-back{

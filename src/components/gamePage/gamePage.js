@@ -43,6 +43,7 @@ function GamePage(props) {
     let [loseMsg, setLoseMsg] = useState('Попробуйте снова!');
     let [isGame, setIsGame] = useState(true);
     let [gameDone, setGameDone] = useState(false);
+    let [pause, setPause] = useState(false);
     let exp, money;
     if(doneLevels === level) {
         exp = moneyAndExpPerDifficult[difficult].exp;
@@ -73,6 +74,7 @@ function GamePage(props) {
         setIsGame(false);
         setLose(false);
         setWin(false);
+        setPause(false);
         setGameDone(false);
         timeout = setTimeout(()=>{
             if(nextLevel) chooseLevel(level + 1);
@@ -107,10 +109,14 @@ function GamePage(props) {
                 {gameName}
                 <div className="playAgain" onClick={()=>{
                     setIsGame(false);
+                    setPause(false);
                     setTimeout(()=>{
                         setIsGame(true);
                     }, 500)
 
+                }}/>
+                <div className="pause" onClick={()=>{
+                    setPause(!pause);
                 }}/>
             </TopMenu>
             {isGame ? <GameComponent
@@ -119,6 +125,7 @@ function GamePage(props) {
                 levelInfo={levelInfo}
                 difficult={difficult}
                 gameDone={gameDone}
+                pause={pause}
             />: ''}
 
             <SwitchTransition>
@@ -149,7 +156,14 @@ function GamePage(props) {
                 :
                     <ReturnBack to={'/levels'} onClick={()=>{setGameDone(true)}}/>
             }
+            {
+                pause ?
+                    <div className={'pause-block'} onClick={()=>setPause(false)}>
+                        Нажмите, чтобы продолжить игру
+                    </div>
 
+                    : ''
+            }
         </div>
     );
 }
