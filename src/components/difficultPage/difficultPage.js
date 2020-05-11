@@ -14,6 +14,14 @@ import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 import {buyLevelsDiff, switchOffConfetti} from "../../store/ac";
 
 const expertCosts = 150;
+const difficultColors =
+    [
+        '#76e879',
+        '#59e4e3',
+        '#57b7d7',
+        '#e25454'
+    ];
+
 function DifficultPage(props) {
     const {gameName, game, randomGame,
         buyLevelsDiff, switchOffConfetti} = props;
@@ -35,6 +43,7 @@ function DifficultPage(props) {
                     name={obj.difficultName}
                     game={game}
                     gameClass={obj.key}
+                    gameDoneColor={difficultColors[index]}
                     difficult={index}
                     randomGame={randomGame}
                     onClick={()=>{setPopUp(true)}}

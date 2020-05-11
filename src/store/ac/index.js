@@ -4,7 +4,7 @@ import {
     ADD_MONEY, BUY_GAME, BUY_LEVELS_DIFF,
     CHANGE_EXP_FROM_PLAYER_DATA,
     CHANGE_LEVEL_FROM_PLAYER_DATA,
-    CHANGE_MONEY_FROM_PLAYER_DATA,
+    CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY,
     CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
@@ -94,4 +94,9 @@ export const changeRandomGame = (isRandGame) => ({
 //confetti
 export const switchOffConfetti = ()=>({
     type: SWITCH_OFF_CONFETTI
+});
+//not enough
+export const changeNotEnoughMoney = (show) =>({
+    type: CHANGE_NOT_ENOUGH_MONEY,
+    show
 });

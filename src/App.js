@@ -8,16 +8,17 @@ import Shop from "./components/shop";
 import {Route, Switch} from "react-router-dom";
 import BottomMainMenu from "./components/bottomMainMenu/bottomMenu";
 import Settings from "./components/settings";
-import {selectSettings} from "./store/selectors";
+import {selectNotEnoughMoney, selectSettings} from "./store/selectors";
 import DifficultPage from "./components/difficultPage/difficultPage";
 import LevelsPage from "./components/levelsPage/levelsPage";
 import GamePage from "./components/gamePage/gamePage";
+import NotEnoughMoneyPopUp from "./components/notEnoughMoneyPopUp/notEnoughMoneyPopUp";
 
 
 function App(props) {
-    const {settings, ysdkGame} = props;
+    const {settings, ysdkGame, notEnoughMoney} = props;
     return (
-        <>
+            <>
             <Switch
               >
                 <Route path={'/home'}
@@ -39,10 +40,12 @@ function App(props) {
                        render={() => <GamePage/>}/>
             </Switch>
             {settings ? <Settings/> : ''}
+            {notEnoughMoney ? <NotEnoughMoneyPopUp/> : ''}
         </>
     );
 }
 
 export default connect((store)=>({
-    settings: selectSettings(store)
+    settings: selectSettings(store),
+    notEnoughMoney: selectNotEnoughMoney(store)
 }))(App);

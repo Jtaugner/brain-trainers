@@ -27,3 +27,5 @@ export const selectRewardedVideoTime = (store) => store.rewardedVideoTime;
 export const selectRandGame = (store) => store.randomGame;
 //confetti
 export const selectShowConfetti = (store) => store.showConfetti;
+
+export const selectNotEnoughMoney = (store) => store.notEnoughMoney;

@@ -22,8 +22,25 @@ function ClosePopUp(props) {
         if (showConfetti) {
             const confettiSettings = {
                 target: 'show-confetti',
-                clock: 29,
-                start_from_edge: true
+                clock: 35,
+                start_from_edge: true,
+                colors: [
+                    [216, 208, 255],
+                    [176, 156, 253],
+                    [251, 194, 48],
+                    [208, 238, 255],
+                    [210, 255, 208],
+                    [242, 255, 208],
+                    [255, 250, 208],
+                    [131, 218, 143],
+                    [239, 101, 101],
+                    [226, 84, 84],
+                    [48, 176, 66],
+                    [118, 232, 121],
+                    [89, 228, 227],
+                    [87, 183, 215]
+
+                ]
             };
             const confetti = new ConfettiGenerator(confettiSettings);
             confetti.render();

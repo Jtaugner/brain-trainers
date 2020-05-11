@@ -12,6 +12,7 @@ import {gameLevelReducer} from "./gameLevelReducer";
 import {advTimeReducer, rewardedVideoTimeReducer} from "./advTimeReducer";
 import {randomGameReducer} from "./randomGameReducer";
 import {showConfettiReducer} from "./showConfettiReducer";
+import {notEnoughMoneyReducer} from "./notEnoughMoneyReducer";
 
 const reducer = combineReducers({
 
@@ -29,6 +30,7 @@ const reducer = combineReducers({
     rewardedVideoTime: rewardedVideoTimeReducer,
     randomGame: randomGameReducer,
     showConfetti: showConfettiReducer,
+    notEnoughMoney: notEnoughMoneyReducer
 
 });
 

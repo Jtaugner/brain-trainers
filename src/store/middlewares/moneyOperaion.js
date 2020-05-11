@@ -1,4 +1,6 @@
 import {selectMoney} from "../selectors";
+import {CHANGE_NOT_ENOUGH_MONEY} from "../common";
+import {changeNotEnoughMoney} from "../ac";
 
 export const moneyOperation  = store => next => action => {
     if(action.buying){
@@ -10,7 +12,8 @@ export const moneyOperation  = store => next => action => {
             });
             next(action);
         }else{
-            alert('Недостаточнос средств');
+            next(changeNotEnoughMoney(true))
+
         }
     }else{
         next(action);

@@ -12,10 +12,13 @@ function Level(props) {
         </div>
     );
     return (
-        <Link to={'/game'} onClick={chooseLevel}>
-            <div className={'level ' + (newLevel ? 'new-level' : '')}>
-                {level+1}
-            </div>
+        <Link
+            to={'/game'}
+              onClick={chooseLevel}
+            onKeyDown={chooseLevel}
+            className={'level ' + (newLevel ? 'new-level' : '')}
+        >
+            {level+1}
         </Link>
 
     );

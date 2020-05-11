@@ -10,10 +10,6 @@
   width: 274px;
   margin: 0 auto;
   padding-left: 4px;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 @media (min-width: 359px) {

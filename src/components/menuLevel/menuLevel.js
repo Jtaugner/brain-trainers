@@ -8,7 +8,8 @@ function MenuLevel(props) {
         name, gameClass, chooseLevel,
         levelsDone, isGameClosed, allLevels,
         difficult,
-        showProgress
+        showProgress,
+        gameDoneColor
     } = props;
     const menuGameClasses = classNames({
         'menu-game': true,
@@ -16,14 +17,16 @@ function MenuLevel(props) {
         'menu-game_closed': isGameClosed,
         'difficult-icon': (difficult + 1)
     });
-    const bgStyle = 'linear-gradient(to right, #d8d0ff ' + (levelsDone/allLevels*100)+ '%, #eee 0%)';
+    const onClickLevel = () => {
+        console.log('click', isGameClosed);
+        isGameClosed ?
+            props.onClick() :
+            chooseLevel();
+    };
+    const bgStyle = 'linear-gradient(to right, ' + gameDoneColor + ' ' + (levelsDone/allLevels*100)+ '%, #eee 0%)';
     return (
         <div className={menuGameClasses}
-             onClick={() => {
-                 isGameClosed ?
-                     props.onClick() :
-                     chooseLevel();
-             }}
+             onClick={onClickLevel}
         >
             <div
                 className={'menu-game__icon'}>

@@ -34,6 +34,7 @@ function MainPage(props) {
                 <MenuGameLevel key={key}
                           name={gamesNames[key]}
                           gameClass={key}
+                               gameDoneColor={'#d8d0ff'}
                           onClick={() => {
                               changeGameClosed(true);
                               gamesClosedName = key;

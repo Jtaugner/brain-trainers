@@ -12,8 +12,11 @@ function CloseDifficultLevel(props) {
         if (showConfetti) {
             const confettiSettings = {
                 target: 'show-confetti',
-                clock: 29,
-                start_from_edge: true
+                clock: 15,
+                start_from_edge: true,
+                colors: [
+                    [226, 84, 84]
+                ]
             };
             const confetti = new ConfettiGenerator(confettiSettings);
             confetti.render();

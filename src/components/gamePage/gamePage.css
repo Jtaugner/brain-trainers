@@ -6,10 +6,6 @@
   justify-content: center;
   align-items: center;
   background-color: #eeeeee;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 .gamePage .top-menu {
