@@ -37,6 +37,7 @@
   height: 15px;
   background: url(../../assets/images/close.png) center center no-repeat;
   background-size: 100%;
+  cursor: pointer;
 }
 
 .close-game p {
@@ -72,6 +73,7 @@
   box-shadow: 2px 3px 3px #fbe5ac;
   font-size: 1.6rem;
   color: #fbc230;
+  cursor: pointer;
 }
 
 .money-img {

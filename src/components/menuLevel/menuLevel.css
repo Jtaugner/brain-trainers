@@ -8,6 +8,7 @@
   border-bottom: 2px solid #fd9896;
   border-radius: 7px;
   margin: 0 auto 13px auto;
+  cursor: pointer;
 }
 
 .numbers-font {

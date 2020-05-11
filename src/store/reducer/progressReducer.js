@@ -13,9 +13,9 @@ function getGameProgress() {
 Object.keys(gamesNames).forEach((key, index)=>{
    //arr[1] - название игры
     const newProgress = getGameProgress();
-    // if(index < 3) newProgress.gameOpen = true;
-    //ДЛЯ ТЕСТИРОВАНИЯ!!!!
-    if(index < 15) newProgress.gameOpen = true;
+    if(index < 3) newProgress.gameOpen = true;
+    // ДЛЯ ТЕСТИРОВАНИЯ!!!!
+    // if(index < 15) newProgress.gameOpen = true;
     gamesProgress[key] = newProgress;
 });
 export const progressReducer = (state = gamesProgress, action) => {
