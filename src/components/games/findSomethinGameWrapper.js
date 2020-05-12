@@ -73,8 +73,8 @@ class FindSomethingGameWrapper extends GameWrapper {
             this.setState({
                 wrongLetter: index
             });
-            if (this.props.difficult > 0 && this.mistakes >= 3) {
-                return this.props.getLose('Вы слишком много раз нажали на неверную букву')
+            if (this.mistakes >= 3) {
+                return this.props.getLose('Вы слишком много раз выбрали неверный ответ')
             }
             timeout2 = setTimeout(() => {
                 console.log('leak');

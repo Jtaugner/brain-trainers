@@ -29,7 +29,6 @@ class GameWrapper extends Component{
         clearInterval(interval)
     }
     componentWillUnmount() {
-        console.log('unmount');
         clearInterval(interval);
     }
 }

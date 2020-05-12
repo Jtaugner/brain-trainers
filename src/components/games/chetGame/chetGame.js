@@ -72,7 +72,7 @@ class ChetGame extends GameWrapper {
                 this.setState({
                     wrongNumber: -1
                 });
-                if (this.props.difficult > 0 && this.mistakes >= 3) {
+                if (this.mistakes >= 3) {
                     return this.props.getLose('Вы слишком много раз выбрали неверное число')
                 }
             }, 200)
