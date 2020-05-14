@@ -19,16 +19,24 @@ function createFieldLetters(height, amount, useSmallWords) {
         if (!lettersPlaces.includes(randPlace)) lettersPlaces.push(randPlace)
     }
     let answerLetter = getRandLetter(useSmallWords);
+    let isUpperCase = answerLetter.toUpperCase()===answerLetter;
     let index = 0;
     while(field.length < length){
-        let randLetter = getRandLetter(useSmallWords);
         if(lettersPlaces.includes(index)){
             field.push(answerLetter);
             index++;
         }else{
-            if(answerLetter !== randLetter){
+            let randLetter = getRandLetter(useSmallWords);
+            if(useSmallWords && Math.random() < 0.20){
+                if(isUpperCase){
+                    field.push(answerLetter.toLowerCase());
+                }else{
+                    field.push(answerLetter.toUpperCase());
+                }
                 index++;
+            }else if(answerLetter !== randLetter){
                 field.push(randLetter);
+                index++;
             }
         }
 

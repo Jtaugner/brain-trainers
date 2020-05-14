@@ -5,13 +5,14 @@ import PlayerLevel from "../playerLevel/playerLevel";
 import Premium from "../premium/premium";
 import Money from "../money/money";
 import TopMenu from "../topMenu/topMenu"
-import {selectGame, selectGameName, selectRandGame} from "../../store/selectors";
+import {selectGame, selectGameName, selectGameProgressWithoutGame, selectRandGame} from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
-import {difficultNames} from "../../projectCommon";
+import {difficultNames, getRules} from "../../projectCommon";
 import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 import {buyLevelsDiff, switchOffConfetti} from "../../store/ac";
+import Rules from "../rules/rules";
 
 const expertCosts = 150;
 const difficultColors =
@@ -24,8 +25,12 @@ const difficultColors =
 
 function DifficultPage(props) {
     const {gameName, game, randomGame,
-        buyLevelsDiff, switchOffConfetti} = props;
+        buyLevelsDiff, switchOffConfetti,
+        progress} = props;
+    let allDoneLevels = progress.doneLevels.reduce((acc, e)=>acc+e, 0);
+    console.log(allDoneLevels);
     let [popUpExpert, setPopUp] = useState(false);
+    let [isRules, showRules] = useState(allDoneLevels === 0);
     return (
         <div className={'mainPage difficultPage'}>
             <TopMenu>
@@ -41,6 +46,7 @@ function DifficultPage(props) {
                 <DifficultLevel
                     key={obj.key}
                     name={obj.difficultName}
+                    progress={progress}
                     game={game}
                     gameClass={obj.key}
                     gameDoneColor={difficultColors[index]}
@@ -59,8 +65,18 @@ function DifficultPage(props) {
                     switchOffConfetti();
                 }}
             />: ''}
-
             <ReturnBack to={'/home'}/>
+            <div className="top-tip__open-rules"
+                 onClick={()=>showRules(true)}
+            >?</div>
+            {
+                isRules ? <Rules
+                    gameName={gameName}
+                    onClick={()=>showRules(false)}
+                >
+                    {getRules(game)}
+                </Rules> : ''
+            }
         </div>
     );
 }
@@ -68,7 +84,8 @@ function DifficultPage(props) {
 export default connect((store, ownProps) => ({
     game: selectGame(store),
     gameName: selectGameName(store),
-    randomGame: selectRandGame(store)
+    randomGame: selectRandGame(store),
+    progress: selectGameProgressWithoutGame(store)
     }),
     (dispatch)=>({
         buyLevelsDiff: (game, level, money) => dispatch(buyLevelsDiff(game, level, money)),

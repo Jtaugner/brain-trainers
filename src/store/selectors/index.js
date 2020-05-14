@@ -19,6 +19,7 @@ export const selectPremium= (store) => store.purchases.isPremium;
 
 export const selectProgress= (store) => store.progress;
 export const selectGameProgress= (store, game) => store.progress[game];
+export const selectGameProgressWithoutGame = (store) => store.progress[selectGame(store)];
 export const selectGameProgressByDifficult= (store) => store.progress[selectGame(store)].doneLevels[selectDifficult(store)];
 
 //adverts

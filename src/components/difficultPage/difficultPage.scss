@@ -1,6 +1,26 @@
 @import '../../root';
 
+.top-tip__open-rules{
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
 
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+
+  background-color: $darkMain;
+  color: white;
+
+  border-radius: 50%;
+
+  box-shadow: 2px 2px 3px #d8d0ff;
+}
 
 
 @media (min-width: 359px) {

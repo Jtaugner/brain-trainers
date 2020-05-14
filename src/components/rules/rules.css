@@ -1,0 +1,37 @@
+.rules {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5rem;
+  background-color: #eeeeee;
+  padding: 40px 20px;
+}
+
+.rules h2 {
+  font-size: 2.2rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.rules p {
+  margin-bottom: 10px;
+}
+
+.close-rules {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  padding: 8px 25px;
+  background-color: #b09cfd;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=rules.css.map */

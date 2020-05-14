@@ -39,9 +39,7 @@ function DifficultLevel(props) {
 }
 
 export default connect(
-    (store, ownProps) => ({
-        progress: selectGameProgress(store, ownProps.game)
-    }),
+    null,
     (dispatch, ownProps) => ({
         chooseDifficult: () => dispatch(chooseDifficult(ownProps.difficult))
     })

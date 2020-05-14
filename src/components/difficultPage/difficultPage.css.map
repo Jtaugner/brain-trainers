@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"difficultPage.css"}
+{"version":3,"sourceRoot":"","sources":["difficultPage.scss","../../root.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EAEA;EACA;EAEA;EACA;EACA;EAEA;EAEA,kBCfS;EDgBT;EAEA;EAEA","file":"difficultPage.css"}
