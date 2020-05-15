@@ -1,12 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './root.css'
 import './App.css';
 import {connect} from "react-redux";
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import MainPage from "./components/mainPage";
 import Shop from "./components/shop";
 import {Route, Switch} from "react-router-dom";
-import BottomMainMenu from "./components/bottomMainMenu/bottomMenu";
 import Settings from "./components/settings";
 import {selectNotEnoughMoney, selectSettings} from "./store/selectors";
 import DifficultPage from "./components/difficultPage/difficultPage";
@@ -14,42 +12,77 @@ import LevelsPage from "./components/levelsPage/levelsPage";
 import GamePage from "./components/gamePage/gamePage";
 import NotEnoughMoneyPopUp from "./components/notEnoughMoneyPopUp/notEnoughMoneyPopUp";
 import GameSettingsPage from "./components/gameSettingsPage/gameSettingsPage";
+import ErrorMessage from "./components/errorMessage/errorMessage";
 
 
-function App(props) {
-    const {settings, ysdkGame, notEnoughMoney} = props;
-    return (
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isError: false
+        };
+
+    }
+
+    componentDidCatch(error, info) {
+        // Послать ошибку в яндекс метрику
+        console.log('ERROR');
+        this.setState({
+            isError: true
+        })
+    }
+
+    render() {
+        if (this.state.isError) {
+            return (
+                <>
+                    <ErrorMessage
+                        getHome={true}
+                        onClick={
+                            () => {
+                                this.setState({
+                                    isError: false
+                                })
+                            }
+                        }/>
+                </>
+            )
+        }
+        return (
             <>
-            <Switch
-              >
-                <Route path={'/home'}
-                       render={() => <MainPage/>}
-                />
-                <Route path={'/shop'}
-                       render={() => <Shop ysdkGame={ysdkGame}/>}/>
+                <Switch
+                >
+                    <Route path={'/home'}
+                           render={() => <MainPage/>}
+                    />
+                    <Route path={'/shop'}
+                           render={() => <Shop ysdkGame={this.props.ysdkGame}/>}/>
 
-                <Route path={'/settings'}
-                       render={() => <Settings/>}/>
+                    <Route path={'/settings'}
+                           render={() => <Settings/>}/>
 
-                <Route path={'/difficult'}
-                       render={() => <DifficultPage/>}
-                />
-                <Route path={'/levels'}
-                       render={() => <LevelsPage/>}
-                />
-                <Route path={'/gameSettings'}
-                       render={() => <GameSettingsPage/>}
-                />
-                <Route path={'/game'}
-                       render={() => <GamePage/>}/>
-            </Switch>
-            {settings ? <Settings/> : ''}
-            {notEnoughMoney ? <NotEnoughMoneyPopUp/> : ''}
-        </>
-    );
+                    <Route path={'/difficult'}
+                           render={() => <DifficultPage/>}
+                    />
+                    <Route path={'/levels'}
+                           render={() => <LevelsPage/>}
+                    />
+                    <Route path={'/gameSettings'}
+                           render={() => <GameSettingsPage/>}
+                    />
+                    <Route path={'/game'}
+                           render={() => <GamePage/>}/>
+                </Switch>
+                {this.props.settings ? <Settings/> : ''}
+                {this.props.notEnoughMoney ? <NotEnoughMoneyPopUp/> : ''}
+            </>
+        );
+    }
+
 }
 
-export default connect((store)=>({
-    settings: selectSettings(store),
-    notEnoughMoney: selectNotEnoughMoney(store)
-}))(App);
+export default connect((store) =>
+    ({
+        settings: selectSettings(store),
+        notEnoughMoney: selectNotEnoughMoney(store)
+    }))(App);

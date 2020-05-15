@@ -1,0 +1,8 @@
+@import '../../root';
+
+.error-message .close-game__header{
+  background-color: $wrong;
+}
+.error-message{
+  border-color: $wrong;
+}
