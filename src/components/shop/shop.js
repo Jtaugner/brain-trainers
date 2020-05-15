@@ -11,6 +11,7 @@ import ShopItemPremium from "./shop-item/shop-item-premium";
 
 function Shop(props) {
     const {money, rewardedVideoTime, ysdkGame} = props;
+    ysdkGame.adv.showFullscreenAdv();
     return (
         <div className="shop">
             <TopMenu><div className={'shop__header'}>МАГАЗИН</div></TopMenu>

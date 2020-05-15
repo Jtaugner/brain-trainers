@@ -5,18 +5,242 @@
     <title>FindWord create</title>
 </head>
 <body>
+<script src="words.js"></script>
 <script>
+    // let someWords = [];
+    // const shuffle = (arr)=> {
+    //     let j, temp;
+    //     for (let i = arr.length - 1; i > 0; i--) {
+    //         j = Math.floor(Math.random() * (i + 1));
+    //         temp = arr[j];
+    //         arr[j] = arr[i];
+    //         arr[i] = temp;
+    //     }
+    //     return arr;
+    // };
+    // words = shuffle(words);
+    // let index = 0;
+    // function testWord(word) {
+    //     let arr = word.split('');
+    //     for(let i = 0; i <  word.length; i++){
+    //         if(arr.slice(i+1).includes(word[i])) return false;
+    //     }
+    //     return true;
+    // }
+    // while(someWords.length < 3000){
+    //     if(words[index].length >= 3 && words[index].length <= 7 && testWord(words[index])){
+    //         someWords.push(words[index]);
+    //     }
+    //     index++;
+    // }
+    // localStorage.setItem('someWords', JSON.stringify(someWords));
     const easyLevels = [];
-
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 3}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 6}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 6}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        easyLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 7}
+        )
+    }
     const mediumLevels = [];
 
-
-
-
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 3, sec: 80 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 4, sec: 100 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 3, sec: 70 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 4, sec: 90 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 5, sec: 105 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 5, sec: 116 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 7, sec: 154 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 5, sec: 112 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 7, sec: 180 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        mediumLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 7, sec: 166 - i * 4}
+        )
+    }
     const hardLevels = [];
-
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 3, sec: 45 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 5, sec: 70 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 3, sec: 45 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 4, sec: 56 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 5, sec: 85 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 7, sec: 115 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 5, sec: 100 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        hardLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 6, sec: 120 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++) {
+        hardLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 7, sec: 160 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++) {
+        hardLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 7, sec: 140 - i * 4}
+        )
+    }
     const expertLevels = [];
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 5, wordsAmount: 3, rounds: 5, sec: 60 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 3, sec: 40 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 6, wordsAmount: 3, rounds: 4, sec: 50 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 5, sec: 70 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 6, wordsAmount: 4, rounds: 7, sec: 100 - i * 5}
+        )
+    }
 
+
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 7, sec: 114 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++){
+        expertLevels.push(
+            {rows: 7, wordsAmount: 4, rounds: 8, sec: 130 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++) {
+        expertLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 9, sec: 150 - i * 5}
+        )
+    }
+    for(let i = 0; i < 5; i++) {
+        expertLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 10, sec: 170 - i * 4}
+        )
+    }
+    for(let i = 0; i < 5; i++) {
+        expertLevels.push(
+            {rows: 7, wordsAmount: 5, rounds: 10, sec: 150 - i * 4}
+        )
+    }
     console.log(easyLevels);
     console.log(mediumLevels);
     console.log(hardLevels);

@@ -3,20 +3,22 @@
 
 .findWord__field{
   background-color: white;
+  margin: 0 auto;
 }
 .findWord__cell{
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
 
   text-align: center;
   vertical-align: middle;
-  font-size: 3rem;
 
+  font-size: 2.6rem;
   text-transform: uppercase;
+
 }
 .findWord-game__done-words{
   text-align: center;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   color: #414141;
   margin-bottom: 10px;
 }
