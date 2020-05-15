@@ -8,6 +8,7 @@ class WordInTextGame extends GameWrapper {
     words = this.props.levelInfo.text.split(' ');
     rounds = this.props.levelInfo.rounds;
     doneWords = [];
+    mistakes = 0;
     componentWillUnmount() {
         clearTimeout(timeoutGame);
         clearTimeout(timeout);
@@ -30,6 +31,7 @@ class WordInTextGame extends GameWrapper {
 
     getRandWord(){
         let newWord = deleteNonLetters(getWord(this.words));
+        if(this.state.rightAnswers % 12 === 0) this.doneWords = [];
         if(this.doneWords.includes(newWord) || newWord === '' || newWord === '-'){
             this.getRandWord();
         }else{
@@ -50,7 +52,11 @@ class WordInTextGame extends GameWrapper {
                 rightAnswer = true;
                 this.setState({rightWordIndex: index, rightAnswers})
             }else{
-                this.setState({wrongWordIndex: index})
+                this.mistakes++;
+                this.setState({wrongWordIndex: index});
+                if(this.mistakes >= 3) {
+                    this.props.getLose('К сожалению, вы сделали слишком много ошибок (3)');
+                }
             }
             if(rightAnswers === this.props.levelInfo.rounds){
                 timeout = setTimeout(()=>{
@@ -109,7 +115,6 @@ class WordInTextGame extends GameWrapper {
 export default WordInTextGame;
 function getWord(words) {
    let word = deleteNonLetters(words[Math.floor(Math.random()*words.length)]);
-   console.log(word);
    if(word.length >= 4){
        return word;
    }else{

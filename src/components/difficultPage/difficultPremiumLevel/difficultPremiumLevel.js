@@ -1,8 +1,10 @@
 import React from 'react';
 import './difficultPremiumLevel.scss'
+import {Link} from "react-router-dom";
 
-function DifficultPremiumLevel(props) {
+function DifficultPremiumLevel() {
     return (
+        <Link to={'/gameSettings'}>
         <div className={'menu-game premium-game'}
              onClick={()=>{
                  console.log('start Premium game');
@@ -15,6 +17,7 @@ function DifficultPremiumLevel(props) {
                 <div className="game-desc">Создай свою игру</div>
             </div>
         </div>
+        </Link>
     );
 }
 

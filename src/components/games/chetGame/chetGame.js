@@ -6,7 +6,7 @@ let timeout;
 
 class ChetGame extends GameWrapper {
     rounds = this.props.levelInfo.rounds;
-    rows = this.props.levelInfo.rows;
+    rows = this.props.levelInfo.smallRows;
     numberLength = this.props.levelInfo.numberLength;
     amount = this.props.levelInfo.amount;
     answers;

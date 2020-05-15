@@ -18,7 +18,7 @@ class FindWordGame extends GameWrapper {
     selectedMode = false;
     rounds = this.props.levelInfo.rounds;
     wordsAmount = this.props.levelInfo.wordsAmount;
-    rows = this.props.levelInfo.rows;
+    rows = this.props.levelInfo.rowsLength;
     componentWillUnmount() {
         clearTimeout(timeout);
         this.clearTimer();

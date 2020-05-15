@@ -13,6 +13,7 @@ import DifficultPage from "./components/difficultPage/difficultPage";
 import LevelsPage from "./components/levelsPage/levelsPage";
 import GamePage from "./components/gamePage/gamePage";
 import NotEnoughMoneyPopUp from "./components/notEnoughMoneyPopUp/notEnoughMoneyPopUp";
+import GameSettingsPage from "./components/gameSettingsPage/gameSettingsPage";
 
 
 function App(props) {
@@ -35,6 +36,9 @@ function App(props) {
                 />
                 <Route path={'/levels'}
                        render={() => <LevelsPage/>}
+                />
+                <Route path={'/gameSettings'}
+                       render={() => <GameSettingsPage/>}
                 />
                 <Route path={'/game'}
                        render={() => <GamePage/>}/>
