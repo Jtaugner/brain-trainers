@@ -137,9 +137,9 @@ class RunWordsGame extends GameWrapper {
             this.setState({
                 wrongWord: word
             });
-            if(this.props.levelInfo.difficult > 0){
+            if(this.props.difficult > 0){
                 timeout = setTimeout(()=>{
-                    this.getLose('Вы выбрали неверное слово. Попробуйте ещё раз!');
+                    this.props.getLose('Вы выбрали неверное слово. Попробуйте ещё раз!');
                 }, 500);
             }else{
                 timeout = setTimeout(()=>{

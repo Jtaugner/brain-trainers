@@ -79,10 +79,6 @@
   color: #fbc230;
 }
 
-.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
-  background-color: #e7e7e7;
-}
-
 .game-done__button {
   width: 35px;
   height: 35px;

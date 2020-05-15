@@ -78,7 +78,9 @@ function GamePage(props) {
         setGameDone(false);
         timeout = setTimeout(()=>{
             if(nextLevel) chooseLevel(level + 1);
-            console.log(nextLevel, level);
+            if(randomGame){
+                level = Math.floor(Math.random() * levelsCount);
+            }
             setIsGame(true);
         }, 500);
 
@@ -136,6 +138,7 @@ function GamePage(props) {
                 >
                     {isWin ? <GameDone level={level}
                                        exp={exp}
+                                       randomGame={randomGame}
                                        money={money}
                                        allMoney={allMoney}
                                        playAgain={()=>playAgain(false)}
