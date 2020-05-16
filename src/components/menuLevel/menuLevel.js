@@ -18,7 +18,6 @@ function MenuLevel(props) {
         'difficult-icon': (difficult + 1)
     });
     const onClickLevel = () => {
-        console.log('click', isGameClosed);
         isGameClosed ?
             props.onClick() :
             chooseLevel();

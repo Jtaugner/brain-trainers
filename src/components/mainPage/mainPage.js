@@ -9,9 +9,9 @@ import MenuGameLevel from "../menuGameLevel/menuGameLevel";
 import {gamesNames} from "../../projectCommon";
 import Gift from "../gift";
 import CloseGame from "../close-game";
-import {getGameLevelOpenCosts, getGameLevelOpenLevel} from '../../projectCommon'
+import {getGameLevelOpenCosts} from '../../projectCommon'
 import RandomMenuGame from '../randomMenuGame/randomMenuGame'
-import {buyGame, changeRandomGame, switchOffConfetti} from "../../store/ac";
+import {buyGame, switchOffConfetti} from "../../store/ac";
 import BottomMainMenu from "../bottomMainMenu/bottomMenu";
 let indexGame = 0;
 let gamesClosedName = [];

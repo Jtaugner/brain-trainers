@@ -2,7 +2,7 @@ import {combineReducers} from 'redux'
 import {moneyReducer} from "./moneyReducer";
 import {levelReducer} from "./levelReducer";
 import {expReducer} from "./expReducer";
-import {purchasesReducer} from "./purchasesReducer";
+import {premiumReducer} from "./premiumReducer";
 import {progressReducer} from "./progressReducer";
 import {settingsReducer} from "./settingsReducer";
 import {soundsReducer} from "./soundsReducer";
@@ -13,13 +13,14 @@ import {advTimeReducer, rewardedVideoTimeReducer} from "./advTimeReducer";
 import {randomGameReducer} from "./randomGameReducer";
 import {showConfettiReducer} from "./showConfettiReducer";
 import {notEnoughMoneyReducer} from "./notEnoughMoneyReducer";
+import {levelInfoReducer} from "./levelInfoReducer";
+import {premiumGameReducer} from "./premiumGameReducer";
 
 const reducer = combineReducers({
 
     money: moneyReducer,
     playerLevel: levelReducer,
     exp: expReducer,
-    purchases: purchasesReducer,
     progress: progressReducer,
     settings: settingsReducer,
     sounds: soundsReducer,
@@ -30,7 +31,10 @@ const reducer = combineReducers({
     rewardedVideoTime: rewardedVideoTimeReducer,
     randomGame: randomGameReducer,
     showConfetti: showConfettiReducer,
-    notEnoughMoney: notEnoughMoneyReducer
+    notEnoughMoney: notEnoughMoneyReducer,
+    levelInfo: levelInfoReducer,
+    premiumGame: premiumGameReducer,
+    premium: premiumReducer
 
 });
 

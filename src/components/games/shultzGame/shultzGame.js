@@ -52,9 +52,9 @@ class ShultzGame extends GameWrapper {
     };
 
     render() {
-        const tableSize = (window.innerWidth > 650) ? 650 : window.innerWidth - 5;
+        const shultzClass = 'shultz-game shultz-width-' + this.width;
         return (
-            <div className={'shultz-game ' + ('shultz-width-' + this.width)}
+            <div className={shultzClass}
             >
                 <div className="game-page__flex">
                     <div className="next-num">Следующее: {this.state.nowNumber}</div>
@@ -62,7 +62,6 @@ class ShultzGame extends GameWrapper {
                 </div>
 
                 <table
-                    style={{width: tableSize, height: tableSize}}
                 >
                     <tbody>
                     {

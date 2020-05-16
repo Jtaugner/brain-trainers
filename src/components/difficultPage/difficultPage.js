@@ -30,6 +30,7 @@ function DifficultPage(props) {
     let allDoneLevels = progress.doneLevels.reduce((acc, e)=>acc+e, 0);
     console.log(allDoneLevels);
     let [popUpExpert, setPopUp] = useState(false);
+    let [popUpPremium, setPremiumPopUp] = useState(false);
     let [isRules, showRules] = useState(allDoneLevels === 0);
     return (
         <div className={'mainPage difficultPage'}>
@@ -89,6 +90,6 @@ export default connect((store, ownProps) => ({
     }),
     (dispatch)=>({
         buyLevelsDiff: (game, level, money) => dispatch(buyLevelsDiff(game, level, money)),
-        switchOffConfetti: () => dispatch(switchOffConfetti())
+        switchOffConfetti: () => dispatch(switchOffConfetti()),
     })
 )(DifficultPage);

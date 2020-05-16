@@ -3,8 +3,8 @@ import {
     ADD_EXP,
     ADD_MONEY, BUY_GAME, BUY_LEVELS_DIFF,
     CHANGE_EXP_FROM_PLAYER_DATA,
-    CHANGE_LEVEL_FROM_PLAYER_DATA,
-    CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY,
+    CHANGE_LEVEL_FROM_PLAYER_DATA, CHANGE_LEVEL_INFO,
+    CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY, CHANGE_PREMIUM_GAME,
     CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
@@ -99,4 +99,14 @@ export const switchOffConfetti = ()=>({
 export const changeNotEnoughMoney = (show) =>({
     type: CHANGE_NOT_ENOUGH_MONEY,
     show
+});
+
+
+export const changeLevelInfo = (levelInfo) => ({
+    type: CHANGE_LEVEL_INFO,
+    levelInfo
+});
+export const changePremiumGame= (premiumGame) => ({
+    type: CHANGE_PREMIUM_GAME,
+    premiumGame
 });

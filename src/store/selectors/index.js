@@ -15,7 +15,7 @@ export const selectDifficultName= (store) => difficultNames[selectDifficult(stor
 export const selectGameLevel = (store) => store.gameLevel;
 
 export const selectMoney= (store) => store.money;
-export const selectPremium= (store) => store.purchases.isPremium;
+export const selectPremium= (store) => store.premium;
 
 export const selectProgress= (store) => store.progress;
 export const selectGameProgress= (store, game) => store.progress[game];
@@ -30,3 +30,6 @@ export const selectRandGame = (store) => store.randomGame;
 export const selectShowConfetti = (store) => store.showConfetti;
 
 export const selectNotEnoughMoney = (store) => store.notEnoughMoney;
+
+export const selectPremiumGame = (store) => store.premiumGame
+export const selectLevelInfo = (store) => store.levelInfo
