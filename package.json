@@ -24,8 +24,7 @@
     "build": "react-scripts build && npm run make-SM",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "make-SM": "node ./make-sw-and-manifest.js",
-    "loc": "./node_modules/.bin/cloc --exclude-dir node_modules,.meteor,.vscode,typings,typings-own,.git,.idea,build ./"
+    "make-SM": "node ./make-sw-and-manifest.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,7 +44,6 @@
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.1",
     "redux-devtools-extension": "^2.13.8",
-    "node-sass": "^4.13.1",
-    "cloc": "^2.2.0"
+    "node-sass": "^4.13.1"
   }
 }

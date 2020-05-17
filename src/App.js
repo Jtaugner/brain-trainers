@@ -6,15 +6,15 @@ import MainPage from "./components/mainPage";
 import Shop from "./components/shop";
 import {Route, Switch} from "react-router-dom";
 import Settings from "./components/settings";
-import {selectNotEnoughMoney, selectSettings} from "./store/selectors";
+import {selectNewLevel, selectNotEnoughMoney, selectSettings} from "./store/selectors";
 import DifficultPage from "./components/difficultPage/difficultPage";
 import LevelsPage from "./components/levelsPage/levelsPage";
 import GamePage from "./components/gamePage/gamePage";
 import NotEnoughMoneyPopUp from "./components/notEnoughMoneyPopUp/notEnoughMoneyPopUp";
 import GameSettingsPage from "./components/gameSettingsPage/gameSettingsPage";
 import ErrorMessage from "./components/errorMessage/errorMessage";
-
-
+import NewLevelPopUp from './components/newLevelPopUp/newLevelPopUp'
+import {closeNewLevel} from "./store/ac";
 class App extends Component {
     constructor(props) {
         super(props);
@@ -75,14 +75,24 @@ class App extends Component {
                 </Switch>
                 {this.props.settings ? <Settings/> : ''}
                 {this.props.notEnoughMoney ? <NotEnoughMoneyPopUp/> : ''}
+                {this.props.newLevel ? <NewLevelPopUp onClick={() => {this.props.closeNewLevel()}}/> : ''}
+
             </>
         );
     }
 
 }
 
-export default connect((store) =>
+export default connect(
+    (store) =>
     ({
         settings: selectSettings(store),
-        notEnoughMoney: selectNotEnoughMoney(store)
-    }))(App);
+        notEnoughMoney: selectNotEnoughMoney(store),
+        newLevel: selectNewLevel(store)
+    }),
+    (dispatch) =>
+        ({
+            closeNewLevel: () => dispatch(closeNewLevel())
+        })
+
+)(App);

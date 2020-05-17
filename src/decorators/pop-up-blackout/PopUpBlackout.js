@@ -6,8 +6,13 @@ import {Link} from "react-router-dom";
 function popUpBlackout(OriginalComponent) {
     //В onClick должна приходить функция закрытия модального окна
     return (props) => {
+        let cannotClose = true;
+        setTimeout(()=>{
+            cannotClose = false;
+        }, 400);
         disableBodyScroll();
         const enableScrollAndExit = () => {
+            if(cannotClose) return;
             enableBodyScroll();
             props.onClick();
         };

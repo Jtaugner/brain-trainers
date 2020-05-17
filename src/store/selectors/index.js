@@ -31,5 +31,8 @@ export const selectShowConfetti = (store) => store.showConfetti;
 
 export const selectNotEnoughMoney = (store) => store.notEnoughMoney;
 
-export const selectPremiumGame = (store) => store.premiumGame
-export const selectLevelInfo = (store) => store.levelInfo
+export const selectPremiumGame = (store) => store.premiumGame;
+export const selectLevelInfo = (store) => store.levelInfo;
+export const selectPremiumTime = (store) => store.premiumTime;
+
+export const selectNewLevel = (store) => store.newLevel;

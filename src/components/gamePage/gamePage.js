@@ -55,19 +55,20 @@ function GamePage(props) {
     let [isGame, setIsGame] = useState(true);
     let [gameDone, setGameDone] = useState(false);
     let [pause, setPause] = useState(false);
-    let exp, money;
-    if (doneLevels === level) {
-        exp = moneyAndExpPerDifficult[difficult].exp;
-        money = moneyAndExpPerDifficult[difficult].money;
-    } else {
-        exp = 0;
-        money = 0;
-    }
+    let [exp, setExp] = useState(0);
+    let [money, setMoney] = useState(0);
     const getWin = () => {
         if (gameDone) return;
-        if (doneLevels === level && !randomGame && !premiumGame) {
-            addMoney(money);
-            addExp(exp);
+
+        if (doneLevels === level
+            && !randomGame
+            && !premiumGame
+        ) {
+            setExp(moneyAndExpPerDifficult[difficult].exp);
+            setMoney(moneyAndExpPerDifficult[difficult].money);
+
+            addMoney(moneyAndExpPerDifficult[difficult].money);
+            addExp(moneyAndExpPerDifficult[difficult].exp);
             if (levelsCount > level + 1) {
                 addDoneLevels(game, difficult, level + 1);
             }

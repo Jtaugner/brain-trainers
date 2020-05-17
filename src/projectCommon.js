@@ -1,17 +1,5 @@
 import React from "react";
 
-const valueForDoneLevel = [
-    {money: 1, exp: 10},
-    {money: 2, exp: 25},
-    {money: 4, exp: 40},
-    {money: 6, exp: 70}
-];
-export const getMoneyForGameLevel = (difficult) => {
-    return valueForDoneLevel[difficult].money;
-};
-export const getExpForGameLevel = (difficult) => {
-    return valueForDoneLevel[difficult].exp;
-};
 const gameLevelOpen = [
     0, 0, 0, 100, 300, 600, 1000, 1400, 1800
 ];
@@ -19,7 +7,7 @@ export const getGameLevelOpenCosts = (lvl) => {
     return gameLevelOpen[lvl];
 };
 const level = [
-    {exp: 50, money: 5},
+    {exp: 50, premium: 24 * 60 * 60 * 1000},
     {exp: 100, money: 10},
     {exp: 250, money: 15},
     {exp: 400, money: 25},
@@ -32,15 +20,14 @@ const level = [
     {exp: 4700, money: 140},
     {exp: 6000, money: 180},
     {exp: 7500, money: 230},
-    {exp: 9200, money: 300},
+    {exp: 9200, premium: 2 * 24 * 60 * 60 * 1000},
 ];
 
 export const getExpLevel = (lvl) => {
-    console.log(lvl, level[lvl], level[lvl].exp);
     return level[lvl].exp
 };
-export const getMoneyLevel= (lvl) => {
-    return level[lvl].money
+export const getLevelPrize= (lvl) => {
+    return level[lvl];
 };
 
 export const gamesNames = {

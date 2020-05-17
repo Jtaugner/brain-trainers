@@ -4,12 +4,12 @@ import {
     ADD_MONEY, BUY_GAME, BUY_LEVELS_DIFF,
     CHANGE_EXP_FROM_PLAYER_DATA,
     CHANGE_LEVEL_FROM_PLAYER_DATA, CHANGE_LEVEL_INFO,
-    CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY, CHANGE_PREMIUM_GAME,
+    CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY, CHANGE_PREMIUM_GAME, CHANGE_PREMIUM_TIME,
     CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
-    CHOOSE_LEVEL,
-    SKIP_LEVEL, SWITCH_OFF_CONFETTI,
+    CHOOSE_LEVEL, CLOSE_NEW_LEVEL, SET_PREMIUM,
+     SWITCH_OFF_CONFETTI,
     TOGGLE_SETTINGS,
     TOGGLE_SOUNDS
 } from "../common";
@@ -109,4 +109,17 @@ export const changeLevelInfo = (levelInfo) => ({
 export const changePremiumGame= (premiumGame) => ({
     type: CHANGE_PREMIUM_GAME,
     premiumGame
+});
+
+
+export const changePremiumTime = (time) => ({
+    type: CHANGE_PREMIUM_TIME,
+    time
+});
+export const setPremium = (isPremium) => ({
+    type: SET_PREMIUM,
+    isPremium
+});
+export const closeNewLevel = () => ({
+    type: CLOSE_NEW_LEVEL
 });

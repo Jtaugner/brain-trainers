@@ -15,6 +15,8 @@ import {showConfettiReducer} from "./showConfettiReducer";
 import {notEnoughMoneyReducer} from "./notEnoughMoneyReducer";
 import {levelInfoReducer} from "./levelInfoReducer";
 import {premiumGameReducer} from "./premiumGameReducer";
+import {premiumTimeReducer} from "./premiumTimeReducer";
+import {newLevelReducer} from "./newLevelReducer";
 
 const reducer = combineReducers({
 
@@ -34,7 +36,9 @@ const reducer = combineReducers({
     notEnoughMoney: notEnoughMoneyReducer,
     levelInfo: levelInfoReducer,
     premiumGame: premiumGameReducer,
-    premium: premiumReducer
+    premium: premiumReducer,
+    premiumTime: premiumTimeReducer,
+    newLevel: newLevelReducer
 
 });
 

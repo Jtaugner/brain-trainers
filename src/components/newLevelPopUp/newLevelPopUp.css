@@ -1,0 +1,44 @@
+.new-level-popUp {
+  border-color: #F3C85A;
+  padding-bottom: 15px;
+  animation: 1s newLevelPopUp linear forwards;
+}
+
+.new-level-popUp .close-game__header {
+  background-color: #F3C85A;
+}
+
+.prize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fbc230;
+}
+
+.prize .money-img {
+  width: 35px;
+  height: 35px;
+}
+
+.premium-img {
+  width: 45px;
+  height: 45px;
+  margin-left: 5px;
+  background: url(../../assets/images/premium.png) center center no-repeat;
+  background-size: 100%;
+}
+
+@keyframes newLevelPopUp {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=newLevelPopUp.css.map */
