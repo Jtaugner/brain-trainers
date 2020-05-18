@@ -2,10 +2,12 @@ import React from 'react';
 import './notEnoughMoneyPopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
 import {connect} from "react-redux";
-import {changeNotEnoughMoney} from "../../store/ac";
-
+import {changeNotEnoughMoney, chooseLevel} from "../../store/ac";
+import {selectSounds} from "../../store/selectors";
+import {notEnoughMoneySound} from '../../sounds'
 function NotEnoughMoneyPopUp(props) {
-    const {onClick} = props;
+    const {onClick, isSounds} = props;
+    if(isSounds) notEnoughMoneySound.play();
     return (
         <div className={'close-game not-enough-money'}>
             <div className={'close-game__header'}>
@@ -18,7 +20,9 @@ function NotEnoughMoneyPopUp(props) {
     );
 }
 
-export default connect(null,
+export default connect((store) => ({
+        isSounds: selectSounds(store)
+    }),
     (dispatch)=>({
         onClick: ()=>dispatch(changeNotEnoughMoney(false))
     })

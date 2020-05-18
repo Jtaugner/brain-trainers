@@ -62,7 +62,7 @@ export const difficultNames = [
 ];
 
 export const moneyAndExpPerDifficult = [
-    {exp: 10, money: 1}, //500 50 с полного уровня
+    {exp: 100, money: 1}, //500 50 с полного уровня
     {exp: 25, money: 2}, //1250 100
     {exp: 40, money: 4}, //2000 200
     {exp: 60, money: 7}, //3000 350

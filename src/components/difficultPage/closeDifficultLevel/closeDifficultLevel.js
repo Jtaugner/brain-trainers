@@ -3,13 +3,18 @@ import './closeDifficultLevel.scss'
 import popUpBlackout from "../../../decorators/pop-up-blackout/PopUpBlackout";
 import {connect} from "react-redux";
 import ConfettiGenerator from "confetti-js";
-import {selectShowConfetti} from "../../../store/selectors";
+import {selectShowConfetti, selectSounds} from "../../../store/selectors";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
+import {openNewGameSound} from "../../../sounds";
 
 function CloseDifficultLevel(props) {
-    const {onClick, name, number, buyLevelsDiff, showConfetti, money} = props;
+    const {onClick, name, number, buyLevelsDiff,
+        showConfetti, money, isSounds} = props;
     useEffect(() => {
         if (showConfetti) {
+            if(isSounds){
+                openNewGameSound.play()
+            }
             const confettiSettings = {
                 target: 'show-confetti',
                 clock: 15,
@@ -70,6 +75,7 @@ function CloseDifficultLevel(props) {
 
 export default connect(
     (store) => ({
-        showConfetti: selectShowConfetti(store)
+        showConfetti: selectShowConfetti(store),
+        isSounds: selectSounds(store)
     })
 )(popUpBlackout(CloseDifficultLevel));

@@ -102,7 +102,11 @@ const NewAudioContext = (function () {
     return WebAudioAPISound;
 })();
 
-// export const doneAnswerSound = new NewAudioContext('doneAnswer.mp3');
-
+export const clickSound = new NewAudioContext('click.mp3');
+export const newLevelSound = new NewAudioContext('newLevel.mp3');
+export const loseLevelSound = new NewAudioContext('loseLevel.mp3');
+export const doneLevelSound = new NewAudioContext('doneLevel.mp3');
+export const notEnoughMoneySound = new NewAudioContext('notEnoughMoney.mp3');
+export const openNewGameSound = new NewAudioContext('openNewGame.mp3');
 
 

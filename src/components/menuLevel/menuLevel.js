@@ -1,5 +1,8 @@
 import React from 'react';
 import './menuLevel.scss'
+import {clickSound} from "../../sounds";
+import {selectSounds} from "../../store/selectors";
+import {connect} from "react-redux";
 
 const classNames = require('classnames');
 
@@ -9,7 +12,8 @@ function MenuLevel(props) {
         levelsDone, isGameClosed, allLevels,
         difficult,
         showProgress,
-        gameDoneColor
+        gameDoneColor,
+        isSounds
     } = props;
     const menuGameClasses = classNames({
         'menu-game': true,
@@ -18,9 +22,13 @@ function MenuLevel(props) {
         'difficult-icon': (difficult + 1)
     });
     const onClickLevel = () => {
-        isGameClosed ?
-            props.onClick() :
+        if(isGameClosed){
+            props.onClick()
+        }else{
             chooseLevel();
+            if(isSounds) clickSound.play();
+        }
+
     };
     const bgStyle = 'linear-gradient(to right, ' + gameDoneColor + ' ' + (levelsDone/allLevels*100)+ '%, #eee 0%)';
     return (
@@ -47,4 +55,8 @@ function MenuLevel(props) {
     )
 }
 
-export default MenuLevel;
+export default connect(
+    (store)=>({
+    isSounds: selectSounds(store)
+})
+)(MenuLevel);

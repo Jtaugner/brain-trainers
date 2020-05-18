@@ -1,10 +1,10 @@
 import {selectMoney} from "../selectors";
-import {CHANGE_NOT_ENOUGH_MONEY} from "../common";
 import {changeNotEnoughMoney} from "../ac";
 
 export const moneyOperation  = store => next => action => {
     if(action.buying){
-        let money = selectMoney(store.getState());
+        const state=store.getState();
+        let money = selectMoney(state);
         if(money >= action.payload.money){
             next({
                 type: 'SUBTRACT_MONEY',

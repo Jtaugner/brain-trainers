@@ -8,7 +8,7 @@ import {
     selectGameLevel,
     selectGameName,
     selectGameProgressByDifficult, selectLevelInfo,
-    selectMoney, selectPremiumGame, selectRandGame
+    selectMoney, selectPremiumGame, selectRandGame, selectSounds
 } from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import ShultzGame from '../games/shultzGame/shultzGame'
@@ -26,6 +26,7 @@ import RunWordsGame from "../games/runWordsGame/runWordsGame";
 import ChetGame from "../games/chetGame/chetGame";
 import FindLettersGame from "../games/findLettersGame/findLettersGame";
 import CoupleGame from "../games/coupleGame/coupleGame";
+import {doneLevelSound, loseLevelSound} from "../../sounds";
 
 let timeout;
 
@@ -34,7 +35,8 @@ function GamePage(props) {
         gameName, game, difficult, allMoney,
         doneLevels, randomGame,
         addMoney, addExp, chooseLevel, addDoneLevels,
-        premiumGame, premiumLevelInfo
+        premiumGame, premiumLevelInfo,
+        isSounds
 
     } = props;
     let {level} = props;
@@ -59,7 +61,11 @@ function GamePage(props) {
     let [money, setMoney] = useState(0);
     const getWin = () => {
         if (gameDone) return;
-
+        if(isSounds){
+            setTimeout(()=>{
+                doneLevelSound.play();
+            }, 500)
+        }
         if (doneLevels === level
             && !randomGame
             && !premiumGame
@@ -78,6 +84,11 @@ function GamePage(props) {
     };
     const getLose = (msg) => {
         if (gameDone) return;
+        if(isSounds){
+            setTimeout(()=>{
+                loseLevelSound.play()
+            }, 500);
+        }
         setLoseMsg(msg);
         setLose(true);
         setGameDone(true);
@@ -208,7 +219,8 @@ export default connect((store) => ({
         allMoney: selectMoney(store),
         doneLevels: selectGameProgressByDifficult(store),
         premiumGame: selectPremiumGame(store),
-        premiumLevelInfo: selectLevelInfo(store)
+        premiumLevelInfo: selectLevelInfo(store),
+        isSounds: selectSounds(store)
     }),
     (dispatch) => ({
         chooseLevel: (level) => dispatch(chooseLevel(level)),

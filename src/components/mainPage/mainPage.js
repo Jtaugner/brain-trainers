@@ -32,13 +32,13 @@ function MainPage(props) {
             <RandomMenuGame />
             {Object.keys(gamesNames).map((key, index) =>
                 <MenuGameLevel key={key}
-                          name={gamesNames[key]}
-                          gameClass={key}
+                               name={gamesNames[key]}
+                               gameClass={key}
                                gameDoneColor={'#d8d0ff'}
-                          onClick={() => {
-                              changeGameClosed(true);
-                              gamesClosedName = key;
-                              indexGame = index;
+                               onClick={() => {
+                                        changeGameClosed(true);
+                                        gamesClosedName = key;
+                                        indexGame = index;
                                     }
                           }
                 />

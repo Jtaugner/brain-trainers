@@ -3,11 +3,9 @@ import './closePopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
 import ConfettiGenerator from "confetti-js";
 import {connect} from "react-redux";
-import {selectShowConfetti} from "../../store/selectors";
-import {switchOffConfetti} from "../../store/ac";
+import {selectShowConfetti, selectSounds} from "../../store/selectors";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
-import GameDone from "../gamePage/gameDone/gameDone";
-import GameDoneLose from "../gamePage/gameDoneLose/gameDoneLose";
+import {openNewGameSound} from '../../sounds'
 
 function ClosePopUp(props) {
     const {
@@ -16,7 +14,7 @@ function ClosePopUp(props) {
         openedParText, openedHeaderText,
         onClick,
         nameColor,
-        buyGame, showConfetti
+        buyGame, showConfetti, isSounds
     } = props;
     useEffect(() => {
         if (showConfetti) {
@@ -45,6 +43,9 @@ function ClosePopUp(props) {
             const confetti = new ConfettiGenerator(confettiSettings);
             confetti.render();
             document.getElementById('show-confetti').style.zIndex = '2';
+            if(isSounds){
+                openNewGameSound.play()
+            }
 
         }
 
@@ -91,6 +92,7 @@ function ClosePopUp(props) {
 
 export default connect(
     (store) => ({
-        showConfetti: selectShowConfetti(store)
+        showConfetti: selectShowConfetti(store),
+        isSounds: selectSounds(store)
     })
 )(popUpBlackout(ClosePopUp));

@@ -2,13 +2,14 @@ import React from 'react';
 import './newLevelPopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
 import {connect} from "react-redux";
-import {selectPlayerLevel} from "../../store/selectors";
+import {selectPlayerLevel, selectSounds} from "../../store/selectors";
 import {getLevelPrize} from "../../projectCommon";
+import {newLevelSound} from "../../sounds";
 
 
 function NewLevelPopUp(props) {
     const {
-        onClick, level
+        onClick, level, isSounds
     } = props;
     if(level === 0) return <></>;
     //prize.premium
@@ -19,6 +20,11 @@ function NewLevelPopUp(props) {
         isPrizeMoney = true;
     }else{
         premiumDays = prize.premium / 24 / 60 / 60 / 1000;
+    }
+    if(isSounds){
+        setTimeout(()=>{
+            newLevelSound.play();
+        }, 500);
     }
     return (
         <div className={'close-game new-level-popUp'}>
@@ -50,6 +56,7 @@ function NewLevelPopUp(props) {
 
 export default connect(
     (store) => ({
-        level: selectPlayerLevel(store)
+        level: selectPlayerLevel(store),
+        isSounds: selectSounds(store)
     })
 )(popUpBlackout(NewLevelPopUp));
