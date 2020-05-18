@@ -13,7 +13,7 @@ import {difficultNames, getRules} from "../../projectCommon";
 import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 import {buyLevelsDiff, switchOffConfetti} from "../../store/ac";
 import Rules from "../rules/rules";
-
+import PremiumInfo from '../premiumInfo/premiumInfo'
 const expertCosts = 150;
 const difficultColors =
     [
@@ -28,10 +28,10 @@ function DifficultPage(props) {
         buyLevelsDiff, switchOffConfetti,
         progress} = props;
     let allDoneLevels = progress.doneLevels.reduce((acc, e)=>acc+e, 0);
-    console.log(allDoneLevels);
     let [popUpExpert, setPopUp] = useState(false);
     let [popUpPremium, setPremiumPopUp] = useState(false);
-    let [isRules, showRules] = useState(allDoneLevels === 0);
+    let [isRules, showRules] = useState(allDoneLevels === 0 && !randomGame);
+
     return (
         <div className={'mainPage difficultPage'}>
             <TopMenu>
@@ -42,7 +42,7 @@ function DifficultPage(props) {
             <div className="top-tip">
                 <div className="top-tip__name">{gameName}</div>
             </div>
-            <DifficultPremiumLevel/>
+            <DifficultPremiumLevel openPremiumInfo={()=>setPremiumPopUp(true)}/>
             {difficultNames.map((obj, index)=>
                 <DifficultLevel
                     key={obj.key}
@@ -77,6 +77,12 @@ function DifficultPage(props) {
                 >
                     {getRules(game)}
                 </Rules> : ''
+            }
+            {
+                popUpPremium ? <PremiumInfo
+                                    onClick={()=>{setPremiumPopUp(false)}}
+                                />
+                    : ''
             }
         </div>
     );

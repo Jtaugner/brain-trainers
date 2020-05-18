@@ -7,7 +7,7 @@ export const getGameLevelOpenCosts = (lvl) => {
     return gameLevelOpen[lvl];
 };
 const level = [
-    {exp: 50, premium: 24 * 60 * 60 * 1000},
+    {exp: 100, premium: 24 * 60 * 60 * 1000},
     {exp: 100, money: 10},
     {exp: 250, money: 15},
     {exp: 400, money: 25},
@@ -62,10 +62,10 @@ export const difficultNames = [
 ];
 
 export const moneyAndExpPerDifficult = [
-    {exp: 10, money: 1},
-    {exp: 25, money: 3},
-    {exp: 40, money: 5},
-    {exp: 70, money: 10},
+    {exp: 10, money: 1}, //500 50 с полного уровня
+    {exp: 25, money: 2}, //1250 100
+    {exp: 40, money: 4}, //2000 200
+    {exp: 60, money: 7}, //3000 350
 ];
 
 export const shuffle = (arr)=> {

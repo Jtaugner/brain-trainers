@@ -1,0 +1,15 @@
+.premium-info {
+  border-color: #fbc230;
+}
+
+.premium-info .close-game__header {
+  background-color: #fbc230;
+}
+
+.premium-info .buyGame {
+  background-color: #fdcd51;
+  color: white;
+  border: none;
+}
+
+/*# sourceMappingURL=premiumInfo.css.map */

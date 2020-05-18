@@ -6,12 +6,20 @@ import {connect} from "react-redux";
 import {changeLevelInfo, changePremiumGame} from "../../../store/ac";
 
 function DifficultPremiumLevel(props) {
-    const {isPremium, switchOffPremiumGame, changePremiumLevelInfo} = props;
+    const {isPremium, switchOffPremiumGame, changePremiumLevelInfo,
+        openPremiumInfo} = props;
     const openSettings = () => {
         changePremiumLevelInfo();
         switchOffPremiumGame();
     };
-    const Component = <div className={'menu-game premium-game'}>
+    const notPremiumClick = () => {
+        if(!isPremium){
+            openPremiumInfo();
+        }
+    };
+    const Component = <div className={'menu-game premium-game'}
+                            onClick={notPremiumClick}
+                        >
                         <div
                             className={'menu-game__icon'}/>
                         <div className="menu-game__additional">
