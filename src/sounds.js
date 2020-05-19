@@ -103,6 +103,7 @@ const NewAudioContext = (function () {
 })();
 
 export const clickSound = new NewAudioContext('click.mp3');
+export const giftSound = new NewAudioContext('gift.mp3');
 export const newLevelSound = new NewAudioContext('newLevel.mp3');
 export const loseLevelSound = new NewAudioContext('loseLevel.mp3');
 export const doneLevelSound = new NewAudioContext('doneLevel.mp3');

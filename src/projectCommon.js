@@ -22,7 +22,6 @@ const level = [
     {exp: 7500, money: 230},
     {exp: 9200, premium: 2 * 24 * 60 * 60 * 1000},
 ];
-
 export const getExpLevel = (lvl) => {
     return level[lvl].exp
 };
@@ -62,7 +61,7 @@ export const difficultNames = [
 ];
 
 export const moneyAndExpPerDifficult = [
-    {exp: 100, money: 1}, //500 50 с полного уровня
+    {exp: 10, money: 1}, //500 50 с полного уровня
     {exp: 25, money: 2}, //1250 100
     {exp: 40, money: 4}, //2000 200
     {exp: 60, money: 7}, //3000 350
@@ -203,3 +202,16 @@ const gamesRules = {
 export const getRules = (game) => {
     return gamesRules[game];
 };
+
+const giftPrizes = [
+  15, 20, 25, 30, 35
+];
+export const getRandPrize = () => {
+    return giftPrizes[Math.floor(Math.random() * giftPrizes.length)];
+};
+export const giftTimes = [
+    1000 * 60 * 30,
+    1000 * 60 * 60,
+    1000 * 60 * 60 * 4,
+    1000 * 60 * 60 * 24
+];

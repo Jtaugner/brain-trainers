@@ -1,15 +1,15 @@
 import {
     ADD_DONE_LEVEL,
     ADD_EXP,
-    ADD_MONEY, BUY_GAME, BUY_LEVELS_DIFF,
-    CHANGE_EXP_FROM_PLAYER_DATA,
+    ADD_MONEY, ADD_OPEN_GIFT, BUY_GAME, BUY_LEVELS_DIFF, CHANGE_CAN_OPEN_GIFT,
+    CHANGE_EXP_FROM_PLAYER_DATA, CHANGE_GAME_SDK, CHANGE_GIFT_TIME,
     CHANGE_LEVEL_FROM_PLAYER_DATA, CHANGE_LEVEL_INFO,
     CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY, CHANGE_PREMIUM_GAME, CHANGE_PREMIUM_TIME,
     CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
     CHOOSE_LEVEL, CLOSE_NEW_LEVEL, SET_PREMIUM,
-     SWITCH_OFF_CONFETTI,
+    SWITCH_OFF_CONFETTI,
     TOGGLE_SETTINGS,
     TOGGLE_SOUNDS
 } from "../common";
@@ -122,4 +122,20 @@ export const setPremium = (isPremium) => ({
 });
 export const closeNewLevel = () => ({
     type: CLOSE_NEW_LEVEL
+});
+
+export const changeGiftTime = (time) => ({
+    type: CHANGE_GIFT_TIME,
+    time
+});
+export const changeCanOpenGift= (canOpen) => ({
+    type: CHANGE_CAN_OPEN_GIFT,
+    canOpen
+});
+export const changeGameSDK= (gameSDK) => ({
+    type: CHANGE_GAME_SDK,
+    gameSDK
+});
+export const addOpenGift = () => ({
+    type: ADD_OPEN_GIFT
 });

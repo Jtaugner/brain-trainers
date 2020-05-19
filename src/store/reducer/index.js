@@ -17,6 +17,10 @@ import {levelInfoReducer} from "./levelInfoReducer";
 import {premiumGameReducer} from "./premiumGameReducer";
 import {premiumTimeReducer} from "./premiumTimeReducer";
 import {newLevelReducer} from "./newLevelReducer";
+import {giftTimeReducer} from "./giftTimeReducer";
+import {canOpenGiftReducer} from "./canOpenGiftReducer";
+import {gameSDKReducer} from "./gameSDKReducer";
+import {giftOpensReducer} from "./giftOpensReducer";
 
 const reducer = combineReducers({
 
@@ -38,7 +42,11 @@ const reducer = combineReducers({
     premiumGame: premiumGameReducer,
     premium: premiumReducer,
     premiumTime: premiumTimeReducer,
-    newLevel: newLevelReducer
+    newLevel: newLevelReducer,
+    giftTime: giftTimeReducer,
+    canOpenGift: canOpenGiftReducer,
+    gameSDK: gameSDKReducer,
+    giftOpens: giftOpensReducer
 
 });
 

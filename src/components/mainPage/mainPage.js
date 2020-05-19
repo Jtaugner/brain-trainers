@@ -6,18 +6,43 @@ import Premium from "../premium/premium";
 import Money from "../money/money";
 import TopMenu from "../topMenu/topMenu";
 import MenuGameLevel from "../menuGameLevel/menuGameLevel";
-import {gamesNames} from "../../projectCommon";
+import {gamesNames, getRandPrize, giftTimes} from "../../projectCommon";
 import Gift from "../gift";
 import CloseGame from "../close-game";
 import {getGameLevelOpenCosts} from '../../projectCommon'
 import RandomMenuGame from '../randomMenuGame/randomMenuGame'
-import {buyGame, switchOffConfetti} from "../../store/ac";
+import {addMoney, addOpenGift, buyGame, changeCanOpenGift, changeGiftTime, switchOffConfetti} from "../../store/ac";
 import BottomMainMenu from "../bottomMainMenu/bottomMenu";
+import {selectCanOpenGift, selectGiftOpens} from "../../store/selectors";
+import GiftPopUp from  '../giftPopUp/giftPopUp'
 let indexGame = 0;
 let gamesClosedName = [];
+
 function MainPage(props) {
-    const {buyGame, switchOffConfetti} = props;
+    const {buyGame, switchOffConfetti, canOpenGift,
+        addMoney, giftOpens, addOpenGifts,
+        changeGiftTime, changeCanOpenGift} = props;
     const [gameClosed, changeGameClosed] = useState(false);
+    const [giftPopUp, changeGiftPopUp] = useState(false);
+    const [moneyPerGift, changeMoneyPerGift] = useState(0);
+    const openGift = () => {
+      if(canOpenGift){
+          changeCanOpenGift();
+
+          let prize = getRandPrize();
+          changeMoneyPerGift(prize);
+          addMoney(prize);
+          changeGiftPopUp(true);
+          let gifts = giftOpens;
+          if(giftOpens !== giftTimes.length-1){
+              gifts++;
+              addOpenGifts();
+          }
+          const time = (+new Date()) + giftTimes[gifts];
+          changeGiftTime(time);
+      }
+    };
+    const closeGift = ()=>{changeGiftPopUp(false)};
     return (
         <div className={'mainPage'}>
             <TopMenu>
@@ -27,7 +52,7 @@ function MainPage(props) {
             </TopMenu>
             <div className="top-tip">
                 <div className="top-tip__name">Упражнения</div>
-                <Gift/>
+                <Gift onClick={openGift}/>
             </div>
             <RandomMenuGame />
             {Object.keys(gamesNames).map((key, index) =>
@@ -56,14 +81,27 @@ function MainPage(props) {
 
             /> : ''}
             <BottomMainMenu/>
+            {giftPopUp ?
+                <GiftPopUp
+                    onClick={closeGift}
+                moneyPerGift={moneyPerGift}/> : ''}
         </div>
     );
 }
 
-export default connect(null,
+export default connect(
+    (store)=>({
+        canOpenGift: selectCanOpenGift(store),
+        giftOpens: selectGiftOpens(store)
+    })
+    ,
     (dispatch)=>({
         buyGame: (game, money) => dispatch(buyGame(game, money)),
-        switchOffConfetti: () => dispatch(switchOffConfetti())
+        switchOffConfetti: () => dispatch(switchOffConfetti()),
+        addMoney: (money) => dispatch(addMoney(money)),
+        addOpenGifts: () => dispatch(addOpenGift()),
+        changeGiftTime: (time) => dispatch(changeGiftTime(time)),
+        changeCanOpenGift: () => dispatch(changeCanOpenGift(false))
     })
 
     )(MainPage);

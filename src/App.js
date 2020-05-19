@@ -56,7 +56,7 @@ class App extends Component {
                            render={() => <MainPage/>}
                     />
                     <Route path={'/shop'}
-                           render={() => <Shop ysdkGame={this.props.ysdkGame}/>}/>
+                           render={() => <Shop/>}/>
 
                     <Route path={'/settings'}
                            render={() => <Settings/>}/>

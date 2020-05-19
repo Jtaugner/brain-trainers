@@ -36,3 +36,8 @@ export const selectLevelInfo = (store) => store.levelInfo;
 export const selectPremiumTime = (store) => store.premiumTime;
 
 export const selectNewLevel = (store) => store.newLevel;
+
+export const selectGiftTime = (store) => store.giftTime;
+export const selectCanOpenGift = (store) => store.canOpenGift;
+export const selectGameSDK = (store) => store.gameSDK;
+export const selectGiftOpens = (store) => store.giftOpens;

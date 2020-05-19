@@ -5,6 +5,7 @@ import App from './App';
 import {Provider} from 'react-redux'
 import {store} from "./store";
 import {MemoryRouter} from "react-router-dom";
+import {changeGameSDK} from "./store/ac";
 var playerGame, payments, ysdkGame;
 function createApp() {
     ReactDOM.render(
@@ -58,12 +59,7 @@ if(window.YaGames) {
     }
     window.YaGames.init()
         .then(ysdk => {
-            ysdk.adv.showFullscreenAdv();
-            console.log('show0')
-            setTimeout(()=>{
-                ysdk.adv.showRewardedVideo();
-                console.log('show1')
-            }, 10000)
+            store.dispatch(changeGameSDK(ysdk));
             var isNativeCache = ysdk.yandexApp && ysdk.yandexApp.enabled;
             if ('serviceWorker' in navigator && !isNativeCache) {
                 window.onload = function(){

@@ -1,0 +1,28 @@
+.gift-pop-up {
+  border-color: #b09cfd;
+}
+
+.gift-pop-up .prize {
+  margin: 10px auto;
+}
+
+.show-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b09cfd;
+  width: 130px;
+  padding: 5px 10px;
+  margin: 0 auto;
+  font-size: 2rem;
+  border: 1px solid #b09cfd;
+  border-radius: 5px;
+}
+
+.show-video .free-money {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=giftPopUp.css.map */
