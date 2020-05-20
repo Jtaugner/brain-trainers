@@ -74,7 +74,7 @@ class Gift extends Component {
 
     render() {
         return (
-            <div className="gift" onClick={this.props.onClick}>
+            <div className={"gift " + (this.state.time <= 0 ? 'gift_done' : '')} onClick={this.props.onClick}>
                 <div className="gift__time">
                     {this.state.time <= 0 ? 'Открыть' : getTime(this.state.time)}
                     <div className="gift-image">

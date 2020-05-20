@@ -4,7 +4,10 @@ import {connect} from "react-redux";
 function TopMenu(props) {
     return (
         <div className="top-menu">
-            {props.children}
+            <div className="top-menu__inner">
+                {props.children}
+            </div>
+
         </div>
     );
 }

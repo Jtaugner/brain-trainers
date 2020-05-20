@@ -1,3 +1,20 @@
+.findSomething-game__numbers {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.findSomething-game__numbers__num {
+  width: 70px;
+  height: 45px;
+  font-size: 2rem;
+  color: #414141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .wrong-letter {
   color: #ef6565;
 }
@@ -7,6 +24,27 @@
   text-align: center;
   color: #414141;
   margin-bottom: 10px;
+}
+
+@media (min-width: 359px) {
+  .findSomething-game__numbers {
+    width: 340px;
+  }
+
+  .findSomething-game__numbers__num {
+    width: 85px;
+  }
+}
+@media (min-width: 600px) {
+  .findSomething-game__numbers {
+    width: 480px;
+  }
+
+  .findSomething-game__numbers__num {
+    width: 120px;
+    height: 50px;
+    font-size: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=findSomethinGameWrapper.css.map */

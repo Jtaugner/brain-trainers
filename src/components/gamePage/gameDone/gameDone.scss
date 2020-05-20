@@ -1,9 +1,11 @@
 @import '../../../root';
-.game-done__blackout{
+
+.game-done__blackout {
   z-index: 3;
   cursor: auto;
 }
-.game-done{
+
+.game-done {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,7 +16,8 @@
 
   z-index: 4;
 }
-.game-done__flex{
+
+.game-done__flex {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,24 +26,30 @@
   margin-bottom: 30px;
   font-size: 2rem;
 }
-.game-done .playerLevel_level, .game-done .moneyPic{
+
+.game-done .playerLevel_level, .game-done .moneyPic {
   width: 40px;
   height: 40px;
   font-size: 2rem;
 }
-.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money{
+
+.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
   height: 25px;
 }
-.game-done__flex .playerLevel, .game-done__flex .moneyBlock{
+
+.game-done__flex .playerLevel, .game-done__flex .moneyBlock {
   margin-right: 5px;
 }
-.game-done__flex_money{
+
+.game-done__flex_money {
   color: $money;
 }
-.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money{
+
+.game-done .playerLevel__progress-bar, .game-done .moneyBlock__money {
   width: 160px;
 }
-.game-done__arrow{
+
+.game-done__arrow {
   width: 16px;
   height: 16px;
 
@@ -49,51 +58,92 @@
   background: url(long-arrow-alt-right.svg) center center no-repeat;
   background-size: 100%;
 }
-.game-done .playerLevel, .game-done .moneyBlock__money{
+
+.game-done .playerLevel, .game-done .moneyBlock__money {
   margin-left: 15px;
 }
-.game-done .moneyBlock__money{
+
+.game-done .moneyBlock__money {
   justify-content: center;
   display: flex;
   align-items: center;
   font-size: 2rem;
   margin-right: 0;
 }
-.line-through{
-text-decoration: line-through #f7b631;
+
+.line-through {
+  text-decoration: line-through #f7b631;
 }
-.game-done__buttons{
+
+.game-done__buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   margin-top: 40px;
 }
-.new-money{
+
+.new-money {
   color: $money;
 }
 
 
-.game-done__button{
+.game-done__button {
+  position: relative;
+
   width: 35px;
   height: 35px;
 
   cursor: pointer;
 }
-.game-done__home{
+
+.game-done__button:before {
+  position: absolute;
+  content: '';
+  top: -5px;
+  right: -20px;
+  left: -20px;
+  bottom: -5px;
+}
+
+.game-done__home {
   background: url(home.png) center center no-repeat;
   background-size: 100%;
 }
-.game-done__again{
+
+.game-done__again {
   background: url(again.png) center center no-repeat;
   background-size: 100%;
 }
-.game-done__next{
+
+.game-done__next {
   background: url(next.png) center center no-repeat;
   background-size: 100%;
 }
+
 @media (min-width: 359px) {
-  .game-done .playerLevel, .game-done .moneyBlock__money{
+  .game-done .playerLevel, .game-done .moneyBlock__money {
     margin-left: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .game-done {
+    padding-top: 85px;
+  }
+  .game-done .playerLevel {
+    margin-left: 28px;
+  }
+  .game-done .playerLevel__progress-bar {
+    width: 170px;
+  }
+  .game-done .moneyBlock__money {
+    width: 179px;
+
+    border-radius: 0 8px 8px 0;
+  }
+  .game-done__button {
+    width: 40px;
+    height: 40px;
   }
 }

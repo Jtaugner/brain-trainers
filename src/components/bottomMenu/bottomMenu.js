@@ -4,7 +4,10 @@ import './bottomMenu.scss'
 function BottomMenu(props) {
     return (
         <div className="bottom-menu">
-            {props.children}
+            <div className="bottom-menu__inner">
+                {props.children}
+            </div>
+
         </div>
     );
 }

@@ -81,3 +81,26 @@ $numberMargin: 8px;
     margin-left: 8px;
   }
 }
+
+@media (min-width: 600px) {
+  .rememberNumbers__number {
+    width: 35px !important;
+    height: 50px !important;
+  }
+
+  $numberWidth: 100px;
+  $numberMargin: 10px;
+  .rememberNumbers__enter{
+    width: $numberWidth*3+$numberMargin*6;
+  }
+  .rememberNumbers__enter__number{
+    width: $numberWidth;
+    height: $numberWidth/2;
+    margin: $numberMargin;
+    font-size: 2.8rem;
+    border-radius: 9px;
+  }
+  .rememberNumbers__enter__number_null{
+    width: $numberMargin*2 + $numberWidth*2;
+  }
+}

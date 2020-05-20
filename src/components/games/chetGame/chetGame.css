@@ -1,20 +1,3 @@
-.findSomething-game__numbers {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 300px;
-}
-
-.findSomething-game__numbers__num {
-  width: 70px;
-  height: 45px;
-  font-size: 2rem;
-  color: #414141;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .chet-length5 .findSomething-game__numbers__num {
   font-size: 1.8rem;
 }
@@ -37,6 +20,41 @@
 
 .right-number {
   color: #35c63f;
+}
+
+@media (min-width: 359px) {
+  .chet-length5 .findSomething-game__numbers__num {
+    font-size: 1.9rem;
+  }
+
+  .chet-length6 .findSomething-game__numbers__num {
+    font-size: 1.8rem;
+  }
+
+  .chet-length7 .findSomething-game__numbers__num {
+    font-size: 1.7rem;
+  }
+
+  .chet-length8 .findSomething-game__numbers__num {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 600px) {
+  .chet-length5 .findSomething-game__numbers__num {
+    font-size: 2.2rem;
+  }
+
+  .chet-length6 .findSomething-game__numbers__num {
+    font-size: 2.1rem;
+  }
+
+  .chet-length7 .findSomething-game__numbers__num {
+    font-size: 2rem;
+  }
+
+  .chet-length8 .findSomething-game__numbers__num {
+    font-size: 1.9rem;
+  }
 }
 
 /*# sourceMappingURL=chetGame.css.map */

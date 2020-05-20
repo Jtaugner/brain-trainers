@@ -2,3 +2,14 @@
   flex-flow: column nowrap;
   font-size: 1.3rem;
 }
+@media (min-width: 600px) {
+  .couple .findSomething-game__numbers{
+    width: 520px;
+  }
+  .couple .findSomething-game__numbers__num {
+    font-size: 1.7rem;
+
+    width: 130px;
+    height: 60px;
+  }
+}

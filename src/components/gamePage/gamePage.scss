@@ -11,7 +11,7 @@
 
   background-color: $lightClose;
 }
-.gamePage .top-menu{
+.gamePage .top-menu__inner{
   justify-content: center;
   color: #4b4b4b;
   font-size: 1.8rem;
@@ -21,6 +21,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+
+  cursor: pointer;
 }
 .playAgain{
   left: 8px;
@@ -35,6 +37,14 @@
   background-size: 100%;
   width: 18px;
   height: 30px;
+}
+.pause:before, .playAgain:before{
+  position:absolute;
+  content:'';
+  top:-15px;
+  right:-50px;
+  left:-50px;
+  bottom:-15px;
 }
 .pause-block{
   position: absolute;
@@ -53,7 +63,9 @@
 
   color: white;
 
-  background-color: #4b4b4b;
+  background-color: #c1c1c1;
+
+  cursor: pointer;
 }
 
 .gamePage .return-back{
@@ -79,7 +91,7 @@
 
 
 .game-page__rounds{
-  margin: 0 0 25px 5px;
+  margin: 0 0 20px 5px;
   color: #4b4b4b;
   font-size: 1.3rem;
   letter-spacing: 1px;
@@ -92,6 +104,36 @@
 
   padding: 0 5px;
 }
-@media (min-width: 359px) {
+@media (min-width: 1000px) {
+  .playAgain, .pause{
+    position: relative;
+    top: auto;
+    left: auto;
+    right:auto;
+    bottom: auto;
+    transform: none;
+  }
+  .playAgain{
+    width: 45px;
+    height: 45px;
+  }
+  .pause{
+    width: 25px;
+    height: 40px;
+  }
 
+  .gamePage .top-menu__inner{
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.2rem;
+  }
+  .game-page__flex{
+    font-size: 1.6rem;
+  }
+  .next-num {
+    margin: 0 auto 10px 0;
+  }
+  .game-page__rounds, .timer{
+    font-size: 1.8rem;
+  }
 }

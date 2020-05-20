@@ -24,7 +24,7 @@ function createApp() {
         document.getElementById('root')
     );
 }
-if(window.YaGames) {
+if(window.YaGames && false) {
     function initPlayer(ysdk) {
         ysdk.getPlayer().then(_player => {
             // Игрок авторизован.

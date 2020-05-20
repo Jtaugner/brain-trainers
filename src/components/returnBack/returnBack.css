@@ -10,4 +10,15 @@
   border-radius: 50%;
 }
 
+@media (min-width: 1000px) {
+  .return-back {
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 4px 4px 5px #d8d0ff;
+  }
+}
+
 /*# sourceMappingURL=returnBack.css.map */

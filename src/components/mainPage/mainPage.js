@@ -54,21 +54,24 @@ function MainPage(props) {
                 <div className="top-tip__name">Упражнения</div>
                 <Gift onClick={openGift}/>
             </div>
-            <RandomMenuGame />
-            {Object.keys(gamesNames).map((key, index) =>
-                <MenuGameLevel key={key}
-                               name={gamesNames[key]}
-                               gameClass={key}
-                               gameDoneColor={'#d8d0ff'}
-                               onClick={() => {
-                                        changeGameClosed(true);
-                                        gamesClosedName = key;
-                                        indexGame = index;
-                                    }
-                          }
-                />
-            )
-            }
+            <div className="mainPage__games">
+                <RandomMenuGame />
+                {Object.keys(gamesNames).map((key, index) =>
+                    <MenuGameLevel key={key}
+                                   name={gamesNames[key]}
+                                   gameClass={key}
+                                   gameDoneColor={'#d8d0ff'}
+                                   onClick={() => {
+                                       changeGameClosed(true);
+                                       gamesClosedName = key;
+                                       indexGame = index;
+                                   }
+                                   }
+                    />
+                )
+                }
+            </div>
+
             {gameClosed ? <CloseGame gameClass={gamesClosedName}
                                      name={gamesNames[gamesClosedName]}
                                      buyGame={()=>buyGame(gamesClosedName, getGameLevelOpenCosts(indexGame))}

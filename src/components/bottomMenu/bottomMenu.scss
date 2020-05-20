@@ -8,9 +8,6 @@
   width: 100%;
   height: 45px;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 
   border-top: 2px solid $lightMain;
 
@@ -18,39 +15,89 @@
 
   z-index: 2;
 }
-.bottom-menu__shop{
+
+.bottom-menu__inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bottom-menu__link{
+  position: relative;
+}
+
+.bottom-menu__link:before{
+  position:absolute;
+  content:'';
+  top:-5px;
+  right:-30px;
+  left:-30px;
+  bottom:-5px;
+}
+.bottom-menu__shop {
   width: 38px;
   background: url('cart.png') center center no-repeat;
 }
-.bottom-menu__active-link .bottom-menu__shop{
+
+.bottom-menu__active-link .bottom-menu__shop {
   background: url('cart_active.png') center center no-repeat;
 }
 
 
-.bottom-menu__home{
+.bottom-menu__home {
   width: 28px;
   background: url('../../assets/images/home.png') center center no-repeat;
 }
-.bottom-menu__active-link .bottom-menu__home{
+
+.bottom-menu__active-link .bottom-menu__home {
   background: url('home_active.png') center center no-repeat;
 }
 
 
-
-.bottom-menu__settings{
+.bottom-menu__settings {
   width: 30px;
   background: url('settings.png') center center no-repeat;
 
   cursor: pointer;
 }
 
-.bottom-menu__active-link .bottom-menu__settings{
+.bottom-menu__active-link .bottom-menu__settings {
   background: url('settings_active.png') center center no-repeat;
 }
 
 
-
-.bottom-menu__link, .bottom-menu__active-link .bottom-menu__link{
+.bottom-menu__link, .bottom-menu__active-link .bottom-menu__link {
   height: 28px;
   background-size: 100%;
+}
+
+
+@media (min-width: 1000px) {
+  .bottom-menu {
+    height: 65px;
+  }
+  .bottom-menu__inner{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .bottom-menu__shop {
+    width: 54px;
+  }
+
+  .bottom-menu__home {
+    width: 40px;
+  }
+
+
+  .bottom-menu__settings {
+    width: 43px;
+  }
+
+  .bottom-menu__link, .bottom-menu__active-link .bottom-menu__link {
+    height: 40px;
+    background-size: 100%;
+  }
 }

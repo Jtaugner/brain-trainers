@@ -16,8 +16,16 @@ html, body, #root {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  background-color: #eeeeee;
 }
 
+@media (min-width: 1000px) {
+  #root {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+}
 .shultz {
   border-color: #d8d0ff;
 }

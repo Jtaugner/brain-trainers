@@ -92,5 +92,30 @@
     font-size: 1.6rem;
   }
 }
+@media (min-width: 1000px) {
+  .playerLevel {
+    margin-left: 35px;
+  }
+
+  .playerLevel_level {
+    position: absolute;
+    left: -35px;
+    width: 45px;
+    height: 45px;
+    background-color: #b09cfd;
+    box-shadow: 4px 4px 4px #d8d0ff;
+    font-size: 2.5rem;
+  }
+
+  .playerLevel_level_small {
+    font-size: 2.3rem;
+  }
+
+  .playerLevel__progress-bar {
+    width: 150px;
+    height: 25px;
+    border-radius: 0 8px 8px 0;
+  }
+}
 
 /*# sourceMappingURL=playerLevel.css.map */

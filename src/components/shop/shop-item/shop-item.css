@@ -17,10 +17,10 @@
 }
 
 .shop-item__pic {
-  height: 45px;
+  height: 55px;
   width: 45px;
   background: url(../../../assets/images/money.png) center center no-repeat;
-  background-size: 100%;
+  background-size: 80%;
 }
 
 .shop-item__buy-button {
@@ -33,6 +33,7 @@
   color: #afc9fa;
   border: 1px solid #afc9fa;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .shop-item__free .shop-item__money {
@@ -77,6 +78,29 @@
 .double-money .shop-item__pic {
   background: url(double-money.png) center center no-repeat;
   background-size: 100%;
+}
+
+@media (min-width: 1000px) {
+  .shop-item {
+    width: 400px;
+    height: 70px;
+  }
+
+  .shop-item__pic {
+    width: 55px;
+    height: 65px;
+  }
+
+  .shop-item__money {
+    font-size: 2rem;
+  }
+
+  .shop-item__buy-button {
+    width: 90px;
+    padding: 6px 0;
+    font-size: 1.8rem;
+    border-radius: 8px;
+  }
 }
 
 /*# sourceMappingURL=shop-item.css.map */

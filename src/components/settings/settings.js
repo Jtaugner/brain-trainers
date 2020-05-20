@@ -24,9 +24,28 @@ function Settings(props) {
                                 Звук
                             </label>
                     </li>
+                    <li className={'our-games'}>
+                        Наши игры
+                    </li>
                     <li>
-                        <div className="settings__icon settings__share"/>
-                        <p className="settings__name">Поделиться ВК</p>
+                        <a href="https://yandex.ru/games/play/99195" target="_blank">
+                            <div className="wfw my-game" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yandex.ru/games/play/99196" target="_blank">
+                            <div className="wfl my-game" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yandex.ru/games/play/99049" target="_blank">
+                            <div className="er my-game" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yandex.ru/games/play/98125" target="_blank">
+                            <div className="stm my-game" />
+                        </a>
                     </li>
                 </ul>
             </div>

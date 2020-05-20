@@ -54,6 +54,7 @@ class FieldGame extends GameWrapper {
             field,
             round: 0
         };
+        console.log(this.props.levelInfo);
         this.startGame();
     }
     mistake(){
@@ -136,8 +137,9 @@ class FieldGame extends GameWrapper {
     }
 
     render() {
+        let cols = this.cols > this.rows ? this.cols : this.rows;
         return (
-             <div className={'field-game ' + ('field-game-cols'+this.cols)}>
+             <div className={'field-game ' + ('field-game-cols'+cols)}>
                     <GameProgressLine round={this.state.round} rounds={this.rounds}/>
                  <table>
                      <tbody>

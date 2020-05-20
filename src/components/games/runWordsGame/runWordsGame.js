@@ -53,10 +53,11 @@ class RunWordsGame extends GameWrapper {
         if(this.state.round === this.rounds){
             return this.props.getWin();
         }
+
+
         this.wordsArr = getWordsArr(this.amount);
-        let index = -1;
+        let index = 0;
         timeout= setTimeout(()=>{
-            console.log('timeout');
             if(!passRound){
                 this.setState((state)=>({
                     round: state.round+1
@@ -69,11 +70,18 @@ class RunWordsGame extends GameWrapper {
                 rightWord: '',
                 showWord: '',
             });
+
+
             this.selectedWordIndex = 0;
+            this.setState({
+                wordIndex: 0,
+                showWord: this.wordsArr[index]
+            });
+
+
+
             interval = setInterval(()=>{
-                console.log('interval');
                 index++;
-                console.log(index, this.amount);
                 if(index === this.amount){
                     this.finishRound();
                     clearInterval(interval);

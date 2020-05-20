@@ -70,7 +70,7 @@
 
 .game-done__buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 40px;
 }
@@ -80,9 +80,19 @@
 }
 
 .game-done__button {
+  position: relative;
   width: 35px;
   height: 35px;
   cursor: pointer;
+}
+
+.game-done__button:before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  right: -20px;
+  left: -20px;
+  bottom: -5px;
 }
 
 .game-done__home {
@@ -103,6 +113,29 @@
 @media (min-width: 359px) {
   .game-done .playerLevel, .game-done .moneyBlock__money {
     margin-left: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .game-done {
+    padding-top: 85px;
+  }
+
+  .game-done .playerLevel {
+    margin-left: 28px;
+  }
+
+  .game-done .playerLevel__progress-bar {
+    width: 170px;
+  }
+
+  .game-done .moneyBlock__money {
+    width: 179px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .game-done__button {
+    width: 40px;
+    height: 40px;
   }
 }
 

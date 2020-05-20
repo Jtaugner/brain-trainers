@@ -23,7 +23,9 @@ function MenuGameLevel(props) {
     if(isGameClosed) return Component;
     return (
         <Link to={'/difficult'} onClick={switchOffRandomGame}
-              onKeyDown={chooseGame}>
+              onKeyDown={chooseGame}
+            className={gameClass}
+        >
             {Component}
             </Link>
     )

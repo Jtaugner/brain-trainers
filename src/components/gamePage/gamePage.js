@@ -150,7 +150,6 @@ function GamePage(props) {
     return (
         <div className={'gamePage'}>
             <TopMenu>
-                {gameName}
                 <div className="playAgain" onClick={() => {
                     setIsGame(false);
                     setPause(false);
@@ -159,6 +158,8 @@ function GamePage(props) {
                     }, 500)
 
                 }}/>
+                {gameName}
+
                 <div className="pause" onClick={() => {
                     setPause(!pause);
                 }}/>

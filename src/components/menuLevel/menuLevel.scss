@@ -136,3 +136,27 @@
     border-radius: 7px;
   }
 }
+
+
+@media (min-width: 1000px) {
+  .menu-game{
+    width: 350px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 0 0 20px 0;
+
+  }
+
+  .menu-game__icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .game-name{
+    font-size: 2rem;
+  }
+
+  .game-doneLevels{
+    font-size: 1.3rem;
+  }
+}

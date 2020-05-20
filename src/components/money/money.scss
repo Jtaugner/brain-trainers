@@ -3,6 +3,10 @@
 .moneyBlock__money{
   position: relative;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 45px;
   height: 16px;
 
@@ -87,5 +91,40 @@
     box-shadow: 0.7px 1px 1px #30b042;
 
     font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .moneyBlock__money{
+
+    width: 150px;
+    height: 25px;
+
+    font-size: 2rem;
+    border-radius: 0 4px 4px 0;
+
+    margin: 0 7px 0 30px;
+  }
+
+  .moneyPic{
+    position: absolute;
+    left: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    background: url(../../assets/images/money.png) center center no-repeat;
+    background-size: 100%;
+  }
+
+  .addMoney{
+    width: 28px;
+    height: 28px;
+
+    box-shadow: 1px 1px 0.5px #30b042;
+
+    font-size: 2.4rem;
   }
 }

@@ -6,6 +6,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
+
 .running-words__word {
   display: flex;
   justify-content: center;
@@ -21,7 +22,8 @@
   border-bottom: 1px solid $gameColor;
 
 }
-.select-words__word{
+
+.select-words__word {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,17 +38,43 @@
   color: $gameColor;
 
   margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  word-break: break-all;
+  padding: 0 5px;
 }
-.select-words__word:active{
+
+.select-words__word:active {
   transform: scale(0.99);
   border: 1px solid $gameColor;
 }
-.runWords-game .right-word{
+
+.runWords-game .right-word {
   color: $right;
 }
-.runWords-game .wrong-word{
+
+.runWords-game .wrong-word {
   color: $wrong;
 }
-@media (min-width: 359px) {
 
+@media (min-width: 600px) {
+  .running-words, .select-words {
+    width: 480px;
+  }
+  .running-words__word {
+    width: 150px;
+    height: 70px;
+
+    font-size: 1.9rem;
+  }
+
+  .select-words__word {
+
+    width: 225px;
+    height: 70px;
+    border-radius: 10px;
+
+    font-size: 1.9rem;
+  }
 }
+

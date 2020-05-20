@@ -1,5 +1,9 @@
 @import '../../root';
 
+.gameSettings .top-menu__inner{
+  justify-content: center;
+}
+
 .gameSettings__name {
   color: #4b4b4b;
   font-size: 2rem;
@@ -49,7 +53,7 @@
   border-color: rgb(89, 228, 227);
 }
 .gameSettings_wrapper .gameSettings__setting:nth-child(3) {
-  border-color: #EBD55A;
+  border-color: #f8dc00;
 }
 .gameSettings_wrapper .gameSettings__setting:nth-child(4) {
   border-color: #eb6c78;
@@ -153,7 +157,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .gameSettings_wrapper .gameSettings__setting:nth-child(3) input[type=range]::-webkit-slider-thumb{
-  background: #EBD55A;
+  background: #f8dc00;
 }
 
 
@@ -182,4 +186,25 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   color: white;
   font-size: 2rem;
+}
+
+@media (min-width: 1000px) {
+  .gameSettings__setting {
+    height: 75px;
+    width: 400px;
+    margin: 15px auto;
+  }
+  .setting__additional{
+    font-size: 1.8rem;
+  }
+  .gameSettings__name {
+    font-size: 3rem;
+  }
+  .gameSettings__start{
+    width: 200px;
+    border-radius: 10px;
+    font-size: 2.8rem;
+    bottom: 80px;
+  }
+
 }

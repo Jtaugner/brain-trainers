@@ -29,5 +29,61 @@
     font-size: 1.3rem;
   }
 }
+@media (min-width: 1000px) {
+  .mainPage {
+    padding: 65px 0;
+  }
+
+  .top-tip {
+    margin: 30px 0;
+  }
+
+  .top-tip__name {
+    font-size: 1.6rem;
+  }
+
+  .mainPage__games {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 800px;
+  }
+
+  .shultz {
+    order: 3;
+  }
+
+  .rememberNumbers {
+    order: 5;
+  }
+
+  .findWord {
+    order: 7;
+  }
+
+  .field {
+    order: 9;
+  }
+
+  .wordInText {
+    order: 2;
+  }
+
+  .couple {
+    order: 4;
+  }
+
+  .runWords {
+    order: 6;
+  }
+
+  .chet {
+    order: 8;
+  }
+
+  .findLetters {
+    order: 10;
+  }
+}
 
 /*# sourceMappingURL=mainPage.css.map */

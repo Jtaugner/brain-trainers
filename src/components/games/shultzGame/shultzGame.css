@@ -57,4 +57,61 @@
   background-color: #ef6565;
 }
 
+@media (min-width: 600px) {
+  .shultz-game table {
+    width: auto;
+    height: auto;
+    max-width: 99vw;
+    max-height: 99vh;
+  }
+
+  .shultz-width-3 td {
+    font-size: 6rem;
+    width: 120px;
+    height: 120px;
+  }
+
+  .shultz-width-4 td {
+    font-size: 5.5rem;
+    width: 110px;
+    height: 110px;
+  }
+
+  .shultz-width-5 td {
+    font-size: 5rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  .shultz-width-6 td {
+    font-size: 4.5rem;
+    width: 90px;
+    height: 90px;
+  }
+
+  .shultz-width-7 td {
+    font-size: 4rem;
+    width: 80px;
+    height: 80px;
+  }
+
+  .shultz-width-8 td {
+    font-size: 3.5rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .shultz-width-9 td {
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .shultz-width-10 td {
+    font-size: 2.5rem;
+    width: 55px;
+    height: 55px;
+  }
+}
+
 /*# sourceMappingURL=shultzGame.css.map */

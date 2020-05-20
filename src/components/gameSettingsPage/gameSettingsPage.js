@@ -19,7 +19,7 @@ const gameSettings = {
     "field": ["rounds", "mistakes", "time", "rows", "cols"],
     "runWords": ["amount", "time", "rounds"],
     "chet": ["rounds", "smallRows", "amount", "numberLength", "sec"],
-    "findLetters": ["rounds", "rows", "amount", "sec"],
+    "findLetters": ["rounds", "rows", "amount", "sec", "useSmallLetters"],
     "couple": ["rounds", "smallRows", "amount", "sec"]
 };
 const settings = {
@@ -31,6 +31,7 @@ const settings = {
     "rowsLength": {name: 'Высота поля', min: 5, max: 7, val: 6},
     "wordsAmount": {name: 'Кол-во слов', min: 3, max: 5, val: 4},
     "text": {val: getRandText()},
+    "useSmallLetters": {val: true},
     "mistakes": {name: 'Кол-во ошибок', min: 2, max: 20, val: 5},
     "rows": {name: 'Количество строк', min: 3, max: 11, val: 6},
     "cols": {name: 'Количество столбцов', min: 3, max: 11, val: 6},
@@ -72,7 +73,11 @@ function GameSettingsPage(props) {
         setLevelInfo(info);
     };
     const startGame = () => {
-        changePremiumLevelInfo(levelInfo);
+        let info = {...levelInfo};
+        if(info.mistakes && info.rounds && info.mistakes > info.rounds){
+            info.mistakes = info.rounds;
+        }
+        changePremiumLevelInfo(info);
     };
     return (
         <div className={'mainPage gameSettings'}>
@@ -85,8 +90,7 @@ function GameSettingsPage(props) {
             <div className="gameSettings_wrapper">
                 {
                     Object.keys(levelInfo).map((key) => {
-                        console.log(settings[key], typeof settings[key] === "object");
-                        if (key === 'text') return '';
+                        if (key === 'text' || key === 'useSmallLetters') return '';
                         return <div
                             className={'gameSettings__setting'}
                             key={key}

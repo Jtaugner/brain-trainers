@@ -80,5 +80,27 @@
     margin-left: 8px;
   }
 }
+@media (min-width: 600px) {
+  .rememberNumbers__number {
+    width: 35px !important;
+    height: 50px !important;
+  }
+
+  .rememberNumbers__enter {
+    width: 360px;
+  }
+
+  .rememberNumbers__enter__number {
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    font-size: 2.8rem;
+    border-radius: 9px;
+  }
+
+  .rememberNumbers__enter__number_null {
+    width: 220px;
+  }
+}
 
 /*# sourceMappingURL=rememberNumbersGame.css.map */

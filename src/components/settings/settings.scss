@@ -122,7 +122,39 @@ $settings: #111112;
 .musicCheckbox:checked + label:before {
   background: $lightMain;
 }
-.settings__share{
-  background: url(share.png) center center no-repeat;
+.our-games{
+  font-size: 2rem;
+}
+.wfw{
+  background: url(wfw.png) center center no-repeat;
+}
+.wfl{
+  background: url(wfl.png) center center no-repeat;
+}
+.stm{
+  background: url(stm.png) center center no-repeat;
+}
+.er{
+  background: url(er.png) center center no-repeat;
+}
+.my-game{
+  width: 140px;
+  height: 80px;
   background-size: 100%;
+}
+
+@media (min-width: 1000px) {
+  .settings__header{
+    font-size: 2.9rem;
+
+    margin-bottom: 20px;
+  }
+  .my-game{
+    width: 180px;
+    height: 100px;
+
+  }
+  .settings{
+    width: 300px;
+  }
 }

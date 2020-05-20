@@ -27,4 +27,15 @@
   margin-bottom: 40px;
 }
 
+@media (min-width: 600px) {
+  .wordInText-game__word {
+    font-size: 2rem;
+  }
+
+  .wordInText-game__text {
+    font-size: 1.9rem;
+    max-width: 600px;
+  }
+}
+
 /*# sourceMappingURL=wordInTextGame.css.map */

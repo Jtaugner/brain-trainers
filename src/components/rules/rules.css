@@ -32,6 +32,21 @@
   padding: 8px 25px;
   background-color: #b09cfd;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  .rules {
+    width: 500px;
+    height: auto;
+    padding-bottom: 100px;
+    border-radius: 15px;
+    border: 5px solid #b09cfd;
+  }
+
+  .rules p {
+    font-size: 1.7rem;
+  }
 }
 
 /*# sourceMappingURL=rules.css.map */

@@ -19,20 +19,13 @@
   border: none;
 }
 
-.field-game-cols7 td{
-  font-size: 3rem;
-  width: 40px;
-  height: 40px;
-}
-.field-game-cols9 td{
-  font-size: 2.5rem;
-  width: 35px;
-  height: 35px;
-}
-.field-game-cols11 td{
-  font-size: 2.2rem;
-  width: 32px;
-  height: 32px;
+
+@for $i from 3 through 11 {
+  .field-game-cols#{$i} td{
+    width: 50px - (2.5px * ($i - 3));
+    height: 50px - (2.5px * ($i - 3));
+    font-size: 3.5rem - (0.2rem * ($i - 3));
+  }
 }
 
 .field-game__mistake-button{
@@ -54,6 +47,12 @@
   transform: scale(0.99);
   outline: none;
 }
-@media (min-width: 359px) {
-
+@media (min-width: 600px) {
+  @for $i from 3 through 11 {
+    .field-game-cols#{$i} td{
+      width: 65px - (2.5px * ($i - 3));
+      height: 65px - (2.5px * ($i - 3));
+      font-size: 4.5rem - (0.2rem * ($i - 3));
+    }
+  }
 }

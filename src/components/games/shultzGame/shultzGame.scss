@@ -29,6 +29,25 @@
   background-color: $wrong;
 }
 
-@media (min-width: 359px) {
-
+@media (min-width: 600px) {
+  .shultz-game table{
+    width: auto;
+    height: auto;
+    max-width: 99vw;
+    max-height: 99vh;
+  }
+  @for $i from 3 through 8 {
+    .shultz-width-#{$i} td{
+      font-size: 6rem - (0.5rem * ($i - 3));
+      width: 150px - $i * 10;
+      height: 150px - $i * 10;
+    }
+  }
+  @for $i from 9 through 10 {
+    .shultz-width-#{$i} td{
+      font-size: 3.5rem - (0.5rem * ($i - 8));
+      width: 65px - ($i - 8) * 5;
+      height: 65px - ($i - 8) * 5;
+    }
+  }
 }

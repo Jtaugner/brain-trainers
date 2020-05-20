@@ -9,7 +9,7 @@ class FindSomethingGameWrapper extends GameWrapper {
     rounds = this.props.levelInfo.rounds;
     rows = this.props.levelInfo.smallRows || this.props.levelInfo.rows;
     amount = this.props.levelInfo.amount;
-    useSmallLetters = this.props.difficult > 0;
+    useSmallLetters = this.props.difficult > 0 || this.props.levelInfo.useSmallLetters;
     answers = [];
     mistakes = 0;
 
