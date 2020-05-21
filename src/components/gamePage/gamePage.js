@@ -27,6 +27,7 @@ import ChetGame from "../games/chetGame/chetGame";
 import FindLettersGame from "../games/findLettersGame/findLettersGame";
 import CoupleGame from "../games/coupleGame/coupleGame";
 import {doneLevelSound, loseLevelSound} from "../../sounds";
+import {giveParams} from "../../App";
 
 
 function GamePage(props) {
@@ -78,6 +79,9 @@ function GamePage(props) {
             addExp(moneyAndExpPerDifficult[difficult].exp);
             if (levelsCount > level + 1) {
                 addDoneLevels(game, difficult, level + 1);
+            }
+            if(level === 49){
+                giveParams({[game + difficult]: 1});
             }
         }
         setGameDone(true);

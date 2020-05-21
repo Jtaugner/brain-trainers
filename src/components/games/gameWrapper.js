@@ -4,7 +4,6 @@ let interval;
 class GameWrapper extends Component{
     setTimer(){
         interval = setInterval(()=>{
-            console.log('interval', this.props.gameDone);
             if(this.props.gameDone){
                 clearInterval(interval);
                 return;

@@ -10,6 +10,7 @@ import {premiumPrice} from "../../projectCommon";
 import ShopItemPremium from "./shop-item/shop-item-premium";
 import {addMoney, changeGamePayments, changePremiumTime, showVideo} from "../../store/ac";
 import {initPlayer, saveData} from "../../index";
+import {giveParams} from "../../App";
 
 
 function Shop(props) {
@@ -26,12 +27,15 @@ function Shop(props) {
         }
         addPremiumTime(newTime);
     };
+    const showRewardedVideo = () => {
+        giveParams({'rewarded': 1});
+        showVideo();
+    };
     const buyThing = (id) => {
         if(payments){
             let purchaseItem = id;
             payments.purchase(purchaseItem).then(purchase => {
                 if(purchase.productID === purchaseItem){
-
                     for(let i = 0; i < moneyPrice.length; i++){
                         if(moneyPrice[i].id === purchaseItem){
                             addMoney(moneyPrice[i].money);
@@ -44,7 +48,7 @@ function Shop(props) {
                             break;
                         }
                     }
-                    // params({[it]: 1});
+                    giveParams({[purchaseItem]: 1});
                     payments.consumePurchase(purchase.purchaseToken);
                     saveData();
                 }
@@ -75,7 +79,7 @@ function Shop(props) {
                         className={'shop-item__free'}
                         money={25}
                         price={0}
-                        onClick={showVideo}
+                        onClick={showRewardedVideo}
                     />
                     : ''
             }

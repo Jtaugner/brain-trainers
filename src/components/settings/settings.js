@@ -3,15 +3,19 @@ import './settings.scss'
 import {connect} from "react-redux";
 import {toggleSettings, toggleSounds} from "../../store/ac";
 import {selectSounds} from "../../store/selectors";
+import {giveParams} from "../../App";
 const games = [
     {id: 99195, classGame: 'wfw'},
     {id: 99196, classGame: 'wfl'},
     {id: 99049, classGame: 'er'},
     {id: 98125, classGame: 'stm'},
-]
+];
 function Settings(props) {
     const {closeSettings, toggleSounds,
         sounds} = props;
+    const doParams = (id) => {
+        giveParams({[id]: 1});
+    };
     return (
         <>
             <div className="blackout settings__blackout" onClick={closeSettings}/>
@@ -34,7 +38,7 @@ function Settings(props) {
                     </li>
                     {
                         games.map((obj)=>{
-                            return  <li key={obj.id}>
+                            return  <li key={obj.id} onClick={()=>doParams(obj.id)}>
                                 <a href={"https://yandex.ru/games/play/" + obj.id} target="_blank"
                                 rel="noopener noreferrer"
                                 >

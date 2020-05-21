@@ -49,12 +49,10 @@ class FieldGame extends GameWrapper {
         this.lettersForChange.forEach((a)=>{
             field[a[0]][a[1]] = '.';
         });
-        console.log(this.mistakes);
         this.state = {
             field,
             round: 0
         };
-        console.log(this.props.levelInfo);
         this.startGame();
     }
     mistake(){
@@ -88,8 +86,6 @@ class FieldGame extends GameWrapper {
         let allMistakes = this.mistakes.length;
         let gameCoef = this.rightClickedMistakes / allMistakes;
         let allClickedCoef = this.allClickedMistakes - this.rightClickedMistakes;
-        console.log(this.rightClickedMistakes, this.allClickedMistakes);
-        console.log(gameCoef, coef, allClickedCoef);
         if(gameCoef >= coef){
             if(
                 (this.props.difficult === 0 && allClickedCoef <= 3) ||
@@ -99,8 +95,6 @@ class FieldGame extends GameWrapper {
                 ){
                 this.props.getWin();
             }else{
-                console.log('Вы слишком много раз ответили неправильно (' +
-                    (this.allClickedMistakes-this.rightClickedMistakes)+')');
                 this.props.getLose('Вы слишком много раз ответили неправильно (' +
                     (this.allClickedMistakes-this.rightClickedMistakes)+')');
             }

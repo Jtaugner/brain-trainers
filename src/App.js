@@ -15,6 +15,16 @@ import GameSettingsPage from "./components/gameSettingsPage/gameSettingsPage";
 import ErrorMessage from "./components/errorMessage/errorMessage";
 import NewLevelPopUp from './components/newLevelPopUp/newLevelPopUp'
 import {closeNewLevel} from "./store/ac";
+import { YMInitializer } from 'react-yandex-metrika';
+import ym from 'react-yandex-metrika';
+
+export function giveParams(data) {
+    try{
+        ym(63291265, 'params', data);
+    }catch(ignored){}
+}
+
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -23,6 +33,7 @@ class App extends Component {
         };
 
     }
+
 
     componentDidCatch(error, info) {
         // Послать ошибку в яндекс метрику
@@ -50,6 +61,7 @@ class App extends Component {
         }
         return (
             <>
+                <YMInitializer accounts={[63291265]} />
                 <Switch
                 >
                     <Route path={'/home'}
