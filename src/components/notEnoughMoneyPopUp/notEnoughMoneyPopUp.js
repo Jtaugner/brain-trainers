@@ -2,9 +2,10 @@ import React from 'react';
 import './notEnoughMoneyPopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
 import {connect} from "react-redux";
-import {changeNotEnoughMoney, chooseLevel} from "../../store/ac";
+import {changeNotEnoughMoney} from "../../store/ac";
 import {selectSounds} from "../../store/selectors";
 import {notEnoughMoneySound} from '../../sounds'
+
 function NotEnoughMoneyPopUp(props) {
     const {onClick, isSounds} = props;
     if(isSounds) notEnoughMoneySound.play();

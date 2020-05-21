@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './levelsPage.scss'
 import {connect} from "react-redux";
 import PlayerLevel from "../playerLevel/playerLevel";
@@ -11,14 +11,10 @@ import ReturnBack from "../returnBack/returnBack";
 import {getLevelsAmountByGameAndDiff} from "../../gamesCommon";
 import Level from "./level/level";
 
-let indexGame = 0;
-let gamesClosedName = [];
 
 function LevelsPage(props) {
     const {diffName, game, difficult, doneLevels} = props;
-    console.log(diffName);
     let levelsCount = getLevelsAmountByGameAndDiff(game, difficult);
-    const [gameClosed, changeGameClosed] = useState(false);
     const levels = [];
     for (let i = 0; i < levelsCount; i++) {
         levels.push(<Level

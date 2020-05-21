@@ -1,7 +1,6 @@
 import React from 'react';
 import './gameDone.scss'
 import PlayerLevel from "../../playerLevel";
-import {Link} from "react-router-dom";
 import GameHomeLink from "../gameHomeLink/GameHomeLink";
 import GamePlayAgain from "../gamePlayAgain/GameHomeLink";
 

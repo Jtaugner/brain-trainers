@@ -28,7 +28,6 @@ import FindLettersGame from "../games/findLettersGame/findLettersGame";
 import CoupleGame from "../games/coupleGame/coupleGame";
 import {doneLevelSound, loseLevelSound} from "../../sounds";
 
-let timeout;
 
 function GamePage(props) {
     const {
@@ -102,7 +101,7 @@ function GamePage(props) {
         setWin(false);
         setPause(false);
         setGameDone(false);
-        timeout = setTimeout(() => {
+        setTimeout(() => {
             if (nextLevel) chooseLevel(level + 1);
             if (randomGame) {
                 level = Math.floor(Math.random() * levelsCount);
@@ -148,6 +147,8 @@ function GamePage(props) {
         case 'couple':
             GameComponent = CoupleGame;
             break;
+        default:
+            GameComponent = ShultzGame;
     }
 
     return (

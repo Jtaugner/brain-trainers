@@ -3,7 +3,12 @@ import './settings.scss'
 import {connect} from "react-redux";
 import {toggleSettings, toggleSounds} from "../../store/ac";
 import {selectSounds} from "../../store/selectors";
-
+const games = [
+    {id: 99195, classGame: 'wfw'},
+    {id: 99196, classGame: 'wfl'},
+    {id: 99049, classGame: 'er'},
+    {id: 98125, classGame: 'stm'},
+]
 function Settings(props) {
     const {closeSettings, toggleSounds,
         sounds} = props;
@@ -27,26 +32,18 @@ function Settings(props) {
                     <li className={'our-games'}>
                         Наши игры
                     </li>
-                    <li>
-                        <a href="https://yandex.ru/games/play/99195" target="_blank">
-                            <div className="wfw my-game" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yandex.ru/games/play/99196" target="_blank">
-                            <div className="wfl my-game" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yandex.ru/games/play/99049" target="_blank">
-                            <div className="er my-game" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yandex.ru/games/play/98125" target="_blank">
-                            <div className="stm my-game" />
-                        </a>
-                    </li>
+                    {
+                        games.map((obj)=>{
+                            return  <li key={obj.id}>
+                                <a href={"https://yandex.ru/games/play/" + obj.id} target="_blank"
+                                rel="noopener noreferrer"
+                                >
+                                    <div className={"my-game " + obj.classGame} />
+                                </a>
+                            </li>
+                        })
+                    }
+
                 </ul>
             </div>
         </>

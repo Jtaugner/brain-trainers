@@ -1,26 +1,32 @@
 import React from "react";
-
+//4000 + 1715
 const gameLevelOpen = [
-    0, 0, 0, 100, 300, 600, 1000, 1400, 1800
+    0, 0, 0, 200, 500, 850, 1350, 1650, 2200
 ];
 export const getGameLevelOpenCosts = (lvl) => {
     return gameLevelOpen[lvl];
 };
+//60750 опыта
 const level = [
     {exp: 100, premium: 24 * 60 * 60 * 1000},
-    {exp: 100, money: 10},
-    {exp: 250, money: 15},
-    {exp: 400, money: 25},
-    {exp: 700, money: 35},
+    {exp: 200, money: 20},
+    {exp: 400, money: 30},
+    {exp: 800, money: 40},
     {exp: 1000, money: 50},
-    {exp: 1400, money: 65},
-    {exp: 1900, money: 75},
-    {exp: 2500, money: 90},
-    {exp: 3500, money: 110},
+    {exp: 1300, money: 60},
+    {exp: 1600, money: 75},
+    {exp: 2000, money: 85},
+    {exp: 2300, money: 95},
+    {exp: 2600, money: 100},
+    {exp: 3100, money: 110},
+    {exp: 3600, money: 120},
+    {exp: 4100, money: 130},
     {exp: 4700, money: 140},
-    {exp: 6000, money: 180},
-    {exp: 7500, money: 230},
-    {exp: 9200, premium: 2 * 24 * 60 * 60 * 1000},
+    {exp: 5300, money: 150},
+    {exp: 5900, money: 160},
+    {exp: 6500, money: 170},
+    {exp: 7200, money: 180},
+    {exp: 8050, premium: 2 * 24 * 60 * 60 * 1000},
 ];
 export const getExpLevel = (lvl) => {
     return level[lvl].exp
@@ -42,16 +48,16 @@ export const gamesNames = {
 };
 export const moneyPrice = [
     //монеты - рубли
-    {money:150, price:59},
-{money:400, price:129, className: 'double-money'},
-    {money:1000, price:249, className: 'bag-money'},
-    {money:2000, price:399, className: 'bags-money'}
+    {money:150, price:49, id: 'money150'},
+    {money:400, price:89, className: 'double-money', id: 'money400'},
+    {money:1000, price:149, className: 'bag-money', id: 'money1000'},
+    {money:2000, price:229, className: 'bags-money', id: 'money2000'}
 ];
 export const premiumPrice = [
     //дни - рубли
-    [1, 49],
-    [7, 149],
-    [30, 299]
+    {days:1, price: 19, id: 'premium1'},
+    {days:7, price: 49, id: 'premium7'},
+    {days:30, price: 99, id: 'premium30'}
 ];
 export const difficultNames = [
     {key: 'easy', difficultName: 'Легко'},
@@ -64,9 +70,8 @@ export const moneyAndExpPerDifficult = [
     {exp: 10, money: 1}, //500 50 с полного уровня
     {exp: 25, money: 2}, //1250 100
     {exp: 40, money: 4}, //2000 200
-    {exp: 60, money: 7}, //3000 350
+    {exp: 60, money: 6}, //3000 300
 ];
-
 export const shuffle = (arr)=> {
     let j, temp;
     for (let i = arr.length - 1; i > 0; i--) {

@@ -2,7 +2,6 @@ import React from 'react';
 import './gameDoneLose.scss'
 import GameHomeLink from "../gameHomeLink/GameHomeLink";
 import GamePlayAgain from "../gamePlayAgain/GameHomeLink";
-import PlayerLevel from "../../playerLevel/playerLevel";
 
 function GameDoneLose(props) {
     const {playAgain, msg} = props;

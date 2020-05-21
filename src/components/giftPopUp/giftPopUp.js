@@ -1,17 +1,26 @@
 import React from 'react';
 import './giftPopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
-import {selectGameSDK, selectRewardedTime} from "../../store/selectors";
+import {selectGameSDK, selectRewardedTime, selectSounds} from "../../store/selectors";
 import {connect} from "react-redux";
 import {showVideo} from "../../store/ac";
+import {giftSound} from "../../sounds";
 
 function GiftPopUp(props) {
     const {
         moneyPerGift,
         gameSDK,
         showVideo,
-        rewardedVideoTime
+        rewardedVideoTime,
+        isSounds
     } = props;
+    if(isSounds){
+        giftSound.play();
+    }
+    const showRewarded = () => {
+        props.onClick();
+        showVideo(moneyPerGift);
+    };
     return (
 
         <div className={'close-game gift-pop-up'}>
@@ -31,7 +40,7 @@ function GiftPopUp(props) {
                 {moneyPerGift}
                 <div className="money-img"/>
             </div>
-            {gameSDK && rewardedVideoTime ? <div className="show-video" onClick={showVideo}>
+            {gameSDK && rewardedVideoTime ? <div className="show-video" onClick={showRewarded}>
                 Видео
                 <div className="free-money"/>
             </div> : ''
@@ -47,7 +56,8 @@ function GiftPopUp(props) {
 export default connect(
     (store) => ({
         gameSDK: selectGameSDK(store),
-        rewardedVideoTime: selectRewardedTime(store)
+        rewardedVideoTime: selectRewardedTime(store),
+        isSounds: selectSounds(store)
     }),
     (dispatch)=>({
         showVideo: (money) => {

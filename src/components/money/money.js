@@ -2,9 +2,9 @@ import React from 'react';
 import './money.scss'
 import {connect} from "react-redux";
 import {selectMoney} from "../../store/selectors";
-import {getExpLevel} from "../../projectCommon";
 import {Link} from "react-router-dom";
-const classNames = require('classnames');
+
+
 function Money(props) {
     const {money} = props;
     return (

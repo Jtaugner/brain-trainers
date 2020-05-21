@@ -82,7 +82,7 @@ class ChetGame extends GameWrapper {
 
     render() {
         return (
-            <div className={'chet-game ' + ('chet-length' + this.numberLength)}>
+            <div className={'chet-game chet-length' + this.numberLength}>
                 <div className="game-page__flex">
                     <div className="game-page__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                     {this.state.timer ? <div className="timer">Время: {this.state.timer}</div> : ''}

@@ -139,7 +139,7 @@ class FieldGame extends GameWrapper {
     render() {
         let cols = this.cols > this.rows ? this.cols : this.rows;
         return (
-             <div className={'field-game ' + ('field-game-cols'+cols)}>
+             <div className={'field-game field-game-cols'+cols}>
                     <GameProgressLine round={this.state.round} rounds={this.rounds}/>
                  <table>
                      <tbody>

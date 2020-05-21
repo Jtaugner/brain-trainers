@@ -2,13 +2,10 @@ import React, {useState} from 'react';
 import './gameSettingsPage.scss'
 import {connect} from "react-redux";
 import TopMenu from "../topMenu/topMenu"
-import {
-    selectGame,
-    selectGameName, selectLevelInfo,
-} from "../../store/selectors";
+import {selectGame, selectGameName, selectLevelInfo,} from "../../store/selectors";
 import ReturnBack from "../returnBack/returnBack";
 import {getRandText} from "../../gamesCommon";
-import {changeLevelInfo, changePremiumGame} from "../../store/ac";
+import {changeLevelInfo} from "../../store/ac";
 import {Link} from "react-router-dom";
 
 const gameSettings = {

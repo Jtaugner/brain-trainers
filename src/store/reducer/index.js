@@ -21,6 +21,7 @@ import {canOpenGiftReducer} from "./canOpenGiftReducer";
 import {gameSDKReducer} from "./gameSDKReducer";
 import {giftOpensReducer} from "./giftOpensReducer";
 import {rewardedVideoTimeReducer} from "./rewardedVideoTimeReducer";
+import {gamePaymentsReducer} from "./gamePaymentsReducer";
 
 const reducer = combineReducers({
 
@@ -45,7 +46,8 @@ const reducer = combineReducers({
     canOpenGift: canOpenGiftReducer,
     gameSDK: gameSDKReducer,
     giftOpens: giftOpensReducer,
-    rewardedTime: rewardedVideoTimeReducer
+    rewardedTime: rewardedVideoTimeReducer,
+    gamePayments: gamePaymentsReducer
 
 });
 

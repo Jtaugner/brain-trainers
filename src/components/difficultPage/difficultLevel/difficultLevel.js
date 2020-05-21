@@ -2,7 +2,6 @@ import React from 'react';
 import './difficultLevel.scss'
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {selectGameProgress} from "../../../store/selectors";
 import {changePremiumGame, chooseDifficult} from "../../../store/ac";
 import MenuLevel from "../../menuLevel/menuLevel";
 import {getLevelsAmountByGameAndDiff} from "../../../gamesCommon";

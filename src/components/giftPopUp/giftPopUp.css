@@ -17,6 +17,7 @@
   font-size: 2rem;
   border: 1px solid #b09cfd;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .show-video .free-money {

@@ -21,7 +21,7 @@ class RememberNumbersGame extends Component {
             enteredNumbers: [],
             showNumber: false,
             isWin: false,
-            round: 0,
+            round: 1,
             showAnswer: false
         };
         this.startGame();
@@ -55,6 +55,13 @@ class RememberNumbersGame extends Component {
                key = false;
             }
         }
+        if(this.state.round === this.props.levelInfo.rounds){
+            this.props.getWin();
+            this.setState({
+                isWin: true
+            })
+            return ;
+        }
         if(key){
             this.setState((state) =>
                 ({
@@ -68,16 +75,9 @@ class RememberNumbersGame extends Component {
                 enteredNumbers: [],
                 showAnswer: false
             });
-            if(this.state.round === this.props.levelInfo.rounds){
-                    this.props.getWin();
-                    this.setState({
-                        isWin: true
-                    })
-            }else{
-                timeout = setTimeout(()=> {
-                    this.showNumber();
-                }, 800);
-            }
+            timeout = setTimeout(()=> {
+                this.showNumber();
+            }, 800);
 
         }, 1000);
 
@@ -109,7 +109,7 @@ class RememberNumbersGame extends Component {
 
     render() {
         return (
-            <div className={'rememberNumbers-game ' + ('remember-width' + this.props.levelInfo.size)}>
+            <div className={'rememberNumbers-game remember-width' + this.props.levelInfo.size}>
                 <div className="game-page__rounds">Этап: {this.state.round}/{this.props.levelInfo.rounds}</div>
                 <div className="rememberNumbers__numbers">
                     {
