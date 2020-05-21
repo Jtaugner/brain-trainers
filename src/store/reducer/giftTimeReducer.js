@@ -1,9 +1,11 @@
-import {CHANGE_GIFT_TIME} from "../common";
+import {CHANGE_GIFT_TIME, getFromLocalStorage} from "../common";
 import {giftTimes} from "../../projectCommon";
 
-const time = (+new Date()) + giftTimes[0];
+let time = getFromLocalStorage('giftTime', (+new Date()) + giftTimes[0]);
+
 export const giftTimeReducer = (state = time, action) => {
     if(action.type === CHANGE_GIFT_TIME){
+        localStorage.setItem('giftTime', action.time);
         return action.time;
     }
     return state;

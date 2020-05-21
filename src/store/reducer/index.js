@@ -9,7 +9,6 @@ import {soundsReducer} from "./soundsReducer";
 import {gameReducer} from "./gameReducer";
 import {difficultReducer} from "./difficultReducer";
 import {gameLevelReducer} from "./gameLevelReducer";
-import {advTimeReducer, rewardedVideoTimeReducer} from "./advTimeReducer";
 import {randomGameReducer} from "./randomGameReducer";
 import {showConfettiReducer} from "./showConfettiReducer";
 import {notEnoughMoneyReducer} from "./notEnoughMoneyReducer";
@@ -21,6 +20,7 @@ import {giftTimeReducer} from "./giftTimeReducer";
 import {canOpenGiftReducer} from "./canOpenGiftReducer";
 import {gameSDKReducer} from "./gameSDKReducer";
 import {giftOpensReducer} from "./giftOpensReducer";
+import {rewardedVideoTimeReducer} from "./rewardedVideoTimeReducer";
 
 const reducer = combineReducers({
 
@@ -33,8 +33,6 @@ const reducer = combineReducers({
     game: gameReducer,
     difficult: difficultReducer,
     gameLevel: gameLevelReducer,
-    advTime: advTimeReducer,
-    rewardedVideoTime: rewardedVideoTimeReducer,
     randomGame: randomGameReducer,
     showConfetti: showConfettiReducer,
     notEnoughMoney: notEnoughMoneyReducer,
@@ -46,7 +44,8 @@ const reducer = combineReducers({
     giftTime: giftTimeReducer,
     canOpenGift: canOpenGiftReducer,
     gameSDK: gameSDKReducer,
-    giftOpens: giftOpensReducer
+    giftOpens: giftOpensReducer,
+    rewardedTime: rewardedVideoTimeReducer
 
 });
 

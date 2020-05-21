@@ -1,9 +1,11 @@
-import {} from "../common";
-import {GET_NEW_LEVEL} from "../common";
-import {CHANGE_LEVEL_FROM_PLAYER_DATA} from "../common";
+import {CHANGE_LEVEL_FROM_PLAYER_DATA, GET_NEW_LEVEL, getFromLocalStorage} from "../common";
 
-export const levelReducer = (state = 0, action) => {
+
+let gameLevel = getFromLocalStorage('gameLevel', 0);
+
+export const levelReducer = (state = gameLevel, action) => {
     if(action.type === GET_NEW_LEVEL){
+        localStorage.setItem('gameLevel', state + 1);
         return state + 1;
     }else if(action.type === CHANGE_LEVEL_FROM_PLAYER_DATA){
         return action.level;

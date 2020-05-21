@@ -2,13 +2,13 @@ import {
     ADD_DONE_LEVEL,
     ADD_EXP,
     ADD_MONEY, ADD_OPEN_GIFT, BUY_GAME, BUY_LEVELS_DIFF, CHANGE_CAN_OPEN_GIFT,
-    CHANGE_EXP_FROM_PLAYER_DATA, CHANGE_GAME_SDK, CHANGE_GIFT_TIME,
+    CHANGE_EXP_FROM_PLAYER_DATA, CHANGE_GAME_SDK, CHANGE_GIFT_OPENS_FROM_PLAYER_DATA, CHANGE_GIFT_TIME,
     CHANGE_LEVEL_FROM_PLAYER_DATA, CHANGE_LEVEL_INFO,
     CHANGE_MONEY_FROM_PLAYER_DATA, CHANGE_NOT_ENOUGH_MONEY, CHANGE_PREMIUM_GAME, CHANGE_PREMIUM_TIME,
-    CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME,
+    CHANGE_PROGRESS_FROM_PLAYER_DATA, CHANGE_RAND_GAME, CHANGE_REWARDED_TIME,
     CHOOSE_DIFFICULT,
     CHOOSE_GAME,
-    CHOOSE_LEVEL, CLOSE_NEW_LEVEL, SET_PREMIUM,
+    CHOOSE_LEVEL, CLOSE_NEW_LEVEL, SET_PREMIUM, SHOW_ADV, SHOW_VIDEO,
     SWITCH_OFF_CONFETTI,
     TOGGLE_SETTINGS,
     TOGGLE_SOUNDS
@@ -86,6 +86,10 @@ export const changeMoney = (money) => ({
     type: CHANGE_MONEY_FROM_PLAYER_DATA,
     money
 });
+export const changeGiftOpens = (gifts) => ({
+    type: CHANGE_GIFT_OPENS_FROM_PLAYER_DATA,
+    gifts
+});
 //Random game
 export const changeRandomGame = (isRandGame) => ({
     type: CHANGE_RAND_GAME,
@@ -138,4 +142,15 @@ export const changeGameSDK= (gameSDK) => ({
 });
 export const addOpenGift = () => ({
     type: ADD_OPEN_GIFT
+});
+export const showAdv = () => ({
+    type: SHOW_ADV
+});
+export const showVideo = (money) => ({
+    type: SHOW_VIDEO,
+    money
+});
+export const changeRewardTime = (isTime) => ({
+    type: CHANGE_REWARDED_TIME,
+    isTime
 });

@@ -1,7 +1,11 @@
-import {CHANGE_PREMIUM_TIME} from "../common";
+import {CHANGE_PREMIUM_TIME, getFromLocalStorage} from "../common";
 
-export const premiumTimeReducer = (state = 9999999999999, action) => {
+
+let time = getFromLocalStorage('premiumTime', 0);
+
+export const premiumTimeReducer = (state = time, action) => {
     if(action.type === CHANGE_PREMIUM_TIME){
+        localStorage.setItem('premiumTime', action.time);
         return action.time;
     }
     return state;

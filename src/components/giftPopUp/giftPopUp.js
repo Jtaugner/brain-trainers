@@ -1,25 +1,17 @@
 import React from 'react';
 import './giftPopUp.scss'
 import popUpBlackout from "../../decorators/pop-up-blackout/PopUpBlackout";
-import {selectGameSDK} from "../../store/selectors";
+import {selectGameSDK, selectRewardedTime} from "../../store/selectors";
 import {connect} from "react-redux";
-import {addMoney} from "../../store/ac";
+import {showVideo} from "../../store/ac";
 
 function GiftPopUp(props) {
     const {
         moneyPerGift,
         gameSDK,
-        giveMoney
+        showVideo,
+        rewardedVideoTime
     } = props;
-    const showRewarded = () => {
-        gameSDK.adv.showRewardedVideo({
-            callbacks: {
-                onRewarded: () => {
-                    giveMoney(moneyPerGift);
-                },
-            }
-        });
-    };
     return (
 
         <div className={'close-game gift-pop-up'}>
@@ -27,12 +19,19 @@ function GiftPopUp(props) {
                 <h3>Ваш подарок</h3>
                 <div className="close-game__close" onClick={() => props.onClick()}/>
             </div>
-            <p>Вы можете посмотреть видео и получить вдвое больше монет</p>
+            <p>
+                {gameSDK && rewardedVideoTime
+                    ?
+                    'Вы можете посмотреть видео и получить вдвое больше монет'
+                    :
+                    'Ваш подарок'
+                }
+                </p>
             <div className="prize">
                 {moneyPerGift}
                 <div className="money-img"/>
             </div>
-            {gameSDK ? <div className="show-video" onClick={showRewarded}>
+            {gameSDK && rewardedVideoTime ? <div className="show-video" onClick={showVideo}>
                 Видео
                 <div className="free-money"/>
             </div> : ''
@@ -47,11 +46,12 @@ function GiftPopUp(props) {
 
 export default connect(
     (store) => ({
-        gameSDK: selectGameSDK(store)
+        gameSDK: selectGameSDK(store),
+        rewardedVideoTime: selectRewardedTime(store)
     }),
     (dispatch)=>({
-        giveMoney: (money) => {
-            dispatch(addMoney(money));
+        showVideo: (money) => {
+            dispatch(showVideo(money));
         }
     })
 )(popUpBlackout(GiftPopUp));

@@ -1,6 +1,10 @@
-import {SET_PREMIUM} from "../common";
+import {getFromLocalStorage, SET_PREMIUM} from "../common";
 
-export const premiumReducer = (state = true, action) => {
+let time = getFromLocalStorage('premiumTime', 0);
+let isPremium = false;
+if((+new Date()) < time ) isPremium = true;
+
+export const premiumReducer = (state = isPremium, action) => {
     if(action.type === SET_PREMIUM){
         return action.isPremium
     }

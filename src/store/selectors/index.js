@@ -22,8 +22,7 @@ export const selectGameProgress= (store, game) => store.progress[game];
 export const selectGameProgressWithoutGame = (store) => store.progress[selectGame(store)];
 export const selectGameProgressByDifficult= (store) => store.progress[selectGame(store)].doneLevels[selectDifficult(store)];
 
-//adverts
-export const selectRewardedVideoTime = (store) => store.rewardedVideoTime;
+
 //rand game
 export const selectRandGame = (store) => store.randomGame;
 //confetti
@@ -41,3 +40,6 @@ export const selectGiftTime = (store) => store.giftTime;
 export const selectCanOpenGift = (store) => store.canOpenGift;
 export const selectGameSDK = (store) => store.gameSDK;
 export const selectGiftOpens = (store) => store.giftOpens;
+
+
+export const selectRewardedTime = (store) => store.rewardedTime;

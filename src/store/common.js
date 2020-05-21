@@ -1,4 +1,5 @@
 export const SHOW_ADV = "SHOW_ADV";
+export const SHOW_VIDEO = "SHOW_VIDEO";
 
 
 
@@ -29,6 +30,7 @@ export const CHANGE_PROGRESS_FROM_PLAYER_DATA = "CHANGE_PROGRESS_FROM_PLAYER_DAT
 export const CHANGE_LEVEL_FROM_PLAYER_DATA = "CHANGE_LEVEL_FROM_PLAYER_DATA";
 export const CHANGE_EXP_FROM_PLAYER_DATA = "CHANGE_EXP_FROM_PLAYER_DATA";
 export const CHANGE_MONEY_FROM_PLAYER_DATA = "CHANGE_MONEY_FROM_PLAYER_DATA";
+export const CHANGE_GIFT_OPENS_FROM_PLAYER_DATA = "CHANGE_GIFT_OPENS_FROM_PLAYER_DATA";
 //Рандомная игра
 export const CHANGE_RAND_GAME = "CHANGE_RAND_GAME";
 //Конфетти
@@ -48,3 +50,12 @@ export const CHANGE_GIFT_TIME = "CHANGE_GIFT_TIME";
 export const CHANGE_CAN_OPEN_GIFT = "CHANGE_CAN_OPEN_GIFT";
 export const CHANGE_GAME_SDK = "CHANGE_GAME_SDK";
 export const ADD_OPEN_GIFT = "ADD_OPEN_GIFT";
+
+export const CHANGE_REWARDED_TIME = "CHANGE_REWARDED_TIME";
+
+export const getFromLocalStorage = (name, defaultVal) => {
+  let val = localStorage.getItem(name);
+  if(val) return Number(val);
+  localStorage.setItem(name, defaultVal);
+  return defaultVal;
+};

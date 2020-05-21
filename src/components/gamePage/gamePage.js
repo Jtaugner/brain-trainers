@@ -15,7 +15,7 @@ import ShultzGame from '../games/shultzGame/shultzGame'
 import GameDone from "./gameDone/gameDone";
 import {moneyAndExpPerDifficult} from "../../projectCommon";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
-import {addDoneLevels, addExp, addMoney, chooseLevel} from "../../store/ac";
+import {addDoneLevels, addExp, addMoney, chooseLevel, showAdv} from "../../store/ac";
 import {getLevelsAmountByGameAndDiff, getLevelsInfoByGameDiffAndLevel} from "../../gamesCommon";
 import GameDoneLose from "./gameDoneLose/gameDoneLose";
 import RememberNumbersGame from "../games/rememberNumbersGame/rememberNumbersGame";
@@ -36,7 +36,8 @@ function GamePage(props) {
         doneLevels, randomGame,
         addMoney, addExp, chooseLevel, addDoneLevels,
         premiumGame, premiumLevelInfo,
-        isSounds
+        isSounds,
+        showAdv
 
     } = props;
     let {level} = props;
@@ -61,6 +62,7 @@ function GamePage(props) {
     let [money, setMoney] = useState(0);
     const getWin = () => {
         if (gameDone) return;
+        showAdv();
         if(isSounds){
             setTimeout(()=>{
                 doneLevelSound.play();
@@ -84,6 +86,7 @@ function GamePage(props) {
     };
     const getLose = (msg) => {
         if (gameDone) return;
+        showAdv();
         if(isSounds){
             setTimeout(()=>{
                 loseLevelSound.play()
@@ -226,6 +229,7 @@ export default connect((store) => ({
     (dispatch) => ({
         chooseLevel: (level) => dispatch(chooseLevel(level)),
         addMoney: (money) => dispatch(addMoney(money)),
+        showAdv: () => dispatch(showAdv()),
         addExp: (exp) => dispatch(addExp(exp)),
         addDoneLevels: (game, difficult, doneLevels) => dispatch(addDoneLevels(game, difficult, doneLevels))
     })
