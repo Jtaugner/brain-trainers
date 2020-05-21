@@ -55,21 +55,21 @@ class RememberNumbersGame extends Component {
                key = false;
             }
         }
-        if(this.state.round === this.props.levelInfo.rounds){
-            this.props.getWin();
-            this.setState({
-                isWin: true
-            })
-            return ;
-        }
+        let round = this.state.round;
         if(key){
-            this.setState((state) =>
-                ({
-                    round: state.round + 1
-                }));
+            round++;
+            if(round-1 === this.props.levelInfo.rounds){
+                this.props.getWin();
+                this.setState({
+                    isWin: true
+                });
+                return;
+            }
+            this.setState({round});
         }else if(this.props.difficult > 0){
             return this.props.getLose('Введённое число оказалось неверным')
         }
+
         timeout = setTimeout(()=>{
             this.setState({
                 enteredNumbers: [],

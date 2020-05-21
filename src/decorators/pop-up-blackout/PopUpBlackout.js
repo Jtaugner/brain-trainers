@@ -19,7 +19,7 @@ function popUpBlackout(OriginalComponent) {
         let Component = <div className={'pop-up-anim'}>
             <canvas id="show-confetti" onClick={enableScrollAndExit}/>
             <div className={'blackout'} onClick={enableScrollAndExit}/>
-            <div className="pop-up">
+            <div className={"pop-up " +(props.bigForm ? 'big-form' : '')}>
                 <OriginalComponent
                     {...props}
                     onClick={enableScrollAndExit}

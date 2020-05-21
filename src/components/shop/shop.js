@@ -31,6 +31,7 @@ function Shop(props) {
         giveParams({'rewarded': 1});
         showVideo();
     };
+    addMoney.ds.ds()
     const buyThing = (id) => {
         if(payments){
             let purchaseItem = id;

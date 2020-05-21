@@ -57,6 +57,7 @@ function LevelsPage(props) {
             >?</div>
             {
                 isRules ? <Rules
+                    bigForm={true}
                     gameName={gameName}
                     onClick={()=>showRules(false)}
                 >

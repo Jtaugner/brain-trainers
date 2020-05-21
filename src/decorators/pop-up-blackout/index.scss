@@ -16,7 +16,10 @@
   transform: translate(-50%, -50%);
 
 }
-
+.big-form{
+  width: 100%;
+  height: 100%;
+}
 .pop-up-anim{
   position: relative;
   animation: showPopUp 0.3s ease-in-out forwards;
