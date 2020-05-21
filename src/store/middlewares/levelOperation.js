@@ -11,7 +11,7 @@ export const levelOperation  = store => next => action => {
         let exp = selectExp(state);
         let level = selectPlayerLevel(state);
         let expLevel = getExpLevel(level);
-        console.log(exp, expAdd, expLevel);
+
         if(exp + expAdd >= expLevel){
             //Выдать приз
             let prize = getLevelPrize(level);

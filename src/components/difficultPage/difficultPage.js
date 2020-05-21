@@ -9,11 +9,11 @@ import {selectGame, selectGameName, selectGameProgressWithoutGame, selectRandGam
 import ReturnBack from "../returnBack/returnBack";
 import DifficultLevel from "./difficultLevel/difficultLevel";
 import DifficultPremiumLevel from "./difficultPremiumLevel/difficultPremiumLevel";
-import {difficultNames, getRules} from "../../projectCommon";
+import {difficultNames} from "../../projectCommon";
 import CloseDifficultLevel from "./closeDifficultLevel/closeDifficultLevel";
 import {buyLevelsDiff, switchOffConfetti} from "../../store/ac";
-import Rules from "../rules/rules";
 import PremiumInfo from '../premiumInfo/premiumInfo'
+
 const expertCosts = 150;
 const difficultColors =
     [
@@ -27,10 +27,8 @@ function DifficultPage(props) {
     const {gameName, game, randomGame,
         buyLevelsDiff, switchOffConfetti,
         progress} = props;
-    let allDoneLevels = progress.doneLevels.reduce((acc, e)=>acc+e, 0);
     let [popUpExpert, setPopUp] = useState(false);
     let [popUpPremium, setPremiumPopUp] = useState(false);
-    let [isRules, showRules] = useState(allDoneLevels === 0 && !randomGame);
 
     return (
         <div className={'mainPage difficultPage'}>
@@ -67,17 +65,6 @@ function DifficultPage(props) {
                 }}
             />: ''}
             <ReturnBack to={'/home'}/>
-            <div className="top-tip__open-rules"
-                 onClick={()=>showRules(true)}
-            >?</div>
-            {
-                isRules ? <Rules
-                    gameName={gameName}
-                    onClick={()=>showRules(false)}
-                >
-                    {getRules(game)}
-                </Rules> : ''
-            }
             {
                 popUpPremium ? <PremiumInfo
                                     onClick={()=>{setPremiumPopUp(false)}}
