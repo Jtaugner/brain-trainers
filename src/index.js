@@ -41,14 +41,17 @@ function getState() {
 }
 
 export function saveData() {
-    if (playerGame) {
-        const state = {gameProgress: getState()};
-        if(playerGame) playerGame.setData(state).then((ignored) => {}).catch(()=>{
-            setTimeout(()=>{
-                playerGame.setData(state).then((ignored) => {})
-            }, 60000)
-        });
-    }
+    try{
+        if (playerGame) {
+            const state = {gameProgress: getState()};
+            if(playerGame) playerGame.setData(state).then((ignored) => {}).catch(()=>{
+                setTimeout(()=>{
+                    playerGame.setData(state).then((ignored) => {})
+                }, 60000)
+            });
+        }
+    }catch (ignored) {}
+
 
 }
 

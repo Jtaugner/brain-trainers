@@ -12,7 +12,6 @@ import {addMoney, changeGamePayments, changePremiumTime, showVideo} from "../../
 import {initPlayer, saveData} from "../../index";
 import {giveParams} from "../../App";
 
-
 function Shop(props) {
     const {money, rewardedVideoTime, gameSDK, showVideo,
         payments, addMoney, addPremiumTime, premiumTime} = props;
@@ -28,10 +27,10 @@ function Shop(props) {
         addPremiumTime(newTime);
     };
     const showRewardedVideo = () => {
+
         giveParams({'rewarded': 1});
         showVideo();
     };
-    addMoney.ds.ds()
     const buyThing = (id) => {
         if(payments){
             let purchaseItem = id;

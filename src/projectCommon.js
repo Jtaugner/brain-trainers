@@ -1,7 +1,7 @@
 import React from "react";
 //4000 + 1715
 const gameLevelOpen = [
-    0, 0, 0, 200, 500, 850, 1350, 1650, 2200
+    0, 0, 0, 200, 500, 850, 1350, 1650, 2000
 ];
 export const getGameLevelOpenCosts = (lvl) => {
     return gameLevelOpen[lvl];
