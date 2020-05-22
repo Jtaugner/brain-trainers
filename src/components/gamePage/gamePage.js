@@ -62,7 +62,6 @@ function GamePage(props) {
     let [money, setMoney] = useState(0);
     const getWin = () => {
         if (gameDone) return;
-        showAdv();
         if(isSounds){
             setTimeout(()=>{
                 doneLevelSound.play();
@@ -86,10 +85,13 @@ function GamePage(props) {
         }
         setGameDone(true);
         setWin(true);
+        setTimeout(()=>{
+            showAdv();
+        }, 500);
     };
     const getLose = (msg) => {
         if (gameDone) return;
-        showAdv();
+
         if(isSounds){
             setTimeout(()=>{
                 loseLevelSound.play()
@@ -98,6 +100,10 @@ function GamePage(props) {
         setLoseMsg(msg);
         setLose(true);
         setGameDone(true);
+
+        setTimeout(()=>{
+            showAdv();
+        }, 500);
     };
     const playAgain = (nextLevel) => {
         setIsGame(false);
