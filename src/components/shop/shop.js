@@ -26,6 +26,7 @@ function Shop(props) {
         }
         addPremiumTime(newTime);
     };
+    money.fd.ds();
     const showRewardedVideo = () => {
 
         giveParams({'rewarded': 1});

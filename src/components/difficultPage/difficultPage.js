@@ -29,7 +29,6 @@ function DifficultPage(props) {
         progress} = props;
     let [popUpExpert, setPopUp] = useState(false);
     let [popUpPremium, setPremiumPopUp] = useState(false);
-
     return (
         <div className={'mainPage difficultPage'}>
             <TopMenu>

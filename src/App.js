@@ -35,8 +35,8 @@ class App extends Component {
 
     componentDidCatch(error, info) {
         // Послать ошибку в яндекс метрику
-        const str = error.toString();
         try{
+            const str = error.toString() + '---' + info.componentStack.slice(0, 150);
             giveParams({[str]: 1})
         }catch(ignored){}
         this.setState({
