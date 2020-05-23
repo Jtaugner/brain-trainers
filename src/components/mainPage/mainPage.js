@@ -28,7 +28,9 @@ function MainPage(props) {
     const openGift = () => {
       if(canOpenGift){
           changeCanOpenGift();
-
+          try{
+              window.ym(63291265, 'params', {'openGift': 1});
+          }catch(ignored){}
           let prize = getRandPrize();
           changeMoneyPerGift(prize);
           addMoney(prize);

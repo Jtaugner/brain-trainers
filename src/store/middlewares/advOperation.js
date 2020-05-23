@@ -6,6 +6,13 @@ let advTime = true;
 export const advertMiddleware  = store => next => action => {
     if(action.type === SHOW_ADV){
         if(advTime){
+
+
+            try{
+                window.ym(63291265, 'params', {'showAdv': 1});
+            }catch(ignored){}
+
+
             let sdk = selectGameSDK(store.getState());
             sdk.adv.showFullscreenAdv({
                 callbacks: {

@@ -20,6 +20,9 @@ function GiftPopUp(props) {
     const showRewarded = () => {
         props.onClick();
         showVideo(moneyPerGift);
+        try{
+            window.ym(63291265, 'params', {'showGiftRewarded': 1});
+        }catch(ignored){}
     };
     return (
 
