@@ -22,14 +22,13 @@ if(gamesProgress){
 
 export const progressReducer = (state = gamesProgress, action) => {
     if(action.type === ADD_DONE_LEVEL){
-        const newState = {...gamesProgress};
+        const newState = {...state};
         newState[action.payload.game]
             .doneLevels[action.payload.difficult]
         = action.payload.doneLevels;
         localStorage.setItem('gamesProgress', JSON.stringify(newState));
         return newState;
     }else if(action.type === CHANGE_PROGRESS_FROM_PLAYER_DATA){
-
         return action.progress;
     }else if(action.type === BUY_GAME){
         const newState = {...gamesProgress};

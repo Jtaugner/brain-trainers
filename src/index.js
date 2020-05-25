@@ -60,11 +60,12 @@ export function initPlayer(ysdk, fromShop) {
         // Игрок авторизован.
         playerGame = _player;
         window.onblur = saveData;
+        window.onunload= saveData;
         window.onbeforeunload = saveData;
         window.onpagehide = saveData;
         setInterval(()=>{
             saveData();
-        }, 300000);
+        }, 60000);
         playerGame.getData(['gameProgress'], false).then((data) => {
             const gp = data.gameProgress;
             if(gp){

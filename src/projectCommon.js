@@ -1,5 +1,5 @@
 import React from "react";
-//4000 + 1620
+//4400 + 1620
 const gameLevelOpen = [
     0, 0, 0, 200, 500, 850, 1350, 1600, 2000
 ];
@@ -70,7 +70,7 @@ export const moneyAndExpPerDifficult = [
     {exp: 10, money: 1}, //500 50 с полного уровня
     {exp: 25, money: 2}, //1250 100
     {exp: 40, money: 4}, //2000 200
-    {exp: 60, money: 6}, //3000 300
+    {exp: 60, money: 7}, //3000 350
 ];
 export const shuffle = (arr)=> {
     let j, temp;
