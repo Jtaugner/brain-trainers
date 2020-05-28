@@ -27,11 +27,12 @@
 }
 
 
-.findWord__cell_selected{
-  background-color: $lightMain;
-}
 .findWord__cell_done{
   background-color: $darkMain;
+}
+
+.findWord__cell_selected{
+  background-color: $lightMain;
 }
 @media (min-width: 600px) {
   .findWord-game__done-words{

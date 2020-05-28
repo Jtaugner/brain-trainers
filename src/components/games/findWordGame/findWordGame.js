@@ -27,11 +27,10 @@ class FindWordGame extends GameWrapper {
 
     constructor(props) {
         super(props);
-        const [words, answers, findWords] =
+        const [words, findWords] =
             getFillWordAndPlacesWords(this.wordsAmount, this.rows);
         this.state = {
             arrWords: words,
-            rightAnswersWords: answers,
             words: findWords,
             doneCells: [],
             doneWords: [],
@@ -51,16 +50,14 @@ class FindWordGame extends GameWrapper {
             if(round === this.rounds) {
                 return this.props.getWin();
             }
-            const [words, answers, findWords] =
+            const [words, findWords] =
                 getFillWordAndPlacesWords(this.wordsAmount, this.rows);
-            this.answers = answers;
             this.setState({
                 arrWords: words,
                 words: findWords,
                 doneWords: [],
                 doneCells: [],
                 selectedCells: [],
-                rightAnswersWords: answers,
                 rightLetters: [],
                 round: round + 1
             });
@@ -78,12 +75,6 @@ class FindWordGame extends GameWrapper {
         }
         word = word.toLowerCase();
         if (this.state.words.includes(word)) {
-            let places = this.state.rightAnswersWords[word];
-            for (let i = 0; i < selectedCells.length; i++) {
-                this.setState({selectedCells: []});
-                this.selectedMode = false;
-                if(places[i] !== selectedCells[i]) return false;
-            }
             let doneCells = [...this.state.doneCells, ...selectedCells];
             let doneWords = [...this.state.doneWords];
             doneWords.push(word);
@@ -92,18 +83,16 @@ class FindWordGame extends GameWrapper {
                     this.startRound();
                 }, 200)
             }
-            this.setState((state)=>({
+            this.setState({
                 doneWords,
                 doneCells
-            }));
+            });
         }
         this.setState({selectedCells: []});
         this.selectedMode = false;
     };
 
     selectFirstCell(i, j) {
-        const cell = i + '-' + j;
-        if (this.state.doneCells.includes(cell)) return;
         if (!this.selectedMode) {
             this.addSelectedCell(i, j);
             this.selectedMode = true;
@@ -131,7 +120,6 @@ class FindWordGame extends GameWrapper {
 
     selectNextCell(i, j){
         const cell = i + '-' + j;
-        if(this.state.doneCells.includes(cell)) return;
         if(this.selectedMode){
             let selectedCells = [...this.state.selectedCells];
             if (selectedCells.includes(cell)){
@@ -202,8 +190,9 @@ class FindWordGame extends GameWrapper {
                                         className={
                                             classNames({
                                                 'findWord__cell': true,
-                                                'findWord__cell_selected': this.state.selectedCells.includes(rowIndex + '-' + colIndex),
-                                                'findWord__cell_done': this.state.doneCells.includes(rowIndex + '-' + colIndex)
+                                                'findWord__cell_done': this.state.doneCells.includes(rowIndex + '-' + colIndex),
+                                                'findWord__cell_selected': this.state.selectedCells.includes(rowIndex + '-' + colIndex)
+
                                             })
                                         }
 
@@ -231,7 +220,7 @@ class FindWordGame extends GameWrapper {
 
 export default FindWordGame;
 
-let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
+let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
 
 function getFillWordAndPlacesWords(wordsLength, height) {
     try{
@@ -243,45 +232,8 @@ function getFillWordAndPlacesWords(wordsLength, height) {
                 fillWord[i].push(0);
             }
         }
-        let allPlacesWords = {};
         for (let i = 0; i < wordArray.length; i++) {
-            let arr = getWordsInArrAndPlaces(wordArray[i], fillWord);
-            fillWord = arr[0];
-            allPlacesWords[wordArray[i]] = arr[1];
-        }
-        //Заполнить буквы вокруг букв слов
-        let letters = [];
-        for (let i = 0; i < fillWord.length; i++) {
-            for (let j = 0; j < fillWord[0].length; j++) {
-                if (fillWord[i][j] !== 0) {
-                    let arr_RU = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я'];
-                    let deleteArr = [];
-                    if (i !== 0) deleteArr.push(fillWord[i - 1][j]);
-                    if (i !== fillWord.length - 1) deleteArr.push(fillWord[i + 1][j]);
-                    if (j !== 0) deleteArr.push(fillWord[i][j - 1]);
-                    if (j !== fillWord[0].length - 1) deleteArr.push(fillWord[i][j + 1]);
-                    for(let i = 0; i < deleteArr.length; i++) {
-                        if (isNaN(deleteArr[i])) {
-                            arr_RU.splice(arr_RU.indexOf(deleteArr[i]), 1);
-                        }
-                    }
-                    if (i !== 0 && fillWord[i - 1][j] === 0) {
-                        letters.push([i - 1, j, arr_RU[Math.floor(Math.random() * arr_RU.length)].toUpperCase()]);
-                    }
-                    if (i !== fillWord.length - 1 && fillWord[i + 1][j] === 0) {
-                        letters.push([i + 1, j, arr_RU[Math.floor(Math.random() * arr_RU.length)].toUpperCase()]);
-                    }
-                    if (j !== fillWord[0].length - 1 && fillWord[i][j + 1] === 0) {
-                        letters.push([i, j + 1, arr_RU[Math.floor(Math.random() * arr_RU.length)].toUpperCase()]);
-                    }
-                    if (j !== 0 && fillWord[i][j - 1] === 0) {
-                        letters.push([i, j - 1, arr_RU[Math.floor(Math.random() * arr_RU.length)].toUpperCase()]);
-                    }
-                }
-            }
-        }
-        for (let i = 0; i < letters.length; i++) {
-            fillWord[letters[i][0]][letters[i][1]] = letters[i][2];
+            fillWord = getWordsInArrAndPlaces(wordArray[i], fillWord);
         }
         //Заполнить оставшиеся клетки случайными буквами
         for (let i = 0; i < fillWord.length; i++) {
@@ -291,7 +243,7 @@ function getFillWordAndPlacesWords(wordsLength, height) {
                 }
             }
         }
-        return [fillWord, allPlacesWords, wordArray];
+        return [fillWord, wordArray];
     }catch (ignored){
         return getFillWordAndPlacesWords(wordsLength, height);
     }
@@ -312,8 +264,6 @@ function getWordsInArrAndPlaces(word, arr) {
     let thatCol = startCell[1];
 
     copyArr[thatRow][thatCol] = word[0];
-    let placesLetters = [];
-    placesLetters.push(thatRow + '-' + thatCol);
     for (let i = 1; i < word.length; i++) {
         let directions = [0, 1, 2, 3];
         let isLetterInCell = false;
@@ -351,12 +301,11 @@ function getWordsInArrAndPlaces(word, arr) {
                 }
             }
         }
-        placesLetters.push(thatRow + '-' + thatCol);
         if (!isLetterInCell) {
             return getWordsInArrAndPlaces(word, arr);
         }
     }
-    return [copyArr, placesLetters];
+    return copyArr;
 }
 
 function getAllEmptyCells(arr) {

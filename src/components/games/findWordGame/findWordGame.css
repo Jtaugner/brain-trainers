@@ -23,12 +23,12 @@
   text-decoration: line-through;
 }
 
-.findWord__cell_selected {
-  background-color: #d8d0ff;
-}
-
 .findWord__cell_done {
   background-color: #b09cfd;
+}
+
+.findWord__cell_selected {
+  background-color: #d8d0ff;
 }
 
 @media (min-width: 600px) {
