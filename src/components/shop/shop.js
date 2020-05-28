@@ -27,8 +27,6 @@ function Shop(props) {
         addPremiumTime(newTime);
     };
     const showRewardedVideo = () => {
-
-        giveParams({'rewarded': 1});
         showVideo();
     };
     const buyThing = (id) => {
