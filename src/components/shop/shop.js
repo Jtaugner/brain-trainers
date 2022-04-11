@@ -3,7 +3,14 @@ import './shop.scss'
 import {connect} from "react-redux";
 import BottomMainMenu from "../bottomMainMenu/bottomMenu";
 import TopMenu from "../topMenu";
-import {selectGameSDK, selectMoney, selectPayments, selectPremiumTime, selectRewardedTime} from "../../store/selectors";
+import {
+    selectCatalog,
+    selectGameSDK,
+    selectMoney,
+    selectPayments,
+    selectPremiumTime,
+    selectRewardedTime
+} from "../../store/selectors";
 import ShopItem from "./shop-item";
 import {moneyPrice} from "../../projectCommon";
 import {premiumPrice} from "../../projectCommon";
@@ -14,7 +21,8 @@ import {giveParams} from "../../App";
 
 function Shop(props) {
     const {money, rewardedVideoTime, gameSDK, showVideo,
-        payments, addMoney, addPremiumTime, premiumTime} = props;
+        payments, addMoney, addPremiumTime, premiumTime,
+        catalog} = props;
 
     const changePremiumTime = (days) => {
         const newDate = +new Date();
@@ -60,6 +68,18 @@ function Shop(props) {
             });
         }
     };
+
+    const getPrice = (item, index, isPremium) => {
+        try{
+            if(isPremium) index += 4;
+            console.log(item, index, catalog[index].price);
+            return catalog[index].price;
+        }catch(e){
+            return item.price + '₽';
+        }
+    }
+
+
     return (
         <div className="shop">
             <TopMenu>
@@ -81,24 +101,25 @@ function Shop(props) {
                     />
                     : ''
             }
+            {moneyPrice.map((obj, index) =>
+                <ShopItem
+                    key={'money' + index}
+                    money={obj.money}
+                    price={getPrice(obj, index)}
+                    className={obj.className}
+                    onClick={()=>buyThing(obj.id)}
+                />
+            )}
 
             {premiumPrice.map((obj, index) =>
                 <ShopItemPremium
                     key={'premium' + index}
                     days={obj.days}
-                    price={obj.price}
+                    price={getPrice(obj, index, true)}
                     onClick={()=>buyThing(obj.id)}
                 />
             )}
-            {moneyPrice.map((obj, index) =>
-                <ShopItem
-                    key={'money' + index}
-                    money={obj.money}
-                    price={obj.price}
-                    className={obj.className}
-                    onClick={()=>buyThing(obj.id)}
-                />
-            )}
+
             <BottomMainMenu/>
         </div>
 
@@ -110,7 +131,8 @@ export default connect((store) => ({
         money: selectMoney(store),
         rewardedVideoTime: selectRewardedTime(store),
         payments: selectPayments(store),
-        premiumTime: selectPremiumTime(store)
+        premiumTime: selectPremiumTime(store),
+        catalog: selectCatalog(store)
     }),
     (dispatch) => ({
         showVideo: () => {

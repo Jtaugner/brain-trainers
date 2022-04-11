@@ -6,7 +6,7 @@ import {
     BUY_GAME,
     BUY_LEVELS_DIFF,
     CHANGE_CAN_OPEN_GIFT,
-    CHANGE_EXP_FROM_PLAYER_DATA,
+    CHANGE_EXP_FROM_PLAYER_DATA, CHANGE_GAME_CATALOG,
     CHANGE_GAME_PAYMENTS,
     CHANGE_GAME_SDK,
     CHANGE_GIFT_OPENS_FROM_PLAYER_DATA,
@@ -176,4 +176,9 @@ export const changeRewardTime = (isTime) => ({
 export const changeGamePayments = (payments) => ({
     type: CHANGE_GAME_PAYMENTS,
     payments
+});
+
+export const changeGameCatalog = (catalog) => ({
+    type: CHANGE_GAME_CATALOG,
+    catalog
 });

@@ -9,7 +9,7 @@ function ShopItemPremium(props) {
                 <div className="shop-item__pic" />
                 <div className="shop-item__money">{days} дней</div>
                 <div className="shop-item__buy-button" onClick={onClick}>
-                    {price}₽
+                    {price}
                 </div>
             </div>
         </>

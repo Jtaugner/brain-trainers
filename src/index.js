@@ -2,12 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App, {giveParams} from './App';
 import {Provider} from 'react-redux'
 import {store} from "./store";
 import {MemoryRouter} from "react-router-dom";
 import {
-    changeExp, changeGamePayments,
+    addMoney,
+    changeExp, changeGameCatalog, changeGamePayments,
     changeGameSDK,
     changeGiftOpens,
     changeGiftTime,
@@ -23,6 +24,7 @@ import {
     selectPlayerLevel,
     selectPremiumTime, selectProgress
 } from "./store/selectors";
+import {moneyPrice, premiumPrice} from "./projectCommon";
 
 var playerGame, ysdkGame;
 
@@ -53,6 +55,26 @@ export function saveData() {
     }catch (ignored) {}
 
 
+}
+
+function consumePurchase(purchase, payments) {
+    try{
+        for(let i = 0; i < moneyPrice.length; i++){
+            if(moneyPrice[i].id === purchase.productID){
+                store.dispatch(addMoney(moneyPrice[i].money));
+                break;
+            }
+        }
+        for(let i = 0; i < premiumPrice.length; i++){
+            if(premiumPrice[i].id === purchase.productID){
+                store.dispatch(changePremiumTime(premiumPrice[i].days));
+                break;
+            }
+        }
+        giveParams({[purchase.productID]: 1});
+        payments.consumePurchase(purchase.purchaseToken);
+        saveData();
+    }catch(e){}
 }
 
 export function initPlayer(ysdk, fromShop) {
@@ -89,15 +111,19 @@ export function initPlayer(ysdk, fromShop) {
         }).catch((e) => {
             if(!fromShop) createApp();
         });
-        ysdk.getPayments({signed: false}).then(_payments => {
-            // Покупки доступны.
-            store.dispatch(changeGamePayments(_payments));
-        }).catch(err => {
-            console.log(err);
-        });
     }).catch((e) => {
         console.log(e);
         if(!fromShop) createApp();
+    });
+    ysdk.getPayments({signed: false}).then(_payments => {
+        _payments.getCatalog().then(catalog => store.dispatch(changeGameCatalog(catalog)) );
+        // Покупки доступны.
+        store.dispatch(changeGamePayments(_payments));
+        _payments.getPurchases().then(purchases => purchases.forEach((id)=>{
+            consumePurchase(id, _payments);
+        }));
+    }).catch(err => {
+        console.log(err);
     });
 }
 

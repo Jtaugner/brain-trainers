@@ -22,6 +22,7 @@ import {gameSDKReducer} from "./gameSDKReducer";
 import {giftOpensReducer} from "./giftOpensReducer";
 import {rewardedVideoTimeReducer} from "./rewardedVideoTimeReducer";
 import {gamePaymentsReducer} from "./gamePaymentsReducer";
+import {gameCatalogReducer} from "./gameCatalogReducer";
 
 const reducer = combineReducers({
 
@@ -47,7 +48,8 @@ const reducer = combineReducers({
     gameSDK: gameSDKReducer,
     giftOpens: giftOpensReducer,
     rewardedTime: rewardedVideoTimeReducer,
-    gamePayments: gamePaymentsReducer
+    gamePayments: gamePaymentsReducer,
+    catalog: gameCatalogReducer
 
 });
 

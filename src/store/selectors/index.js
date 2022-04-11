@@ -44,3 +44,5 @@ export const selectGiftOpens = (store) => store.giftOpens;
 
 export const selectRewardedTime = (store) => store.rewardedTime;
 export const selectPayments = (store) => store.gamePayments;
+
+export const selectCatalog = (store) => store.catalog;

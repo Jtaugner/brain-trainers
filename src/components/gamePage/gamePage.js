@@ -76,7 +76,7 @@ function GamePage(props) {
 
             addMoney(moneyAndExpPerDifficult[difficult].money);
             addExp(moneyAndExpPerDifficult[difficult].exp);
-            if (levelsCount > level + 1) {
+            if (levelsCount >= level + 1) {
                 addDoneLevels(game, difficult, level + 1);
             }
             if(level === 49){

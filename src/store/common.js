@@ -54,9 +54,25 @@ export const ADD_OPEN_GIFT = "ADD_OPEN_GIFT";
 
 export const CHANGE_REWARDED_TIME = "CHANGE_REWARDED_TIME";
 
-export const getFromLocalStorage = (name, defaultVal) => {
-  let val = localStorage.getItem(name);
-  if(val) return Number(val);
-  localStorage.setItem(name, defaultVal);
+
+export const CHANGE_GAME_CATALOG = "CHANGE_GAME_CATALOG";
+
+export const getFromLocalStorage = (name, defaultVal, simpleValue) => {
+  try{
+    let val = localStorage.getItem(name);
+
+    if(val) {
+      if(simpleValue) return val;
+      return Number(val);
+    }
+
+    if(!simpleValue) localStorage.setItem(name, defaultVal);
+  }catch(e){}
   return defaultVal;
 };
+
+export const setToLocalStorage = (name, value) => {
+  try{
+    localStorage.setItem(name, value);
+  }catch(e){}
+}
