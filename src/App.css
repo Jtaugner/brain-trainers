@@ -17,6 +17,7 @@ html, body, #root {
   -webkit-user-select: none;
   user-select: none;
   background-color: #eeeeee;
+  overflow-y: auto;
 }
 
 @media (min-width: 1000px) {
@@ -122,6 +123,35 @@ table, tr, td {
 td {
   text-align: center;
   vertical-align: center;
+}
+
+#root::-webkit-scrollbar-button {
+  background-repeat: no-repeat;
+  width: 6px;
+  height: 0;
+}
+
+#root::-webkit-scrollbar-track {
+  background-color: #787878;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#root::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #AD9EF6;
+}
+
+#root::-webkit-resizer {
+  background-repeat: no-repeat;
+  width: 5px;
+  height: 0;
+}
+
+#root::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
 }
 
 /*# sourceMappingURL=App.css.map */
